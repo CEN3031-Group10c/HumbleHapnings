@@ -6,4 +6,4 @@
 
 
 TEAM NAMES:
-Joshua
+Josh
