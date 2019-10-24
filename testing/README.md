@@ -6,4 +6,9 @@
 
 
 TEAM NAMES:
-Josh
+1. Josh (Scrum Master)
+2.
+3.
+4.
+5.
+6.
