@@ -10,5 +10,5 @@ TEAM NAMES:
 2.
 3. Kevin Wang
 4. Lukas (Product Manager)
-5.
+5. Diego Simonelli
 6.
