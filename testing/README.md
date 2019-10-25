@@ -6,9 +6,9 @@
 ^ Why did I have caps lock on?
 
 TEAM NAMES:
-1. Josh (Scrum Master)
-2. 
-3.
-4.
+1. Joshua Dargan (Scrum Master)
+2.
+3. Kevin Wang
+4. Lukas (Product Manager)
 5. Diego Simonelli
 6.
