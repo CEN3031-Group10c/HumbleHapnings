@@ -8,7 +8,7 @@
 TEAM NAMES:
 1. Josh (Scrum Master)
 2.
-3.
+3. Kevin Wang
 4.
 5.
 6.
