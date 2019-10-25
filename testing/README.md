@@ -7,7 +7,7 @@
 
 TEAM NAMES:
 1. Josh (Scrum Master)
-2.
+2. Sebastian
 3.
 4.
 5.
