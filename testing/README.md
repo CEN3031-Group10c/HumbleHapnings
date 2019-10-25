@@ -9,6 +9,6 @@ TEAM NAMES:
 1. Josh (Scrum Master)
 2.
 3.
-4.
+4. Lukas (Product Manager)
 5.
 6.
