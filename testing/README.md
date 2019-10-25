@@ -7,8 +7,8 @@
 
 TEAM NAMES:
 1. Josh (Scrum Master)
-2.
+2. 
 3.
 4.
-5.
+5. Diego Simonelli
 6.
