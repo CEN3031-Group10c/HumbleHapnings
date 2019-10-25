@@ -7,7 +7,7 @@
 
 TEAM NAMES:
 1. Joshua Dargan (Scrum Master)
-2.
+2. Sebastian
 3. Kevin Wang
 4. Lukas (Product Manager)
 5. Diego Simonelli
