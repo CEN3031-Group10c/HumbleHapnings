@@ -1,31 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Header.css';
 
-const Header = () => {
-    return (
-        <div className='topnav'>
-            {/* Logo */}
-            <Link id="logo-link" to="/">
-                <img className="topnav-logo" src={ "/logo192.png" } alt="React logo" />
-            </Link>
-
-            {/* Page Links */}
-            <div className="topnav-right">
-                <Link className="topnav-link" to='/Register'>Sign in</Link>
-                <Link className="topnav-link" to='/projects'>Projects</Link>
-                <a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/groups/ufosc/events/?source=4&action_history=null&filter=calendar">
-                    Events
-                    <i className="fas fa-external-link-alt external-link" data-fa-transform="up-6"></i>
-                </a>
-                <a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://github.com/ufosc/club-resources">
-                    Resources
-                    <i className="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"></i>
-                </a>
-                <Link className="topnav-link" to="/about">About</Link>
+//https://www.w3schools.com/css/css_navbar.asp
+class Header extends React.Component {
+    render(){
+        return (
+            <div>
+                <body className='header'>
+                    <div className='navbar'>
+                    <li className='logo'>HumbleHapnings</li>
+                    <ul class="nav">
+                        <button>Home</button>
+                        <button>About</button>
+                        <button>Events</button>
+                        <button>Church Directory</button>
+                    </ul>
+                    </div>
+                </body>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default Header;
