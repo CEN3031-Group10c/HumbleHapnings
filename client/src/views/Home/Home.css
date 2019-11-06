@@ -88,3 +88,40 @@ input[type=text]:focus, input[type=password]:focus {
 	padding: 0px;
     margin-left: 50px;
 }
+
+
+.book1-background{
+    background-image: url('../../assets/book1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 0px;
+}
+.cathedral1-background{
+    background-image: url('../../assets/cathedral1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 0px;
+}
+
+.field1-background{
+    background-image: url('../../assets/field1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 0px;
+}
+
+
+
+
