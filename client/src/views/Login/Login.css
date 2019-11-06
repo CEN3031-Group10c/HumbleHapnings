@@ -1,0 +1,47 @@
+.login .christians1{
+    background-image: url('../../assets/christians1.png');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 50px;
+}
+
+.login .book1-background{
+    background-image: url('../../assets/book1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 50px;
+}
+.login .cathedral1-background{
+    background-image: url('../../assets/cathedral1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 50px;
+}
+
+.login .field1-background{
+    background-image: url('../../assets/field1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 50px;
+}
+
+
+
+
+
