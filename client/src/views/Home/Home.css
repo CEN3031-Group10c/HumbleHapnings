@@ -122,6 +122,11 @@ input[type=text]:focus, input[type=password]:focus {
     padding: 0px;
 }
 
+.homePagePad{
+    position: center;
+    padding: 60px;
+}
+
 
 
 

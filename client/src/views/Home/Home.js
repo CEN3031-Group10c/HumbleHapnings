@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import Header from "../../components/Header/Header.js"
+import ChurchDirectory from "../../components/ChurchDirectory/ChurchDirectory.js"
 
 //From: Kevin
 /*
@@ -22,6 +23,10 @@ class Home extends React.Component {
             <div>
                 <div className={randomImage()}>
                     <Header/>
+                    <div className="homePagePad">
+                    <ChurchDirectory/>
+                    </div>
+                    
                 </div>
             </div>
         );
