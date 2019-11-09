@@ -56,7 +56,6 @@ class Register extends React.Component{
                                         id="regName" 
                                         type="text" 
                                         placeholder="Enter Name" 
-                                        onChange={this.valuesUpdate.bind(this)}
                                         required
                                     />
 
@@ -67,7 +66,6 @@ class Register extends React.Component{
                                         id="regGender" 
                                         type="text" 
                                         placeholder="Enter Gender" 
-                                        onChange={this.valuesUpdate.bind(this)}
                                         required
                                     />
                                     
@@ -78,7 +76,6 @@ class Register extends React.Component{
                                         id="regEmail" 
                                         type="text" 
                                         placeholder="Enter Email" 
-                                        onChange={this.valuesUpdate.bind(this)}
                                         required
                                     />
 
@@ -89,7 +86,6 @@ class Register extends React.Component{
                                         id="regPassword" 
                                         type="password" 
                                         placeholder="Enter Password" 
-                                        onChange={this.valuesUpdate.bind(this)}
                                         required
                                     />
 
@@ -100,12 +96,11 @@ class Register extends React.Component{
                                         id="regConfirmPass" 
                                         type="password" 
                                         placeholder="Retype Password" 
-                                        onChange={this.valuesUpdate.bind(this)}
                                         required
                                     />
                                 </div>
 
-                                <button type="submit" class="reg">Create Account</button>
+                                <button type="submit" onClick={this.valuesUpdate.bind(this)} class="reg">Create Account</button>
                             </form>
                         </div>
 
