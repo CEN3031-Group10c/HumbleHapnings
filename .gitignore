@@ -58,4 +58,4 @@ yarn-error.log*
 # User-specific stuff
 .idea/*
 
-humbleHapWorkspaceJosh.code-workspace
+*.code-workspace
