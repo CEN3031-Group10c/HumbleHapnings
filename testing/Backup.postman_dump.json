@@ -1,0 +1,91 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "ef0b1a9d-1f96-4596-a0f3-64fd5d4f4289",
+			"name": "HumbleHapningsPostman",
+			"description": null,
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"3c501329-31a7-4c26-bab8-d1da858035c4"
+			],
+			"folders_order": [],
+			"folders": [],
+			"requests": [
+				{
+					"id": "3c501329-31a7-4c26-bab8-d1da858035c4",
+					"name": "HH_POST_login",
+					"url": "http://localhost:5000/api/users/register",
+					"description": "Set the request type to POST\r\nSet the request url to http://localhost:5000/api/users/register\r\nNavigate to the Body tab, select x-www-form-urlencoded, fill in your registration parameters and hit Send\r\n\r\nYou should receive a HTTP status response of 200 OK and have the new user returned as JSON.",
+					"data": [
+						{
+							"key": "name",
+							"value": "Josh Test",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "email",
+							"value": "test1@test.com",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "test123",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password2",
+							"value": "test123",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/x-www-form-urlencoded",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "ef0b1a9d-1f96-4596-a0f3-64fd5d4f4289",
+					"headers": "Content-Type: application/x-www-form-urlencoded\n",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "97b51c62-d337-4380-9eb7-31da9c043f35",
+			"name": "My Workspace - globals",
+			"values": []
+		},
+		{
+			"id": "8ed508e4-8401-4f9d-9afc-8e6baa8021f4",
+			"name": "Team Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}
