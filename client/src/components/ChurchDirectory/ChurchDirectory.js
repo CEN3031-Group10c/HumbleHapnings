@@ -6,7 +6,7 @@ class ChurchDirectory extends React.Component {
     render(){
         return (
             <div>
-                <p>Hello i am directory</p>
+                
             </div>
         )
     }
