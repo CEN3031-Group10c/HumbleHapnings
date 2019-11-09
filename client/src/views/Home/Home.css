@@ -1,22 +1,127 @@
-.App {
-    text-align: center;
+/*default styles*/
+html {
+    box-sizing: border-box;
+  }
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
-.App-logo {
-    height: 40vmin;
+body{
+    background-size: cover;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    margin: 0px;
 }
 
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
+/*button*/
+button{
+    padding: 15px 90px;
+    color: white;
+    background: rgb(59, 125, 212); 
+    cursor: pointer;
+    margin:5px;
+}
+button:hover{
+    opacity: 0.85;
+}
+
+input[type=text], input[type=password]{
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    border: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+input[type=text]::placeholder, input[type=password]::placeholder{
+    color: black;
+    opacity: 1;
+}
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    opacity: 0.80;
+    outline: none;
+}
+
+/*containers*/
+.container {
+    padding: 20px;
+}
+.login-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    padding: 16px;
+    border: 3px solid #000000;
+    margin: 50px;
 }
 
-.App-link {
-    color: #09d3ac;
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
+
+.row-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 12px;
+}
+
+/*column*/
+.column1{
+    float: left;
+	width: 50%;
+	padding: 15px;
+	background-color: #ccdef9;
+    outline-style: solid;
+    margin-left: 50px;
+}
+
+.column2{
+    float: left;
+	width: 50%;
+	padding: 0px;
+    margin-left: 50px;
+}
+
+
+.book1-background{
+    background-image: url('../../assets/book1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 0px;
+}
+.cathedral1-background{
+    background-image: url('../../assets/cathedral1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 0px;
+}
+
+.field1-background{
+    background-image: url('../../assets/field1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 0px;
+}
+
+
+
+
