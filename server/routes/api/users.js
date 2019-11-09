@@ -57,6 +57,7 @@ router.post("/login", (req, res) => {
     if (!isValid) {
         return res.status(400).json(errors);
     }
+    console.log("No login errors")
     const email = req.body.email;
     const password = req.body.password;
     // Find user by email
@@ -77,7 +78,7 @@ router.post("/login", (req, res) => {
                 // Sign token
                 jwt.sign(
                     payload,
-                    keys.secretOrKey,
+                    config.db.secretOrKey,
                     {
                         expiresIn: 31556926 // 1 year in seconds
                     },
