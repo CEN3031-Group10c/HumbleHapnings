@@ -1,5 +1,5 @@
 var mongoose = require('mongoose')
-var ChurchListing = require('../models/listings.server.churchmodel.js/index.js')
+var ChurchListing = require('../models/listings.server.churchmodel.js')
 
 
 // Function to create a church listing in the database

@@ -14,6 +14,7 @@ class Header extends React.Component {
                         <button>About</button>
                         <button>Events</button>
                         <button>Church Directory</button>
+                        <button>Create Church Directory</button>
                     </ul>
                     </div>
                 </body>
