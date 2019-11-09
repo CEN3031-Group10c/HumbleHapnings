@@ -17,23 +17,56 @@ function randomImage(){
 //To: Kevin
 
 class Login extends React.Component {
+
+    /* Megan Start Code */
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: "",
+            password: "",
+            errors: {}
+        };
+    }
+
+    // Update state of values
+    valuesUpdate() {
+        this.setState({
+            email: this.userEmail.value,
+            password: this.userPassword.value
+        })
+    }
+
+    onSubmit = e => {
+        e.preventDefault();
+        const userData = {
+            email: this.state.email,
+            password: this.state.password
+        };
+    };
+
+    /* Megan End Code */
+
     render() {
         return (
+            /* 
+                Changed Log In
+                Now it requires user to input email instead of username
+                - Megan 
+            */
             //From: Kevin
             <body className='login'>
                 {/*background image*/}
                 <div className={randomImage()}> 
                     <h1 align="center">Welcome to HumbleHapnings</h1>
-                    <form>
+                    <form noValidate onSubmit={this.onSubmit}>
                         <div className="login-container">
-
                             <div className="input-container">
-                                <label for='loginUserName'><b>Username</b></label>
+                                <label for='loginEmail'><b>Email</b></label>
                                 <input 
-                                    id = 'loginUserName'
+                                    id = 'loginEmail'
                                     type="text" 
-                                    placeholder="Username"  
-                                    ref={(value) => {this.userName = value}}
+                                    placeholder="Email"  
+                                    ref={(value) => {this.userEmail = value}}
                                     required
                                 />
 
@@ -47,7 +80,7 @@ class Login extends React.Component {
                                 />
 
                                 <div className="row-container">
-                                    <button type="submit">Login</button>
+                                    <button type="submit" onClick={this.valuesUpdate.bind(this)}>Login</button>
                                     <Link to="/Register"><button>Sign Up</button></Link>
                                 </div>
                             </div>
