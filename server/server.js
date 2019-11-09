@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const config = require ('./config/config')
 
  // Connect to database
- mongoose.connect(config.db.uri, { useNewUrlParser: true });
+ mongoose.connect(config.db.uri, { useNewUrlParser: true, useUnifiedTopology: true  });
 
 // Use env port or default
 const port = process.env.PORT || 5000;
