@@ -1,3 +1,5 @@
+//Josh & Megan - src: https://blog.bitsrc.io/build-a-login-auth-app-with-mern-stack-part-1-c405048e3669
+//Use config instead of keys
 const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const mongoose = require("mongoose");
