@@ -24,9 +24,11 @@ class Events extends React.Component{
         tags: ["fun, ", "Yearly, ", "social"]}]
 
         //mapping the elements of the array
+        //outline 
         const eventMaping = events.map(event => {
             return (
-                <div class="column1" style={{padding: '30px'}, {paddingBottom: '30px'}}>
+                
+                <div class="column1" style={{padding: '30px'}, {paddingBottom: '30px'} }>
                     <div class="containerEvent">
                         <h1>{event.name}</h1>
                         <tr>by: {event.hostChurch}</tr>
@@ -41,6 +43,7 @@ class Events extends React.Component{
                     </tr>
                 </div>
             </div>
+            
         );
     });
 
@@ -49,15 +52,15 @@ class Events extends React.Component{
             <body className="Events">
                 <div class="container">
                     <h1 style={{fontSize: 70}}>Events</h1>
-                    <div class="row-container">
+                    
                     <text style={{fontSize: 30}}>Check out these awesome events happening in your community!</text>
                         
                             <form>
-                            
+                                <div style={{paddingBottom: '30px'}}>{"   "}</div>
                                 <div>{eventMaping}</div>
                             </form>
                         
-                    </div>
+                    
                 </div>
             </body>
 
