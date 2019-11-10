@@ -5,20 +5,24 @@ import NotFound from "./views/NotFound"
 import Register from "./views/Register/Register"
 import Login from "./views/Login/Login"
 
+import { Provider } from "react-redux";
+import store from "./store";
 
 const App = () => {
   return (
-    <div> 
-      <Switch>
-        <Route exact path="/Login" component={Login}/>
-        <Route exact path="/Register" component={Register}/> 
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/">
-          <Redirect to="/Login" />
-        </Route>
-        <Route component={NotFound}/>
-      </Switch>
-    </div>
+    <Provider store={store}>
+      <div> 
+        <Switch>
+          <Route exact path="/Login" component={Login}/>
+          <Route exact path="/Register" component={Register}/> 
+          <Route exact path="/Home" component={Home} />
+          <Route exact path="/">
+            <Redirect to="/Login" />
+          </Route>
+          <Route component={NotFound}/>
+        </Switch>
+      </div>
+    </Provider> 
   );
 }
 
