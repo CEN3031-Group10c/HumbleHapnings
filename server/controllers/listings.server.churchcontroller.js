@@ -5,7 +5,16 @@ var ChurchListing = require('../models/listings.server.churchmodel.js')
 // Function to create a church listing in the database
 exports.createChurch = function(req,res) {
 
-    var churchListing = new ChurchListing(req.body);
+    var churchData = {
+        name: req.body.name,
+        pastor: req.body.pastor,
+        address: req.body.address,
+        email: req.body.email,
+        phone: req.body.phone,
+        description: req.body.description
+    };
+
+    var churchListing = new ChurchListing(churchData);
 
     // Saves the listing
     churchListing.save(function(err) {
