@@ -11,7 +11,7 @@
     "dev": "concurrently \"nodemon server/server.js\" \"cd client && npm run start\"",
     "build": "npm run-script client",
     "start": "npm run-script client",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build" 
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.0",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^0.20.0",
     "mocha": "^6.2.1",
     "mongoose": "^5.7.1",
     "morgan": "^1.9.1",
