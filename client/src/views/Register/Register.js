@@ -1,180 +1,161 @@
-import React from 'react';
-import './Register.css';
+import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 
-class Register extends React.Component{
-
-    /* Megan Start Code */
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: "",
-            gender: "",
-            email: "",
-            password: "",
-            password2: ""
-        };
-    }
-
-    //Josh
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.errors) {
-          this.setState({
-            errors: nextProps.errors
-          });
-        }
-    }
-
-    //Josh - Changes the state of the value at component target id
-    onChange = e => {
-        this.setState({ [e.target.id]: e.target.value });
-      };
-   
-
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.errors) {
-            this.setState({
-                errors: nextProps.errors
-            });
-        }
-    }
-      //this.props.registerUser(newUser, this.props.history); 
- // };
-
-    // Update all values to inputted values
-    valuesUpdate() {
-        this.setState({
-            name: this.nameValue.value,
-            gender: this.genderValue.value,
-            email: this.emailValue.value,
-            password: this.passwordValue.value,
-            password2: this.password2Value.value
-        })
-    }
-
-    onSubmit = e => {
-        e.preventDefault();
-        const newUser = {
-            name: this.state.name,
-            gender: this.state.gender,
-            email: this.state.email,
-            password: this.state.password,
-            password2: this.state.password2
-        }
-
-        this.props.registerUser(newUser, this.props.history); 
+class Register extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      email: "",
+      password: "",
+      password2: "",
+      errors: {}
     };
+  }
 
-    /* Megan End Code */
-
-    render(){
-        const { errors } = this.state;
-
-        return(
-            <body className="reg">
-                <div class="container">
-                    <h1>Create Account</h1>
-                    <div class="row-container">
-                        <div class="column2">
-                            <form noValidate onSubmit={this.onSubmit}>
-                                <p>Please fill in this form to create an account.</p>
-                                <div class="regName">
-                                    <label for="regName"><b>Name</b></label>
-                                    <input 
-                                        className={ classnames("reg", {
-                                            invalid: errors.name
-                                        })}
-                                        ref={ (value) => {this.nameValue = value} }
-                                        id="regName" 
-                                        type="text" 
-                                        placeholder="Enter Name" 
-                                        required
-                                    />
-                                    <span className="red-text">{errors.name}</span>
-
-                                    <label for="regGender"><b>Gender</b></label>
-                                    <input 
-                                        className="reg"
-                                        ref={ (value) => {this.genderValue = value} }
-                                        id="regGender" 
-                                        type="text" 
-                                        placeholder="Enter Gender" 
-                                        required
-                                    />
-                                    
-                                    <label for="regEmail"><b>Email</b></label>
-                                    <input 
-                                        className={classnames("reg", {
-                                            invalid: errors.email
-                                          })}
-                                        ref={ (value) => {this.emailValue = value} }
-                                        id="regEmail" 
-                                        type="text" 
-                                        placeholder="Enter Email" 
-                                        required
-                                    />
-                                    <span className="red-text">{errors.password}</span>
-
-                                    <label for="regPassword"><b>Password</b></label>
-                                    <input 
-                                        className={classnames("reg", {
-                                            invalid: errors.password
-                                          })}
-                                        ref={ (value) => {this.passwordValue = value} }
-                                        id="regPassword" 
-                                        type="password" 
-                                        placeholder="Enter Password" 
-                                        required
-                                    />
-                                    <span className="red-text">{errors.password}</span>
-
-                                    <label for="regConfirmPass"><b>Confirm Password</b></label>
-                                    <input 
-                                        className={classnames("reg", {
-                                            invalid: errors.password2
-                                          })}
-                                        ref={ (value) => {this.password2Value = value} }
-                                        id="regConfirmPass" 
-                                        type="password" 
-                                        placeholder="Retype Password" 
-                                        required
-                                    />
-                                    <span className="red-text">{errors.password2}</span>
-                                </div>
-
-                                <button type="submit" onClick={this.valuesUpdate.bind(this)} class="reg">Create Account</button>
-                            </form>
-                        </div>
-
-
-
-                        <div class="column1">
-                            Payment
-                        </div>
-                    </div>
-                </div>
-            </body>
-        )
+componentDidMount() {
+    // If logged in and user navigates to Register page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
     }
 }
 
-/// Josh's code below
-//
-Register.propTypes = {
-    registerUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired,
-    errors: PropTypes.object.isRequired
+componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
+}
+  
+//Josh - Changes the state of the value at component target id  
+onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
   };
+
+  //Submits the register request and saves it to the db
+onSubmit = e => {
+    e.preventDefault();
+const newUser = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2
+    };
+this.props.registerUser(newUser, this.props.history); 
+  };
+render() {
+    const { errors } = this.state;
+return (
+      <div className="container">
+        <div className="row">
+          <div className="col s8 offset-s2">
+            <Link to="/Home" className="btn-flat waves-effect">
+              <i className="material-icons left">keyboard_backspace</i> 
+              Back to home
+            </Link>
+            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+              <h4>
+                <b>Register</b> below
+              </h4>
+              <p className="grey-text text-darken-1">
+                Already have an account? <Link to="/login">Log in</Link>
+              </p>
+            </div>
+            <form noValidate onSubmit={this.onSubmit}>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.name}
+                  error={errors.name}
+                  id="name"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.name
+                  })}
+                />
+                <label htmlFor="name">Name</label>
+                <span className="red-text">{errors.name}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.email}
+                  error={errors.email}
+                  id="email"
+                  type="email"
+                  className={classnames("", {
+                    invalid: errors.email
+                  })}
+                />
+                <label htmlFor="email">Email</label>
+                <span className="red-text">{errors.email}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.password}
+                  error={errors.password}
+                  id="password"
+                  type="password"
+                  className={classnames("", {
+                    invalid: errors.password
+                  })}
+                />
+                <label htmlFor="password">Password</label>
+                <span className="red-text">{errors.password}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.password2}
+                  error={errors.password2}
+                  id="password2"
+                  type="password"
+                  className={classnames("", {
+                    invalid: errors.password2
+                  })}
+                />
+                <label htmlFor="password2">Confirm Password</label>
+                <span className="red-text">{errors.password2}</span>
+              </div>
+              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                <button
+                  style={{
+                    width: "150px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem"
+                  }}
+                  type="submit"
+                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                >
+                  Sign up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+Register.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
 
 // This allows us to call this.props.auth or this.props.errors within our Register component.
 const mapStateToProps = state => ({
-    auth: state.auth,
-    errors: state.errors
-  });
+  auth: state.auth,
+  errors: state.errors
+});
 
 /*
   You may also notice we wrapped our Register with a withRouter(). 
@@ -185,6 +166,6 @@ const mapStateToProps = state => ({
       in our onSubmit event so we can easily access it within our action
 */
 export default connect(
-    mapStateToProps,
-    { registerUser }
-  )(withRouter(Register));
+  mapStateToProps,
+  { registerUser }
+)(withRouter(Register));

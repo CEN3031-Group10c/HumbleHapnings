@@ -20,7 +20,7 @@ class Landing extends Component {
             <br />
             <div className="col s6">
               <Link
-                to="/register"
+                to="/TestRegister"
                 style={{
                   width: "140px",
                   borderRadius: "3px",
@@ -33,7 +33,7 @@ class Landing extends Component {
             </div>
             <div className="col s6">
               <Link
-                to="/login"
+                to="/TestLogin"
                 style={{
                   width: "140px",
                   borderRadius: "3px",
