@@ -1,0 +1,427 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "ef0b1a9d-1f96-4596-a0f3-64fd5d4f4289",
+			"name": "HumbleHapningsPostman",
+			"description": null,
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"3c501329-31a7-4c26-bab8-d1da858035c4",
+				"59a54417-593c-4437-96a9-a26e179540a4",
+				"cb145bbb-1836-4ef1-9d9a-032c0a623b7b",
+				"ff9c5b7d-9fa9-4774-9420-05bb8a19be91",
+				"19630c72-150b-4b06-9384-7b50011c7614",
+				"9abb2b72-7f3a-4a80-98fd-b30ff4d87f86",
+				"d59a4b45-069f-48f2-89e9-e8825386ed44",
+				"6e908e47-2001-4820-8c28-a9ca753fc569"
+			],
+			"folders_order": [],
+			"folders": [],
+			"requests": [
+				{
+					"id": "19630c72-150b-4b06-9384-7b50011c7614",
+					"name": "HH_POST_Login_Success_WeirdPassword",
+					"url": "http://localhost:5000/api/users/login",
+					"description": "",
+					"data": [
+						{
+							"key": "email",
+							"value": "test2@test.com",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "$($#@(*$&()!@$(*_",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/x-www-form-urlencoded",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "ef0b1a9d-1f96-4596-a0f3-64fd5d4f4289",
+					"headers": "Content-Type: application/x-www-form-urlencoded\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "3c501329-31a7-4c26-bab8-d1da858035c4",
+					"name": "HH_POST_Register_Success_Generic",
+					"url": "http://localhost:5000/api/users/register",
+					"description": "Set the request type to POST\r\nSet the request url to http://localhost:5000/api/users/register\r\nNavigate to the Body tab, select x-www-form-urlencoded, fill in your registration parameters and hit Send\r\n\r\nYou should receive a HTTP status response of 200 OK and have the new user returned as JSON.",
+					"data": [
+						{
+							"key": "name",
+							"value": "Josh Test",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "email",
+							"value": "test1@test.com",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "test123",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password2",
+							"value": "test123",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/x-www-form-urlencoded",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "ef0b1a9d-1f96-4596-a0f3-64fd5d4f4289",
+					"headers": "Content-Type: application/x-www-form-urlencoded\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "59a54417-593c-4437-96a9-a26e179540a4",
+					"name": "HH_POST_Register_Error_MultiError",
+					"url": "http://localhost:5000/api/users/register",
+					"description": "\"name\": \"Name field is required\",\r\n    \"email\": \"Email is invalid\",\r\n    \"password\": \"Password must be at least 6 characters\",\r\n    \"password2\": \"Passwords must match\"",
+					"data": [
+						{
+							"key": "name",
+							"value": "",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "email",
+							"value": "test1",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password2",
+							"value": "test1",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/x-www-form-urlencoded",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "ef0b1a9d-1f96-4596-a0f3-64fd5d4f4289",
+					"headers": "Content-Type: application/x-www-form-urlencoded\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "6e908e47-2001-4820-8c28-a9ca753fc569",
+					"name": "HH_POST_Login_Error_WrongPassword",
+					"url": "http://localhost:5000/api/users/login",
+					"description": "",
+					"data": [
+						{
+							"key": "email",
+							"value": "test2@test.com",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "$($",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/x-www-form-urlencoded",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "ef0b1a9d-1f96-4596-a0f3-64fd5d4f4289",
+					"headers": "Content-Type: application/x-www-form-urlencoded\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "9abb2b72-7f3a-4a80-98fd-b30ff4d87f86",
+					"name": "HH_POST_Login_Error_InvalidEmail",
+					"url": "http://localhost:5000/api/users/login",
+					"description": "",
+					"data": [
+						{
+							"key": "email",
+							"value": "test1",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "test123",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/x-www-form-urlencoded",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "ef0b1a9d-1f96-4596-a0f3-64fd5d4f4289",
+					"headers": "Content-Type: application/x-www-form-urlencoded\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "cb145bbb-1836-4ef1-9d9a-032c0a623b7b",
+					"name": "HH_POST_Register2_Success_WeirdPassword",
+					"url": "http://localhost:5000/api/users/register",
+					"description": "Should we allow weird passwords (no alphanumeric characters contained)?",
+					"data": [
+						{
+							"key": "name",
+							"value": "Josh Test",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "email",
+							"value": "test2@test.com",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "$($#@(*$&()!@$(*_",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password2",
+							"value": "$($#@(*$&()!@$(*_",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/x-www-form-urlencoded",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "ef0b1a9d-1f96-4596-a0f3-64fd5d4f4289",
+					"headers": "Content-Type: application/x-www-form-urlencoded\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "d59a4b45-069f-48f2-89e9-e8825386ed44",
+					"name": "HH_POST_Login_Error_NoEmailOrPassword",
+					"url": "http://localhost:5000/api/users/login",
+					"description": "",
+					"data": [
+						{
+							"key": "email",
+							"value": "",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/x-www-form-urlencoded",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "ef0b1a9d-1f96-4596-a0f3-64fd5d4f4289",
+					"headers": "Content-Type: application/x-www-form-urlencoded\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "ff9c5b7d-9fa9-4774-9420-05bb8a19be91",
+					"name": "HH_POST_Login_Success_Generic",
+					"url": "http://localhost:5000/api/users/login",
+					"description": "",
+					"data": [
+						{
+							"key": "email",
+							"value": "test1@test.com",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "test123",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/x-www-form-urlencoded",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "ef0b1a9d-1f96-4596-a0f3-64fd5d4f4289",
+					"headers": "Content-Type: application/x-www-form-urlencoded\n",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "ce5506d2-0d63-4393-adb7-d150b30620bc",
+			"name": "My Workspace - globals",
+			"values": []
+		},
+		{
+			"id": "b8e038a3-2040-4c52-bda2-6c92a261a9a2",
+			"name": "Team Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}
