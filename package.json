@@ -8,11 +8,18 @@
     "install-all": "concurrently \"npm install\" \"cd client && npm install\"",
     "client": "npm start --prefix client",
     "server": "nodemon server/server.js",
+<<<<<<< HEAD
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "cd client && npm build",
     "start": "node server/server.js",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "client-install": "npm install --prefix client"
+=======
+    "dev": "concurrently \"nodemon server/server.js\" \"cd client && npm run start\"",
+    "build": "npm run-script client",
+    "start": "npm run-script client",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+>>>>>>> 5013bac818844f3933cab12a725df3e4d096ebc1
   },
   "repository": {
     "type": "git",
@@ -22,6 +29,7 @@
   "author": "Dakota Rennemann",
   "license": "MIT",
   "dependencies": {
+<<<<<<< HEAD
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.2",
@@ -36,6 +44,24 @@
     "nodemon": "^1.18.10",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+=======
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "concurrently": "^4.1.0",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.20.0",
+    "mocha": "^6.2.1",
+    "mongoose": "^5.7.1",
+    "jquery": "^3.4.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.4",
+    "popper.js": "^1.16.0",
+    "react": "^16.11.0",
+    "react-bootstrap": "^1.0.0-beta.14",
+    "react-dom": "^16.11.0",
+    "reactstrap": "^8.1.1",
+>>>>>>> 5013bac818844f3933cab12a725df3e4d096ebc1
     "server": "^1.0.19",
     "should": "^13.2.3",
     "supertest": "^4.0.2",

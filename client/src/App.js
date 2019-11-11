@@ -1,8 +1,19 @@
 import React from 'react';
+<<<<<<< HEAD
 import { BrowserRouter as Router, Route, Switch, Redirect  } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
+=======
+import { Route, Switch, Redirect  } from 'react-router-dom';
+import Home from "./views/Home/Home"
+import NotFound from "./views/NotFound"
+import Register from "./views/Register/Register"
+import Login from "./views/Login/Login"
+import Events from "./views/Events/Events"
+import ChurchCreation from "./views/ChurchDirectoryCreation/ChurchDirectoryCreation"
+
+>>>>>>> 5013bac818844f3933cab12a725df3e4d096ebc1
 
 import Home from "./views/Home/Home";
 import NotFound from "./views/NotFound";
@@ -43,10 +54,11 @@ const App = () => {
       <Router>
         <div> 
           <Navbar/>
-          <Route exact path="/Test" component={Landing}/>
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/Register" component={Register}/> 
           <Route exact path="/Home" component={Home} />
+          <Route exact path="/Events" component={Events}></Route>
+          <Route exact path="/ChurchCreation" component={ChurchCreation} />
           <Route exact path="/">
           <Redirect to="/Login" />
           <Route component={NotFound}/></Route>
