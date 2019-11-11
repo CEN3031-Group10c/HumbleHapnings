@@ -20,13 +20,31 @@ function randomImage(){
 
 class Home extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedTab: 0
+        }
+    }
+    // Updates the selected tab value so that the information on screen can switch based on what tab is pressed
+    selectedUpdate(id) {
+        this.setState({
+            selectedTab: id
+        })
+    }
+
     render() {
+        
         return (
             <div>
                 <div className={randomImage()}>
-                    <Header/>
+                    <Header
+                        selectedUpdate={this.selectedUpdate.bind(this)}
+                    />
                     <div className="homePagePad">
-                    <ChurchDirectory/>
+                    <ChurchDirectory
+                        selectedTab={this.state.selectedTab}
+                    />
                     </div>
                     
                 </div>
