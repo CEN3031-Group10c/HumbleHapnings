@@ -13,7 +13,7 @@ class ChurchDirectory extends React.Component {
             churchListings: []
         };
     }
-
+    // Retrieves listings from the backend
     componentDidMount() {
         axios.get('api/ChurchCreation/list').then(res => {
             this.setState({churchListings: res.data});
@@ -22,10 +22,12 @@ class ChurchDirectory extends React.Component {
 
     render(){
 
+        const {selectedTab} = this.props
+
         const churchList = this.state.churchListings
             .map(listings => {
                 return (
-                    <div>
+                    <div key={listings.name}>
                         
                         <h3>{listings.name} </h3>
                         <h4>Pastor: {listings.pastor}</h4>
@@ -37,12 +39,13 @@ class ChurchDirectory extends React.Component {
 
                 )
             });
-                
-        return (
-            <div>
-                {churchList}
-            </div>
-        )
+        // Does not display anything if the church directory tab wasn't pressed
+        console.log(selectedTab);
+        if (selectedTab == 3)
+        {
+            return <div>{churchList}</div>
+        }
+        return <div></div>
     }
 }
 

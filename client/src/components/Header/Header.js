@@ -4,17 +4,20 @@ import './Header.css';
 //https://www.w3schools.com/css/css_navbar.asp
 class Header extends React.Component {
     render(){
+
+        const {selectedUpdate} = this.props;
+
         return (
             <div>
                 <body className='header'>
                     <div className='navbar'>
                     <li className='logo'>HumbleHapnings</li>
                     <ul class="nav">
-                        <button>Home</button>
-                        <button>About</button>
-                        <button>Events</button>
-                        <button>Church Directory</button>
-                        <button>Create Church Directory</button>
+                        <button onClick={() => selectedUpdate(0)}>Home</button>
+                        <button onClick={() => selectedUpdate(1)}>About</button>
+                        <button onClick={() => selectedUpdate(2)}>Events</button>
+                        <button onClick={() => selectedUpdate(3)}>Church Directory</button>
+                        <button onClick={() => selectedUpdate(4)}>Create Church Directory</button>
                     </ul>
                     </div>
                 </body>
