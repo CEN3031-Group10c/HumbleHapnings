@@ -40,9 +40,12 @@ class ChurchDirectoryCreation extends React.Component{
 
         console.log(newChurchListing);
 
-        // Sends the user data to the database using axios
+        // Sends the user data to the database and then redirects to the homepage using axios
         axios
         .post("api/ChurchCreation/create", newChurchListing)
+        .then(function(res) {
+            window.location = "/home"
+        })
         
     };
 
