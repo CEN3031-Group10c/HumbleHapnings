@@ -6,30 +6,39 @@
   "scripts": {
     "test": "mocha server/tests",
     "install-all": "concurrently \"npm install\" \"cd client && npm install\"",
-    "client": "cd client && npm start",
+    "client": "npm start --prefix client",
     "server": "nodemon server/server.js",
     "dev": "concurrently \"nodemon server/server.js\" \"cd client && npm run start\"",
-    "build": "cd client && npm build",
-    "start": "node server/server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "build": "npm run-script client",
+    "start": "npm run-script client",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "client-install": "npm install --prefix client"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/UFWebApps/React_Template_Repo.git"
+    "url": "git+https://github.com/UFWebApps/React_Template_Repo.git"
   },
   "keywords": [],
   "author": "Dakota Rennemann",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "bootstrap": "^4.3.1",
-    "concurrently": "^4.1.0",
+    "concurrently": "^4.1.2",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
-    "mocha": "^6.2.2",
+    "handlebars": "^4.5.1",
+    "hbs": "^4.0.6",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.9",
     "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "http-proxy-middleware": "^0.20.0",
+    "mocha": "^6.2.1",
+    "jquery": "^3.4.1",
     "nodemon": "^1.19.4",
     "popper.js": "^1.16.0",
     "react": "^16.11.0",
@@ -38,7 +47,11 @@
     "reactstrap": "^8.1.1",
     "server": "^1.0.19",
     "should": "^13.2.3",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "validator": "^12.0.0"
   },
-  "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme"
+  "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme",
+  "bugs": {
+    "url": "https://github.com/UFWebApps/React_Template_Repo/issues"
+  }
 }
