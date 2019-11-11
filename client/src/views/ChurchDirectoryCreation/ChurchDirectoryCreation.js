@@ -48,7 +48,7 @@ class ChurchDirectoryCreation extends React.Component{
         })
         
     };
-
+    // Needs new css to cleanup
     render(){
         return(
             <body className="reg">
