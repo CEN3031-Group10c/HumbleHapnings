@@ -1,8 +1,8 @@
 import React from 'react';
 import './ChurchDirectory.css';
 import axios from 'axios';
-//import {Card, CardBody, CardTitle} from 'reactstrap';
-import Card from 'react-bootstrap/Card';
+import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
+// import Card from 'react-bootstrap/Card';
 
 
 class ChurchDirectory extends React.Component {
@@ -27,23 +27,35 @@ class ChurchDirectory extends React.Component {
         const churchList = this.state.churchListings
             .map(listings => {
                 return (
-                    <div key={listings.name}>
-                        
-                        <h3>{listings.name} </h3>
-                        <h4>Pastor: {listings.pastor}</h4>
-                        <h4>Address: {listings.address}</h4>
-                        <h4>Email: {listings.email}</h4>
-                        <h4>Phone: {listings.phone}</h4>
-                        <h4>Description: {listings.description}</h4>
-                    </div>
-
+                    <Col>
+                        <Card style={{ width: '20rem'}}>
+                            <CardBody>
+                                <CardTitle>{listings.name}</CardTitle>
+                                <ul className="ChurchDirCardList">
+                                    <li>Church Leader: {listings.pastor}</li>
+                                    <li>Address: {listings.address}</li>
+                                    <li>Email: {listings.email}</li>
+                                    <li>Phone: {listings.phone}</li>
+                                    <li>Description: {listings.description}</li>
+                                </ul>
+                                <Button>View Church</Button>
+                            </CardBody>
+                        </Card>
+                    </Col>
+  
                 )
             });
         // Does not display anything if the church directory tab wasn't pressed
         console.log(selectedTab);
         if (selectedTab == 3)
         {
-            return <div>{churchList}</div>
+            return ( 
+                <div >
+                    <Row>
+                    {churchList} 
+                    </Row>
+                </div>
+            )
         }
         return <div></div>
     }
