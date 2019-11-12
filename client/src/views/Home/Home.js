@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header.js"
 import ChurchDirectory from "../../components/ChurchDirectory/ChurchDirectory.js"
 //Maybe?
 import ChurchDirectoryCreation from "../../views/ChurchDirectoryCreation/ChurchDirectoryCreation.js"
+import Events from '../Events/Events';
 
 //From: Kevin
 /*
@@ -42,6 +43,9 @@ class Home extends React.Component {
                         selectedUpdate={this.selectedUpdate.bind(this)}
                     />
                     <ChurchDirectory
+                        selectedTab={this.state.selectedTab}
+                    />
+                    <Events
                         selectedTab={this.state.selectedTab}
                     />
 
