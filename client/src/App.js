@@ -42,7 +42,6 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <div> 
-          <Navbar/>
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/Register" component={Register}/> 
           <Route exact path="/Home" component={Home} />
