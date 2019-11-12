@@ -35,7 +35,7 @@ class Header extends React.Component {
                         <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(2)}>Events</a>
                     </li>
                     <li>
-                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(3)}>Events</a>
+                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(3)}>Churches</a>
                     </li>
                     <li>
                         <a class="waves-effect waves-light btn"onClick={() => selectedUpdate(4)}><Link to="/ChurchCreation">Create Church Directory</Link></a>
