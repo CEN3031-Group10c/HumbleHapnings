@@ -41,11 +41,10 @@ class Home extends React.Component {
                     <Header
                         selectedUpdate={this.selectedUpdate.bind(this)}
                     />
-                    <div className="homePagePad">
                     <ChurchDirectory
                         selectedTab={this.state.selectedTab}
                     />
-                    </div>
+
                     
                 </div>
             </div>
