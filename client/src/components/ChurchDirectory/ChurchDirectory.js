@@ -31,7 +31,7 @@ class ChurchDirectory extends React.Component {
                             <CardBody>
                                 <CardTitle>{listings.name}</CardTitle>
                                 <ul className="ChurchDirCardList">
-                                    <li>Pastor: {listings.pastor}</li>
+                                    <li>Church Leader: {listings.pastor}</li>
                                     <li>Address: {listings.address}</li>
                                     <li>Email: {listings.email}</li>
                                     <li>Phone: {listings.phone}</li>
