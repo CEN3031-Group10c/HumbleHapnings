@@ -17,6 +17,8 @@ class Events extends React.Component{
 
     render(){
 
+        const {selectedTab} = this.props
+
         // creating the test array for the mapping 
         const events = [{name: "Church Meeting",
         date: "11/15", 
@@ -69,28 +71,28 @@ class Events extends React.Component{
 
     var letterColor = "black";
         //organazing page components
-        return (
-            <body className="Events">
-                 <div className={randomImage()}> 
-                 <Header
-                        selectedUpdate={this.selectedUpdate.bind(this)}
-                    />
-                <div class="container">
-                    <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
-                    
-                    <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
-                        
-                            <form>
-                                <div style={{paddingBottom: '30px'}}>{"   "}</div>
-                                <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center'}}>{eventMaping}</div>
-                            </form>
-                        
-                    
-                </div>
-                </div>
-            </body>
 
-        )
+        if (selectedTab == 2) {
+
+            return (
+                <body className="Events">
+                    <div className={randomImage()}> 
+                    <div class="container">
+                        <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
+                        
+                        <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
+                            
+                                <form>
+                                    <div style={{paddingBottom: '30px'}}>{"   "}</div>
+                                    <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center'}}>{eventMaping}</div>
+                                </form>
+                    </div>
+                    </div>
+                </body>
+            )
+        }
+        else
+            return <div></div>
     }
 }
 
