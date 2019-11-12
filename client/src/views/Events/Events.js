@@ -1,34 +1,54 @@
 import React from 'react';
 import './Events.css';
+import Header from "../../components/Header/Header.js"
 
 // Sebastian and Diego
 
 // Creating the event front end
 
+ 
+
 class Events extends React.Component{
+    selectedUpdate(id) {
+        this.setState({
+            selectedTab: id
+        })
+    }
+
     render(){
 
         // creating the test array for the mapping 
-        const events = [{name: "Meeting",
+        const events = [{name: "Church Meeting",
         date: "11/15", 
-        location: "house",
-        description: "Praying",
-        hostChurch: "Church",
-        tags: ["fun, ", "religious, ", "social"]},
+        location: "Conference Room",
+        description: "Discussing upcoming fair",
+        hostChurch: "Our-Church",
+        tags: ["Discussion, ", "Social commitment, ", "Planning"]},
 
-        {name: "Meeting2",
+        {name: "6 PM Sunday Mass",
         date: "11/13",
-        location: "house",
-        description: "Praying",
-        hostChurch: "Church",
-        tags: ["fun, ", "Yearly, ", "social"]}]
+        location: "Main Church",
+        description: "Mass, praying",
+        hostChurch: "Your-Church",
+        tags: ["Weekly mass, ", "Devotion, ", "Social"]}]
+
+        function randomImage(){
+
+            var backgroundImages = ['book1-background', 'field1-background'];
+            var randomIndex = Math.floor(Math.random() * backgroundImages.length);
+            var randomImg = backgroundImages[randomIndex];
+            if(randomIndex == 0) //passing in the variable that is part of this class to be changed if the background is dark
+                 letterColor = "white";
+            return randomImg;
+        }  
 
         //mapping the elements of the array
         //outline 
         const eventMaping = events.map(event => {
             return (
                 
-                <div class="column1" style={{padding: '30px'}, {paddingBottom: '30px'} }>
+                <div class="columnEvents" style={{padding: '0px'}, {paddingBottom: '20px'}, {paddingTop: '0px'}, 
+                                {display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                     <div class="containerEvent">
                         <h1>{event.name}</h1>
                         <tr>by: {event.hostChurch}</tr>
@@ -47,20 +67,26 @@ class Events extends React.Component{
         );
     });
 
+    var letterColor = "black";
         //organazing page components
         return (
             <body className="Events">
+                 <div className={randomImage()}> 
+                 <Header
+                        selectedUpdate={this.selectedUpdate.bind(this)}
+                    />
                 <div class="container">
-                    <h1 style={{fontSize: 70}}>Events</h1>
+                    <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
                     
-                    <text style={{fontSize: 30}}>Check out these awesome events happening in your community!</text>
+                    <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
                         
                             <form>
                                 <div style={{paddingBottom: '30px'}}>{"   "}</div>
-                                <div>{eventMaping}</div>
+                                <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center'}}>{eventMaping}</div>
                             </form>
                         
                     
+                </div>
                 </div>
             </body>
 
