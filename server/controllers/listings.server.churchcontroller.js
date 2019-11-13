@@ -91,5 +91,6 @@ exports.churchListingByID = function(req, res, next, id) {
             req.churchListing = listing;
             next();
         }
+        
     });
 };
