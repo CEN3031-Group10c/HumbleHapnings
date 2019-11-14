@@ -53,10 +53,10 @@ class Events extends React.Component{
                                 {display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                     <div class="containerEvent">
                         <h1>{event.name}</h1>
-                        <tr>by: {event.hostChurch}</tr>
+                        <tr>By: {event.hostChurch}</tr>
                         <tr>{event.location}</tr>
                         <tr>{event.date}</tr>
-                        <tr>description: {event.description}</tr>
+                        <tr>Description: {event.description}</tr>
                         <tr>Related to: {event.tags.map ( tag => {
                             return (
                                 <text style={{fontWeight: "bold"}}>{tag}</text>
