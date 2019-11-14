@@ -33,40 +33,33 @@ body.header{
     padding: 0;
     text-decoration: underline;
     font-size: 18px;
-<<<<<<< HEAD
     color: gray;
 }
 .nav button:hover{
     opacity: 0.5;
-    color: gray;
-=======
-    
+    color: gray;   
 }
 .nav button:hover{
     opacity: 0.5;
     color: white;
->>>>>>> 6078fccbd6e781ae363674a3334cf42aa7e5531a
+    color: gray;
+}
+.nav button:hover{
+    opacity: 0.5;
+    color: gray;
     cursor: pointer;
 }
 
 .navbar .logo{
     font-size: 30px;
-<<<<<<< HEAD
     color: black;
-=======
-    color: white;
->>>>>>> 6078fccbd6e781ae363674a3334cf42aa7e5531a
     list-style: none;
     flex: 1 1 auto;
     margin-left: 5%;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
-
-<<<<<<< HEAD
 }
 .logo {
         padding-left: 50px;
-=======
->>>>>>> 6078fccbd6e781ae363674a3334cf42aa7e5531a
 }
