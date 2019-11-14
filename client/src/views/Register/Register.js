@@ -54,10 +54,7 @@ class Register extends Component {
         const { errors } = this.state;
     return (
         <div className="container">
-<<<<<<< HEAD
             <NavBar/>
-=======
->>>>>>> 6078fccbd6e781ae363674a3334cf42aa7e5531a
             <div className="row">
             <div className="col s8 offset-s2">
                 <Link to="/Home" className="btn-flat waves-effect">
