@@ -10,7 +10,7 @@ module.exports.init = () => {
         connect to database
         - reference README for db uri
     */
-    mongoose.connect(process.env.DB_URI || require('./prod').db.uri, {
+    mongoose.connect(process.env.MONGO_URI || require('./prod').db.uri, {
         useNewUrlParser: true, useUnifiedTopology: true 
     });
     mongoose.set('useCreateIndex', true);
