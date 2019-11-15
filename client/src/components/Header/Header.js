@@ -15,7 +15,7 @@ class Header extends React.Component {
                 <a href="#" class="logo"> <Link
                         to="/"
                         style={{
-                            fontFamily: "monospace"
+                            fontFamily: "Verdana"
                         }}
                         className="col s5 brand-logo left black-text"
                     >

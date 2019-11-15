@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import NavBar from "../../components/layout/Navbar";
 
 class Register extends Component {
     constructor() {
@@ -53,6 +54,7 @@ class Register extends Component {
         const { errors } = this.state;
     return (
         <div className="container">
+            <NavBar/>
             <div className="row">
             <div className="col s8 offset-s2">
                 <Link to="/Home" className="btn-flat waves-effect">

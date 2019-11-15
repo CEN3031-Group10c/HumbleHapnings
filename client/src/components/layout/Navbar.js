@@ -6,24 +6,20 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-
-        <nav className="z-depth-0">
+      <nav className="z-depth-0">
         <div className="nav-wrapper white">
-          <Link
-              to="/"
-              style={{
-                fontFamily: "monospace"
-              }}
-              className="col s5 brand-logo left black-text"
+          <a href="#" class="logo"> 
+            <Link
+                to="/Home"
+                style={{
+                  fontFamily: "Verdana"
+                }}
+                className="col s5 brand-logo left black-text"
             >
               <i className="material-icons">flare</i>
               HumbleHapnings
             </Link>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
-          </ul>
+          </a>
         </div>
       </nav>
     );

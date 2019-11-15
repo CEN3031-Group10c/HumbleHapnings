@@ -37,6 +37,15 @@ body.header{
 }
 .nav button:hover{
     opacity: 0.5;
+    color: gray;   
+}
+.nav button:hover{
+    opacity: 0.5;
+    color: white;
+    color: gray;
+}
+.nav button:hover{
+    opacity: 0.5;
     color: gray;
     cursor: pointer;
 }
@@ -50,7 +59,6 @@ body.header{
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
-
 }
 .logo {
         padding-left: 50px;
