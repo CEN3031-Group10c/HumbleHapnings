@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const bodyParser = require("body-parser");
 
-const config = require ('./config/config');
+const prod = require ('./config/prod');
 const users = require("./routes/api/users");
 const app = express.init();
 
@@ -16,7 +16,7 @@ app.use(
 app.use(bodyParser.json());
 
  // Connect to MongoDB database
- mongoose.connect(config.db.uri, { useNewUrlParser: true, useUnifiedTopology: true  })
+ mongoose.connect(prod.db.uri, { useNewUrlParser: true, useUnifiedTopology: true  })
  .then(() => console.log("MongoDB successfully connected"))
  .catch(err => console.log(err));
 
