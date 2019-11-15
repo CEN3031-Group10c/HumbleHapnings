@@ -6,22 +6,22 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-      <div className="navbar-fixed">
-        <nav className="z-depth-0">
-          <div className="nav-wrapper white">
+      <nav className="z-depth-0">
+        <div className="nav-wrapper white">
+          <a href="#" class="logo"> 
             <Link
-              to="/"
-              style={{
-                fontFamily: "monospace"
-              }}
-              className="col s5 brand-logo center black-text"
+                to="/Home"
+                style={{
+                  fontFamily: "Verdana"
+                }}
+                className="col s5 brand-logo left black-text"
             >
               <i className="material-icons">flare</i>
               HumbleHapnings
             </Link>
-          </div>
-        </nav>
-      </div>
+          </a>
+        </div>
+      </nav>
     );
   }
 }

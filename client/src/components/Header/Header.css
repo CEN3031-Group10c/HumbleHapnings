@@ -33,22 +33,33 @@ body.header{
     padding: 0;
     text-decoration: underline;
     font-size: 18px;
-    
+    color: gray;
+}
+.nav button:hover{
+    opacity: 0.5;
+    color: gray;   
 }
 .nav button:hover{
     opacity: 0.5;
     color: white;
+    color: gray;
+}
+.nav button:hover{
+    opacity: 0.5;
+    color: gray;
     cursor: pointer;
 }
 
 .navbar .logo{
     font-size: 30px;
-    color: white;
+    color: black;
     list-style: none;
     flex: 1 1 auto;
     margin-left: 5%;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
-
+}
+.logo {
+        padding-left: 50px;
 }
