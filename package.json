@@ -9,8 +9,8 @@
     "client": "npm start --prefix client",
     "server": "nodemon server/server.js",
     "dev": "concurrently \"nodemon server/server.js\" \"cd client && npm run start\"",
-    "build": "npm run-script client",
-    "start": "npm run-script client",
+    "build": "npm run-script dev",
+    "start": "npm run-script dev",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "client-install": "npm install --prefix client"
   },
