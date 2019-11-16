@@ -8,7 +8,7 @@ class Navbar extends Component {
     return (
       <nav className="z-depth-0">
         <div className="nav-wrapper white">
-          <a href="#" className="logo"> 
+          <a className="logo"> 
             <Link
                 to="/landing"
                 style={{

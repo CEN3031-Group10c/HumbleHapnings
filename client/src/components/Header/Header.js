@@ -20,7 +20,7 @@ class Header extends React.Component {
 
         <nav className="z-depth-0">
             <div className="nav-wrapper white">
-                <a href="#" class="logo"> <Link
+                <a className="logo"> <Link
                         to="/Home"
                         style={{
                             fontFamily: "Verdana"
@@ -31,22 +31,22 @@ class Header extends React.Component {
                             HumbleHapnings
                         </Link>
                 </a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li>
-                        <a class="waves-effect waves-light btn blue accent-3">Social</a>
+                        <a className="waves-effect waves-light btn blue accent-3">Social</a>
                     </li>
                     <li>
-                        <a class="waves-effect waves-light btn blue accent-3" onClick={() => selectedUpdate(2)}>Events</a>
+                        <a className="waves-effect waves-light btn blue accent-3" onClick={() => selectedUpdate(2)}>Events</a>
                     </li>
                     <li>
-                        <a class="waves-effect waves-light btn blue accent-3" onClick={() => selectedUpdate(3)}>Churches</a>
+                        <a className="waves-effect waves-light btn blue accent-3" onClick={() => selectedUpdate(3)}>Churches</a>
                     </li>
                     <li>
-                        <a class="waves-effect waves-light btn blue accent-3"onClick={() => selectedUpdate(4)}><Link to="/ChurchCreation">Create Church Directory</Link></a>
+                        <a className="waves-effect waves-light btn blue accent-3"onClick={() => selectedUpdate(4)}><Link to="/ChurchCreation">Create Church Directory</Link></a>
                     </li>
                     <li>
-                    <a class="waves-effect waves-light btn blue accent-3"onClick={this.onLogoutClick}>Logout</a>
+                        <a className="waves-effect waves-light btn blue accent-3"onClick={this.onLogoutClick}>Logout</a>
                     </li>
                 </ul>
             </div>

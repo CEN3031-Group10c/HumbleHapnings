@@ -13,10 +13,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 //Test
-import Navbar from './components/layout/Navbar';
 import Landing from "./components/layout/Landing";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/Dashboard/Dashboard";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -42,11 +40,7 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <div>
-          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/landing" component={Landing} />
-          <Route exact path="/">
-            <Redirect to="/dashboard" />
-          <Route component={NotFound}/></Route>
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/Register" component={Register}/> 
           <Switch>
@@ -55,6 +49,9 @@ const App = () => {
             <PrivateRoute exact path="/Events" component={Events}/>
             <PrivateRoute exact path="/ChurchCreation" component={ChurchCreation} />
           </Switch>
+          <Route path="/">
+            <Redirect to="/landing" />
+          </Route>
         </div>
       </Router>   
     </Provider> 

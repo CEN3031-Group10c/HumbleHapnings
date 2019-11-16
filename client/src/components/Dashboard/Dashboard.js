@@ -31,7 +31,6 @@ componentWillReceiveProps(nextProps) {
 }
 
   render() {
-      const { user } = this.props.auth;
 
       return (
         <div className='field1-background'>
