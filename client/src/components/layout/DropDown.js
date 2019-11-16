@@ -34,12 +34,15 @@ class DropDown extends Component {
   
     render() {
       return (
-        <div>
-          <button onClick={this.showMenu}>
+          <div>
+              <li>
+          <button onClick={this.showMenu} >
             Show menu
           </button>
           
-          {
+          
+        </li>
+        {
             this.state.showMenu
               ? (
                 <div
@@ -57,7 +60,9 @@ class DropDown extends Component {
                 null
               )
           }
-        </div>
+          </div>
+        
+        
       );
     }
   }

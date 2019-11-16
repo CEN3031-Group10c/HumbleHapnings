@@ -41,7 +41,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <div> 2
+        <div>
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/landing" component={Landing} />
           <Route exact path="/">

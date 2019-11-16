@@ -38,11 +38,12 @@ class Home extends React.Component {
         
         return (
             <div>
+                <Header
+                    selectedUpdate={this.selectedUpdate.bind(this)}
+                />
+
                 <div className={randomImage()}>
-                    <Header
-                        selectedUpdate={this.selectedUpdate.bind(this)}
-                    />
-                    
+
                     <ChurchDirectory
                         selectedTab={this.state.selectedTab}
                     />
@@ -50,7 +51,7 @@ class Home extends React.Component {
                         selectedTab={this.state.selectedTab}
                     />
 
-                    
+
                 </div>
             </div>
         );

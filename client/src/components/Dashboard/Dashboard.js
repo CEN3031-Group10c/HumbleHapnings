@@ -34,7 +34,7 @@ componentWillReceiveProps(nextProps) {
       const { user } = this.props.auth;
 
       return (
-        <div>
+        <div className='field1-background'>
           <NavBar/>
           <div style={{ height: "75vh" }} className="container valign-wrapper">
             <div className="row">

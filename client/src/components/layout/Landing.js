@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import NavBar from "../../components/layout/Navbar";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import './Landing.css';
 
 class Landing extends Component {
 
@@ -28,24 +29,24 @@ componentWillReceiveProps(nextProps) {
 
   render() {
     return (
-      <div>
+      <div className='field1-background'>
         <NavBar/>
-        <div style={{ height: "75vh" }} className="container valign-wrapper">
-          <div className="row">
-            <div className="col s12 center-align">
-              <h4>
-                <b>Build</b> a login/auth app with the{" "}
-                <span style={{ fontFamily: "Verdana" }}>MERN</span> stack from
-                scratch
-              </h4>
-              <p className="flow-text grey-text text-darken-1">
-                Create a (minimal) full-stack app with user authentication via
-                passport and JWTs
-              </p>
+        <div style={{ height: "50vh", paddingBottom: "200" }} className="container valign-wrapper">
+          <div className="row ">
+            <div style={{ paddingBottom: "25px" }} className="col s12 center-align colorDiv">
+              <h2>
+                <b>Welcome to HumbleHapnings!</b> 
+              </h2>
+              <h5>
+                This is a community for believers in God. 
+              </h5>
+              <h6>
+              Register or login below to make friends and find local churches and events. 
+              </h6>
               <br />
               <div className="col s6">
                   <Link 
-                    className="btn btn-large waves-effect waves-light hoverable" 
+                    className="btn btn-large waves-effect waves-light hoverable blue accent-3" 
                     to="/Register" 
                     style={{color: "white"}} >
                     Register
@@ -53,7 +54,7 @@ componentWillReceiveProps(nextProps) {
               </div>
               <div className="col s6">
                 <Link 
-                    className="btn btn-large waves-effect waves-light hoverable" 
+                    className="btn btn-large waves-effect waves-light hoverable blue accent-3" 
                     to="/Login" 
                     style={{color: "white"}} >
                     Login
