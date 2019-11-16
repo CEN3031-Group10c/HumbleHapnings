@@ -19,13 +19,13 @@ class Login extends Component {
     componentDidMount() {
         // If logged in and user navigates to Login page, should redirect them to dashboard
         if (this.props.auth.isAuthenticated) {
-            this.props.history.push("/dashboard");
+            this.props.history.push("/home");
         }
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.auth.isAuthenticated) {
-            this.props.history.push("/dashboard"); // push user to dashboard when they login
+            this.props.history.push("/home"); // push user to dashboard when they login
         }
 
         if (nextProps.errors) {
@@ -64,7 +64,7 @@ class Login extends Component {
                 <NavBar/>
                 <div style={{ marginTop: "4rem" }} className="row">
                 <div className="col s8 offset-s2">
-                    <Link to="/Home" className="btn-flat waves-effect">
+                    <Link to="/landing" className="btn-flat waves-effect">
                     <i className="material-icons left">keyboard_backspace</i> 
                     Back to home
                     </Link>

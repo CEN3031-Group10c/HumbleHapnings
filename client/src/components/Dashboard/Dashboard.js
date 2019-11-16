@@ -11,50 +11,55 @@ class Dashboard extends Component {
     this.props.logoutUser();
   };
 
-render() {
-    const { user } = this.props.auth;
+  componentDidMount() {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+        this.props.history.push("/home");
+    }
+}
 
-    return (
-      <div>
-        <NavBar/>
-        <div style={{ height: "75vh" }} className="container valign-wrapper">
-          <div className="row">
-            <div className="col s12 center-align">
-              <h4>
-                <b>What's Hapning,</b> {user.name.split(" ")[0]}<b>?</b>
-                <p className="flow-text grey-text text-darken-1">
-                  You are logged into {" "}
-                  <span style={{ fontFamily: "Verdana" }}>HumbleHapnings</span> 👏
-                </p>
-              </h4>
-              <button
-                style={{
-                  width: "150px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px",
-                  marginTop: "1rem"
-                }}
-                className="btn btn-large waves-effect waves-light hoverable"
-              >
-                <Link to="/Home" style={{color: "white"}} >
-                  Home
+componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+        this.props.history.push("/home"); // push user to dashboard when they login
+    }
+
+    if (nextProps.errors) {
+        this.setState({
+            errors: nextProps.errors
+        });
+    }
+}
+
+  render() {
+      const { user } = this.props.auth;
+
+      return (
+        <div>
+          <NavBar/>
+          <div style={{ height: "75vh" }} className="container valign-wrapper">
+            <div className="row">
+              <div className="col s12 center-align">
+                <h4>
+                  <b>What's Hapning?</b>
+                  <p className="flow-text grey-text text-darken-1">
+                    <span style={{ fontFamily: "Verdana" }}>HumbleHapnings</span> 👏
+                  </p>
+                </h4>
+                <Link 
+                  className="btn btn-large waves-effect waves-light hoverable" 
+                  to="/Login" 
+                  style={{color: "white"}} >
+                  Login
                 </Link>
-              </button>
-              <button
-                style={{
-                  width: "150px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px",
-                  marginTop: "1rem"
-                }}
-                onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable"
-              >
-                Logout
-              </button>
+                <Link 
+                  className="btn btn-large waves-effect waves-light hoverable" 
+                  to="/Register" 
+                  style={{color: "white"}} >
+                  Register
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
       </div>
     );
   }

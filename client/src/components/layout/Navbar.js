@@ -8,9 +8,9 @@ class Navbar extends Component {
     return (
       <nav className="z-depth-0">
         <div className="nav-wrapper white">
-          <a href="#" class="logo"> 
+          <a href="#" className="logo"> 
             <Link
-                to="/Home"
+                to="/landing"
                 style={{
                   fontFamily: "Verdana"
                 }}

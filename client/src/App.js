@@ -41,17 +41,19 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <div> 
+        <div> 2
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/landing" component={Landing} />
+          <Route exact path="/">
+            <Redirect to="/dashboard" />
+          <Route component={NotFound}/></Route>
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/Register" component={Register}/> 
-          <Route exact path="/Home" component={Home} />
-          <Route exact path="/Events" component={Events}></Route>
-          <Route exact path="/ChurchCreation" component={ChurchCreation} />
-          <Route exact path="/">
-          <Redirect to="/Login" />
-          <Route component={NotFound}/></Route>
           <Switch>
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            
+            <PrivateRoute exact path="/Home" component={Home} />
+            <PrivateRoute exact path="/Events" component={Events}/>
+            <PrivateRoute exact path="/ChurchCreation" component={ChurchCreation} />
           </Switch>
         </div>
       </Router>   

@@ -21,7 +21,7 @@ class Register extends Component {
     componentDidMount() {
         // If logged in and user navigates to Register page, should redirect them to dashboard
         if (this.props.auth.isAuthenticated) {
-        this.props.history.push("/dashboard");
+        this.props.history.push("/Home");
         }
     }
 
@@ -57,7 +57,7 @@ class Register extends Component {
             <NavBar/>
             <div className="row">
             <div className="col s8 offset-s2">
-                <Link to="/Home" className="btn-flat waves-effect">
+                <Link to="/landing" className="btn-flat waves-effect">
                 <i className="material-icons left">keyboard_backspace</i> 
                 Back to home
                 </Link>

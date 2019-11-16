@@ -42,6 +42,7 @@ class Home extends React.Component {
                     <Header
                         selectedUpdate={this.selectedUpdate.bind(this)}
                     />
+                    
                     <ChurchDirectory
                         selectedTab={this.state.selectedTab}
                     />
