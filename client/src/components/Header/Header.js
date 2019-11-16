@@ -34,19 +34,19 @@ class Header extends React.Component {
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li>
-                        <a class="waves-effect waves-light btn">Social</a>
+                        <a class="waves-effect waves-light btn blue accent-3">Social</a>
                     </li>
                     <li>
-                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(2)}>Events</a>
+                        <a class="waves-effect waves-light btn blue accent-3" onClick={() => selectedUpdate(2)}>Events</a>
                     </li>
                     <li>
-                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(3)}>Churches</a>
+                        <a class="waves-effect waves-light btn blue accent-3" onClick={() => selectedUpdate(3)}>Churches</a>
                     </li>
                     <li>
-                        <a class="waves-effect waves-light btn"onClick={() => selectedUpdate(4)}><Link to="/ChurchCreation">Create Church Directory</Link></a>
+                        <a class="waves-effect waves-light btn blue accent-3"onClick={() => selectedUpdate(4)}><Link to="/ChurchCreation">Create Church Directory</Link></a>
                     </li>
                     <li>
-                    <a class="waves-effect waves-light btn"onClick={this.onLogoutClick}>Logout</a>
+                    <a class="waves-effect waves-light btn blue accent-3"onClick={this.onLogoutClick}>Logout</a>
                     </li>
                 </ul>
             </div>
