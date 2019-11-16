@@ -59,8 +59,6 @@ class Login extends Component {
 
     render() {
         const { errors } = this.state;
-        const test = process.env.DB_URI;
-        const test2 = "hello!";
         return (
             <div className="container">
                 <NavBar/>
@@ -72,7 +70,7 @@ class Login extends Component {
                     </Link>
                     <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                     <h4>
-                        <b>Login</b> below {test} but {test2}
+                        <b>Login</b> below
                     </h4>
                     <p className="grey-text text-darken-1">
                         Don't have an account? <Link to="/register">Register</Link>
