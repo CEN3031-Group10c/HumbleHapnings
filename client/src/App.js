@@ -4,7 +4,6 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import Home from "./views/Home/Home"
-import NotFound from "./views/NotFound"
 import Register from "./views/Register/Register"
 import Login from "./views/Login/Login"
 import Events from "./views/Events/Events"
