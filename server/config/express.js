@@ -3,7 +3,7 @@ const path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    exampleRouter = require('../routes/examples.server.routes');
+    churchCreationRouter = require('../routes/server.church.routes');
 
 module.exports.init = () => {
     /* 
@@ -11,7 +11,7 @@ module.exports.init = () => {
         - reference README for db uri
     */
     mongoose.connect(process.env.DB_URI || require('./config').db.uri, {
-        useNewUrlParser: true
+        useNewUrlParser: true, useUnifiedTopology: true 
     });
     mongoose.set('useCreateIndex', true);
     mongoose.set('useFindAndModify', false);
@@ -23,10 +23,11 @@ module.exports.init = () => {
     app.use(morgan('dev'));
 
     // body parsing middleware
+    app.use(bodyParser.urlencoded({ extended: false })); //Needed for testing
     app.use(bodyParser.json());
 
-    // add a router
-    app.use('/api/example', exampleRouter);
+    // Church Creation Router
+    app.use('/api/ChurchCreation', churchCreationRouter);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files

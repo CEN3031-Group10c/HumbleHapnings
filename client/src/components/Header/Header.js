@@ -1,31 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Header.css';
+import {Link} from 'react-router-dom';
 
-const Header = () => {
-    return (
-        <div className='topnav'>
-            {/* Logo */}
-            <Link id="logo-link" to="/">
-                <img className="topnav-logo" src={ "/logo192.png" } alt="React logo" />
-            </Link>
+//https://www.w3schools.com/css/css_navbar.asp
+class Header extends React.Component {
+    render(){
 
-            {/* Page Links */}
-            <div className="topnav-right">
-                <Link className="topnav-link" to='/Register'>Sign in</Link>
-                <Link className="topnav-link" to='/projects'>Projects</Link>
-                <a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/groups/ufosc/events/?source=4&action_history=null&filter=calendar">
-                    Events
-                    <i className="fas fa-external-link-alt external-link" data-fa-transform="up-6"></i>
+        const {selectedUpdate} = this.props;
+
+        return (
+
+        <nav className="z-depth-0">
+            <div className="nav-wrapper white">
+                <a href="#" class="logo"> <Link
+                        to="/"
+                        style={{
+                            fontFamily: "Verdana"
+                        }}
+                        className="col s5 brand-logo left black-text"
+                    >
+                            <i className="material-icons">flare</i>
+                            HumbleHapnings
+                        </Link>
                 </a>
-                <a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://github.com/ufosc/club-resources">
-                    Resources
-                    <i className="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"></i>
-                </a>
-                <Link className="topnav-link" to="/about">About</Link>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li>
+                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(0)}>Home</a>
+                    </li>
+                    <li>
+                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(1)}>About</a>
+                    </li>
+                    <li>
+                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(2)}>Events</a>
+                    </li>
+                    <li>
+                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(3)}>Churches</a>
+                    </li>
+                    <li>
+                        <a class="waves-effect waves-light btn"onClick={() => selectedUpdate(4)}><Link to="/ChurchCreation">Create Church Directory</Link></a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    )
+      </nav>
+        )
+    }
 }
 
 export default Header;

@@ -1,0 +1,24 @@
+body.Events {
+    font-family: Arial;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    margin: 0px;
+    background-size: cover;
+}
+
+div.containerEvent {
+    font-family: Arial;
+    padding: 10px;
+    
+}
+
+.columnEvents{
+    float: left;
+	width: 35%;
+    padding: 10px;
+    padding-left: 0px;
+	background-color: #f9f1cc;
+    outline-style: solid;
+    margin-left: 50px;
+}
