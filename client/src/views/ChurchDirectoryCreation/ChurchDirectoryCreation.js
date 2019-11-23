@@ -35,6 +35,8 @@ class ChurchDirectoryCreation extends React.Component{
             address: this.state.address,
             email: this.state.email,
             phone: this.state.phone,
+            denomination: this.state.denomination,
+            missionStatement: this.state.missionStatement,
             description: this.state.description
         }
 

@@ -11,6 +11,8 @@ exports.createChurch = function(req,res) {
         address: req.body.address,
         email: req.body.email,
         phone: req.body.phone,
+        denomination: req.body.denomination,
+        missionStatement: req.body.missionStatement,
         description: req.body.description
     };
 
@@ -46,6 +48,8 @@ exports.updateChurch = function(req, res) {
     churchListing.address = req.body.address;
     churchListing.email = req.body.email;
     churchListing.phone = req.body.phone;
+    churchListing.denomination = req.body.denomination;
+    churchListing.missionStatement = req.body.missionStatement;
     churchListing.description = req.body.description;
 
     ChurchListing.findOneAndUpdate(query, churchListing, function(err) {
