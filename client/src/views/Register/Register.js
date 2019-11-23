@@ -6,17 +6,17 @@ import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 import NavBar from "../../components/layout/Navbar";
 import "./Register.css";
-import {NORMAL, CHURCH_LEADER, ADMIN} from "../../actions/userTypes";
+import {NORMAL, UNAPPROVED_CHURCH_LEADER} from "../../actions/userTypes";
 
 class Register extends Component {
-    constructor() {
-    super();
+    constructor(props) {
+    super(props);
     this.state = {
         name: "",
         email: "",
         password: "",
         password2: "",
-        state: NORMAL,
+        type: NORMAL,
         errors: {}
     };
   }
@@ -33,6 +33,18 @@ class Register extends Component {
             this.setState({
                 errors: nextProps.errors
             });
+        }
+    }
+
+    //Josh - changes the account type based on checkbox status
+    onCheckbox() {
+        if (this.state.type === NORMAL)
+        {
+            this.setState({ type: UNAPPROVED_CHURCH_LEADER });
+        }
+        else 
+        {
+            this.setState({ type: NORMAL });
         }
     }
     
@@ -107,8 +119,8 @@ class Register extends Component {
                                 <div>
                                 <p>
                                 <label style={{paddingLeft: 25}}>
-                                    <input type="checkbox" class="filled-in" />
-                                    <span>Apply for a Church Leader account? (Paid Subscription Required)</span>
+                                    <input onChange={this.onCheckbox.bind(this)} type="checkbox" class="filled-in" />
+                                    <span className="black-text">Apply for a Church Leader account? (Paid Subscription Required)</span>
                                 </label>
                                 </p>
                                 </div>
@@ -160,7 +172,6 @@ class Register extends Component {
                 </div>
             </div>
         </div>
-       
         );
     }
 }

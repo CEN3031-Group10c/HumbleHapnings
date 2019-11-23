@@ -1,3 +1,5 @@
 export const NORMAL = "NORMAL";
 export const CHURCH_LEADER = "CHURCH LEADER";
 export const ADMIN = "ADMIN";
+export const UNAPPROVED_CHURCH_LEADER = "UNAPPROVED CHURCH LEADER";
+export const UNAPPROVED_ADMIN = "UNAPPROVED ADMIN";
