@@ -6,6 +6,7 @@ import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 import NavBar from "../../components/layout/Navbar";
 import "./Register.css";
+import {NORMAL, CHURCH_LEADER, ADMIN} from "../../actions/userTypes";
 
 class Register extends Component {
     constructor() {
@@ -15,6 +16,7 @@ class Register extends Component {
         email: "",
         password: "",
         password2: "",
+        state: NORMAL,
         errors: {}
     };
   }
@@ -46,7 +48,8 @@ class Register extends Component {
             name: this.state.name,
             email: this.state.email,
             password: this.state.password,
-            password2: this.state.password2
+            password2: this.state.password2,
+            type: this.state.type
         };
         this.props.registerUser(newUser, this.props.history); 
     };
@@ -100,6 +103,14 @@ class Register extends Component {
                                     />
                                     <label htmlFor="email">Email</label>
                                     <span className="red-text">{errors.email}</span>
+                                </div>
+                                <div>
+                                <p>
+                                <label style={{paddingLeft: 25}}>
+                                    <input type="checkbox" class="filled-in" />
+                                    <span>Apply for a Church Leader account? (Paid Subscription Required)</span>
+                                </label>
+                                </p>
                                 </div>
                                 <div className="input-field col s12">
                                     <input
