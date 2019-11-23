@@ -1,6 +1,8 @@
 import React from 'react';
 import './Home.css';
+import PropTypes from "prop-types";
 import Header from "../../components/Header/Header.js"
+import { connect } from "react-redux";
 import ChurchDirectory from "../../components/ChurchDirectory/ChurchDirectory.js"
 //Maybe?
 import Events from '../Events/Events';
@@ -26,6 +28,15 @@ class Home extends React.Component {
             selectedTab: 0
         }
     }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.errors) {
+          this.setState({
+            errors: nextProps.errors
+          });
+        }
+    }
+
     // Updates the selected tab value so that the information on screen can switch based on what tab is pressed
     selectedUpdate(id) {
         this.setState({
@@ -34,13 +45,11 @@ class Home extends React.Component {
     }
 
     render() {
-        
         return (
             <div>
                 <Header
                     selectedUpdate={this.selectedUpdate.bind(this)}
                 />
-
                 <div className={randomImage()}>
 
                     <ChurchDirectory
@@ -57,4 +66,16 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+Home.propTypes = {
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
+  };
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors
+  });
+
+  export default connect(
+    mapStateToProps
+  )(Home);

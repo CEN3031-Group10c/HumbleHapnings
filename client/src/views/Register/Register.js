@@ -16,7 +16,7 @@ class Register extends Component {
         email: "",
         password: "",
         password2: "",
-        type: NORMAL,
+        userType: NORMAL,
         errors: {}
     };
   }
@@ -38,13 +38,13 @@ class Register extends Component {
 
     //Josh - changes the account type based on checkbox status
     onCheckbox() {
-        if (this.state.type === NORMAL)
+        if (this.state.userType === NORMAL)
         {
-            this.setState({ type: UNAPPROVED_CHURCH_LEADER });
+            this.setState({ userType: UNAPPROVED_CHURCH_LEADER });
         }
         else 
         {
-            this.setState({ type: NORMAL });
+            this.setState({ userType: NORMAL });
         }
     }
     
@@ -61,7 +61,7 @@ class Register extends Component {
             email: this.state.email,
             password: this.state.password,
             password2: this.state.password2,
-            type: this.state.type
+            userType: this.state.userType
         };
         this.props.registerUser(newUser, this.props.history); 
     };
