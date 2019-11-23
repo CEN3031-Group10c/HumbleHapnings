@@ -14,8 +14,6 @@ class Header extends React.Component {
 
     render(){
 
-        const {selectedUpdate} = this.props;
-
         return (
 
         <nav className="z-depth-0">
@@ -37,13 +35,13 @@ class Header extends React.Component {
                         <a className="waves-effect waves-light btn blue accent-3">Social</a>
                     </li>
                     <li>
-                        <a className="waves-effect waves-light btn blue accent-3" onClick={() => selectedUpdate(2)}>Events</a>
+                        <a className="waves-effect waves-light btn blue accent-3"> <Link to="/Events">Events</Link></a>
                     </li>
                     <li>
-                        <a className="waves-effect waves-light btn blue accent-3" onClick={() => selectedUpdate(3)}>Churches</a>
+                        <a className="waves-effect waves-light btn blue accent-3"> <Link to="/ChurchDirectory">Churches</Link></a>
                     </li>
                     <li>
-                        <a className="waves-effect waves-light btn blue accent-3"onClick={() => selectedUpdate(4)}><Link to="/ChurchCreation">Create Church Directory</Link></a>
+                        <a className="waves-effect waves-light btn blue accent-3"> <Link to="/ChurchCreation">Create Church Directory</Link></a>
                     </li>
                     <li>
                         <a className="waves-effect waves-light btn blue accent-3"onClick={this.onLogoutClick}>Logout</a>
@@ -52,7 +50,7 @@ class Header extends React.Component {
             </div>
       </nav>
         )
-    } //<Link to="/Login">
+    } 
 }
 
 Header.propTypes = {
