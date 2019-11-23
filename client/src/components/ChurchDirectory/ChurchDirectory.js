@@ -28,7 +28,7 @@ class ChurchDirectory extends React.Component {
             var backgroundImages = ['book1-background', 'field1-background'];
             var randomIndex = Math.floor(Math.random() * backgroundImages.length);
             var randomImg = backgroundImages[randomIndex];
-            if(randomIndex == 0) //passing in the variable that is part of this class to be changed if the background is dark
+            if(randomIndex === 0) //passing in the variable that is part of this class to be changed if the background is dark
                  letterColor = "white";
             return randomImg;
         }  
