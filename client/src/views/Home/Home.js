@@ -1,9 +1,6 @@
 import React from 'react';
 import './Home.css';
 import Header from "../../components/Header/Header.js"
-import ChurchDirectory from "../../components/ChurchDirectory/ChurchDirectory.js"
-//Maybe?
-import Events from '../Events/Events';
 
 //From: Kevin
 /*
@@ -22,36 +19,15 @@ class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            selectedTab: 0
-        }
     }
     // Updates the selected tab value so that the information on screen can switch based on what tab is pressed
-    selectedUpdate(id) {
-        this.setState({
-            selectedTab: id
-        })
-    }
+
 
     render() {
         
         return (
-            <div>
-                <Header
-                    selectedUpdate={this.selectedUpdate.bind(this)}
-                />
-
-                <div className={randomImage()}>
-
-                    <ChurchDirectory
-                        selectedTab={this.state.selectedTab}
-                    />
-                    <Events
-                        selectedTab={this.state.selectedTab}
-                    />
-
-
-                </div>
+            <div className={randomImage()}>
+                <Header/>
             </div>
         );
     }

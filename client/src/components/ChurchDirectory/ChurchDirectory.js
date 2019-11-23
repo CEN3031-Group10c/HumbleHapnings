@@ -1,5 +1,7 @@
 import React from 'react';
 import './ChurchDirectory.css';
+import Header from "../Header/Header";
+import "../../views/Home/Home.css"
 import axios from 'axios';
 import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 // import Card from 'react-bootstrap/Card';
@@ -21,8 +23,16 @@ class ChurchDirectory extends React.Component {
     }
 
     render(){
+        var letterColor = "black";
+        function randomImage(){
+            var backgroundImages = ['book1-background', 'field1-background'];
+            var randomIndex = Math.floor(Math.random() * backgroundImages.length);
+            var randomImg = backgroundImages[randomIndex];
+            if(randomIndex == 0) //passing in the variable that is part of this class to be changed if the background is dark
+                 letterColor = "white";
+            return randomImg;
+        }  
         
-        const {selectedTab} = this.props
         // Maps the values based on the churches name
         const churchList = this.state.churchListings
             .map(listings => {
@@ -42,22 +52,17 @@ class ChurchDirectory extends React.Component {
                             </CardBody>
                         </Card>
                     </Col>
-  
                 )
             });
-        // Does not display anything if the church directory tab wasn't pressed
-        console.log(selectedTab);
-        if (selectedTab === 3)
-        {
+
             return ( 
-                <div >
+                <div className={randomImage()}>
+                    <Header/>
                     <Row>
-                    {churchList} 
+                        {churchList} 
                     </Row>
                 </div>
             )
-        }
-        return <div></div>
     }
 }
 

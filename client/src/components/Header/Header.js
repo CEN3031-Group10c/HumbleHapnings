@@ -12,16 +12,16 @@ class Header extends React.Component {
         this.props.logoutUser();
       };
 
-    render(){
+      render(){
 
-        const {selectedUpdate} = this.props;
 
         return (
 
         <nav className="z-depth-0">
             <div className="nav-wrapper white">
-                <a className="logo"> <Link
-                        to="/Home"
+                <a href="#" class="logo"> 
+                    <Link
+                        to="/"
                         style={{
                             fontFamily: "Verdana"
                         }}
@@ -29,30 +29,38 @@ class Header extends React.Component {
                     >
                             <i className="material-icons">flare</i>
                             HumbleHapnings
-                        </Link>
+                    </Link>
                 </a>
-                <a data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li>
-                        <a className="waves-effect waves-light btn blue accent-3">Social</a>
+                        <a class="waves-effect waves-light btn">
+                        <Link to="/Home">Home</Link>
+                        </a>
                     </li>
                     <li>
-                        <a className="waves-effect waves-light btn blue accent-3" onClick={() => selectedUpdate(2)}>Events</a>
+                        <a class="waves-effect waves-light btn">About</a>
                     </li>
                     <li>
-                        <a className="waves-effect waves-light btn blue accent-3" onClick={() => selectedUpdate(3)}>Churches</a>
+                        <a class="waves-effect waves-light btn">
+                            <Link to="/Events">Events</Link>
+                        </a>
                     </li>
                     <li>
-                        <a className="waves-effect waves-light btn blue accent-3"onClick={() => selectedUpdate(4)}><Link to="/ChurchCreation">Create Church Directory</Link></a>
+                        <a class="waves-effect waves-light btn">
+                            <Link to="/ChurchDirectory">Churches</Link>
+                        </a>
                     </li>
                     <li>
-                        <a className="waves-effect waves-light btn blue accent-3"onClick={this.onLogoutClick}>Logout</a>
+                        <a class="waves-effect waves-light btn">
+                            <Link to="/ChurchCreation">Create Church Directory</Link>
+                        </a>
                     </li>
                 </ul>
             </div>
       </nav>
         )
-    } //<Link to="/Login">
+    }
 }
 
 Header.propTypes = {
