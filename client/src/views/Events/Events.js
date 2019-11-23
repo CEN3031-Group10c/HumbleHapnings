@@ -1,11 +1,19 @@
 import React from 'react';
 import './Events.css';
+import Header from '../../components/Header/Header'
+import StripeCheckout from 'react-stripe-checkout'
+import Axios from 'axios';
+import { throwStatement } from 'babel-types';
+import {toast} from 'react-toastify';
+import randomImage from '../../components/RandomImage/randomImage'
+
+toast.configure()
 
 // Sebastian and Diego
 
 // Creating the event front end
 
- 
+
 
 class Events extends React.Component{
     selectedUpdate(id) {
@@ -15,8 +23,6 @@ class Events extends React.Component{
     }
 
     render(){
-
-        const {selectedTab} = this.props
 
         // creating the test array for the mapping 
         const events = [{name: "Church Meeting",
@@ -78,27 +84,59 @@ class Events extends React.Component{
     var letterColor = "black";
         //organazing page components
 
-        if (selectedTab === 2) {
-
-            return (
-                <body className="Events">
-                    <div className={randomImage()}> 
-                    <div class="container">
-                        <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
-                        
-                        <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
-                            
-                                <form>
-                                    <div style={{paddingBottom: '30px'}}>{"   "}</div>
-                                    <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center'}}>{eventMaping}</div>
-                                </form>
-                    </div>
-                    </div>
-                </body>
-            )
+        const eventPrice = 100;
+        async function handleToken(token){
+            console.log({token})
+            const response = await Axios.post("/api/Events/checkout", {
+                token,
+                eventPrice
+            });
+            const {status} = response.data;
+            if (status === 'success'){
+                console.log('success')
+                toast('Purchase Successful', {
+                    type: "success"});
+                }else{
+                    console.log('fail')
+                toast("Payment is unsuccessful", {
+                    type: "error"
+                });
+            }
         }
-        else
-            return <div></div>
+ 
+
+        return (
+            <div>
+                <Header/>
+                <div className={randomImage()}>
+                    <div class="container">
+                        <StripeCheckout
+                            name="Event Payment"
+                            stripeKey="pk_test_8o2KG0ESrNywOAbv3v3OWG3s00HIu8oWDs"
+                            token={handleToken}
+                            billingAddress
+                            amount={eventPrice}
+                        />
+                    </div> 
+                </div>
+            </div>
+            // <div>
+            //     <body className="Events">
+            //         <div class="container">
+            //             <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
+                        
+            //             <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
+                            
+            //                     <form>
+            //                         <div style={{paddingBottom: '30px'}}>{"   "}</div>
+            //                         <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center'}}>{eventMaping}</div>
+            //                     </form>
+            //         </div>
+            //         </div>
+            //     </body>
+            // </div>
+        )
+            
     }
 }
 
