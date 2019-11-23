@@ -47,7 +47,7 @@ class ChurchDirectory extends React.Component {
             });
         // Does not display anything if the church directory tab wasn't pressed
         console.log(selectedTab);
-        if (selectedTab == 3)
+        if (selectedTab === 3)
         {
             return ( 
                 <div >

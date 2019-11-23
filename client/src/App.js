@@ -4,7 +4,6 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import Home from "./views/Home/Home"
-import NotFound from "./views/NotFound"
 import Register from "./views/Register/Register"
 import Login from "./views/Login/Login"
 import Events from "./views/Events/Events"
@@ -13,10 +12,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 //Test
-import Navbar from './components/layout/Navbar';
 import Landing from "./components/layout/Landing";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/Dashboard/Dashboard";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -41,18 +38,19 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <div> 
+        <div>
+          <Route exact path="/landing" component={Landing} />
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/Register" component={Register}/> 
-          <Route exact path="/Home" component={Home} />
-          <Route exact path="/Events" component={Events}></Route>
-          <Route exact path="/ChurchCreation" component={ChurchCreation} />
-          <Route exact path="/">
-          <Redirect to="/Login" />
-          <Route component={NotFound}/></Route>
           <Switch>
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            
+            <PrivateRoute exact path="/Home" component={Home} />
+            <PrivateRoute exact path="/Events" component={Events}/>
+            <PrivateRoute exact path="/ChurchCreation" component={ChurchCreation} />
           </Switch>
+          <Route path="/">
+            <Redirect to="/landing" />
+          </Route>
         </div>
       </Router>   
     </Provider> 

@@ -1,0 +1,14 @@
+.field1-background{
+    background-image: url('../../assets/field1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 0px;
+}
+
+.colorDiv {
+    background-color: rgb(255, 255, 255, 0.5);
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import './Events.css';
-import Header from "../../components/Header/Header.js"
 
 // Sebastian and Diego
 
@@ -39,7 +38,7 @@ class Events extends React.Component{
             var backgroundImages = ['book1-background', 'field1-background'];
             var randomIndex = Math.floor(Math.random() * backgroundImages.length);
             var randomImg = backgroundImages[randomIndex];
-            if(randomIndex == 0) //passing in the variable that is part of this class to be changed if the background is dark
+            if(randomIndex === 0) //passing in the variable that is part of this class to be changed if the background is dark
                  letterColor = "white";
             return randomImg;
         }  
@@ -49,8 +48,15 @@ class Events extends React.Component{
         const eventMaping = events.map(event => {
             return (
                 
-                <div class="columnEvents" style={{padding: '0px'}, {paddingBottom: '20px'}, {paddingTop: '0px'}, 
-                                {display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+                <div class="columnEvents" 
+                    style={
+                        {padding: '0px',  
+                        paddingBottom: '20px', 
+                        paddingTop: '0px', 
+                        display: 'flex',  
+                        justifyContent:'center', 
+                        alignItems:'center'}}
+                >
                     <div class="containerEvent">
                         <h1>{event.name}</h1>
                         <tr>By: {event.hostChurch}</tr>
@@ -72,7 +78,7 @@ class Events extends React.Component{
     var letterColor = "black";
         //organazing page components
 
-        if (selectedTab == 2) {
+        if (selectedTab === 2) {
 
             return (
                 <body className="Events">
