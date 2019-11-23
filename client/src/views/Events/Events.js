@@ -8,6 +8,7 @@ import {toast} from 'react-toastify';
 import randomImage from '../../components/RandomImage/randomImage'
 
 toast.configure()
+import "../Home/Home.css"
 
 // Sebastian and Diego
 
@@ -16,11 +17,6 @@ toast.configure()
 
 
 class Events extends React.Component{
-    selectedUpdate(id) {
-        this.setState({
-            selectedTab: id
-        })
-    }
 
     render(){
 
@@ -44,7 +40,7 @@ class Events extends React.Component{
             var backgroundImages = ['book1-background', 'field1-background'];
             var randomIndex = Math.floor(Math.random() * backgroundImages.length);
             var randomImg = backgroundImages[randomIndex];
-            if(randomIndex === 0) //passing in the variable that is part of this class to be changed if the background is dark
+            if(randomIndex == 0) //passing in the variable that is part of this class to be changed if the background is dark
                  letterColor = "white";
             return randomImg;
         }  
@@ -54,15 +50,8 @@ class Events extends React.Component{
         const eventMaping = events.map(event => {
             return (
                 
-                <div class="columnEvents" 
-                    style={
-                        {padding: '0px',  
-                        paddingBottom: '20px', 
-                        paddingTop: '0px', 
-                        display: 'flex',  
-                        justifyContent:'center', 
-                        alignItems:'center'}}
-                >
+                <div class="columnEvents" style={{padding: '0px'}, {paddingBottom: '20px'}, {paddingTop: '0px'}, 
+                                {display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                     <div class="containerEvent">
                         <h1>{event.name}</h1>
                         <tr>By: {event.hostChurch}</tr>
@@ -77,13 +66,15 @@ class Events extends React.Component{
                     </tr>
                 </div>
             </div>
-            
-        );
-    });
+            );
+        });
 
-    var letterColor = "black";
-        //organazing page components
+        var letterColor = "black";
+        // Megan - worked on code formatting plus changed return to proper format to work with linking to webpages vs. 
+        // puting component over top of home page
 
+
+        //Kevin: token handler function 
         const eventPrice = 100;
         async function handleToken(token){
             console.log({token})
@@ -103,8 +94,6 @@ class Events extends React.Component{
                 });
             }
         }
- 
-
         return (
             <div>
                 <Header/>
@@ -121,22 +110,21 @@ class Events extends React.Component{
                 </div>
             </div>
             // <div>
+            //     <Header/>
             //     <body className="Events">
-            //         <div class="container">
-            //             <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
-                        
-            //             <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
-                            
+            //         <div className={randomImage()}> 
+            //             <div class="container">
+            //                 <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
+            //                 <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
             //                     <form>
             //                         <div style={{paddingBottom: '30px'}}>{"   "}</div>
             //                         <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center'}}>{eventMaping}</div>
-            //                     </form>
-            //         </div>
+            //                     </form>                              
+            //             </div>
             //         </div>
             //     </body>
             // </div>
         )
-            
     }
 }
 

@@ -6,13 +6,18 @@ import {randomImage} from '../../components/RandomImage/randomImage'
 
 class Home extends React.Component {
 
+    constructor(props) {
+        super(props);
+    }
+    // Updates the selected tab value so that the information on screen can switch based on what tab is pressed
+
+
     render() {
         
         return (
             <div>
                 <Header/>
-                <div className={randomImage()}>
-                </div>
+                <div className={randomImage()}/>
             </div>
         );
     }
