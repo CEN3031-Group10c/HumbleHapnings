@@ -26,8 +26,9 @@ class Home extends React.Component {
     render() {
         
         return (
-            <div className={randomImage()}>
+            <div>
                 <Header/>
+                <div className={randomImage()}/>
             </div>
         );
     }

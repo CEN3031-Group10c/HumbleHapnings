@@ -56,11 +56,13 @@ class ChurchDirectory extends React.Component {
             });
 
             return ( 
-                <div className={randomImage()}>
+                <div>
                     <Header/>
-                    <Row>
-                        {churchList} 
-                    </Row>
+                    <div className={randomImage()}>
+                        <Row>
+                            {churchList} 
+                        </Row>
+                    </div>
                 </div>
             )
     }

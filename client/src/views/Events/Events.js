@@ -65,11 +65,10 @@ class Events extends React.Component{
         });
 
         var letterColor = "black";
-            //organazing page components
-// Megan - worked on code formatting plus changed return to proper format to work with linking to webpages vs. 
-// puting component over top of home page
+        // Megan - worked on code formatting plus changed return to proper format to work with linking to webpages vs. 
+        // puting component over top of home page
         return (
-            <div className={randomImage()}>
+            <div>
                 <Header/>
                 <body className="Events">
                     <div className={randomImage()}> 
