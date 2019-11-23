@@ -3,7 +3,6 @@ import './Home.css';
 import Header from "../../components/Header/Header.js"
 import ChurchDirectory from "../../components/ChurchDirectory/ChurchDirectory.js"
 //Maybe?
-import ChurchDirectoryCreation from "../../views/ChurchDirectoryCreation/ChurchDirectoryCreation.js"
 import Events from '../Events/Events';
 
 //From: Kevin
@@ -38,10 +37,12 @@ class Home extends React.Component {
         
         return (
             <div>
+                <Header
+                    selectedUpdate={this.selectedUpdate.bind(this)}
+                />
+
                 <div className={randomImage()}>
-                    <Header
-                        selectedUpdate={this.selectedUpdate.bind(this)}
-                    />
+
                     <ChurchDirectory
                         selectedTab={this.state.selectedTab}
                     />
@@ -49,7 +50,7 @@ class Home extends React.Component {
                         selectedTab={this.state.selectedTab}
                     />
 
-                    
+
                 </div>
             </div>
         );
