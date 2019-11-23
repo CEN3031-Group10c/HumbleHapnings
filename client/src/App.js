@@ -15,7 +15,6 @@ import store from "./store";
 //Test
 import Landing from "./components/layout/Landing";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import ChurchDirectory from './components/ChurchDirectory/ChurchDirectory';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {

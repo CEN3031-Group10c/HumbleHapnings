@@ -6,8 +6,6 @@ import axios from 'axios';
 import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 // import Card from 'react-bootstrap/Card';
 import {randomImage} from '../RandomImage/randomImage'
-import Header from "../Header/Header"
-
 
 class ChurchDirectory extends React.Component {
 

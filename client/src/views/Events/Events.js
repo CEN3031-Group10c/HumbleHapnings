@@ -6,9 +6,9 @@ import Axios from 'axios';
 import { throwStatement } from 'babel-types';
 import {toast} from 'react-toastify';
 import randomImage from '../../components/RandomImage/randomImage'
+import "../Home/Home.css"
 
 toast.configure()
-import "../Home/Home.css"
 
 // Sebastian and Diego
 
