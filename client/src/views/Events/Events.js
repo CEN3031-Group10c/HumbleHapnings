@@ -1,6 +1,7 @@
 import React from 'react';
 import './Events.css';
 import Header from "../../components/Header/Header.js"
+import "../Home/Home.css"
 
 // Sebastian and Diego
 
@@ -9,11 +10,6 @@ import Header from "../../components/Header/Header.js"
  
 
 class Events extends React.Component{
-    selectedUpdate(id) {
-        this.setState({
-            selectedTab: id
-        })
-    }
 
     render(){
 
@@ -65,34 +61,30 @@ class Events extends React.Component{
                     </tr>
                 </div>
             </div>
-            
-        );
-    });
+            );
+        });
 
-    var letterColor = "black";
-        //organazing page components
-
-        if (selectedTab == 2) {
-
-            return (
+        var letterColor = "black";
+            //organazing page components
+// Megan - worked on code formatting plus changed return to proper format to work with linking to webpages vs. 
+// puting component over top of home page
+        return (
+            <div className={randomImage()}>
+                <Header/>
                 <body className="Events">
                     <div className={randomImage()}> 
-                    <div class="container">
-                        <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
-                        
-                        <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
-                            
+                        <div class="container">
+                            <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
+                            <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
                                 <form>
                                     <div style={{paddingBottom: '30px'}}>{"   "}</div>
                                     <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center'}}>{eventMaping}</div>
-                                </form>
-                    </div>
+                                </form>                              
+                        </div>
                     </div>
                 </body>
-            )
-        }
-        else
-            return <div></div>
+            </div>
+        )
     }
 }
 

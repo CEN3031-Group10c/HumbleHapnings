@@ -6,13 +6,13 @@ import {Link} from 'react-router-dom';
 class Header extends React.Component {
     render(){
 
-        const {selectedUpdate} = this.props;
 
         return (
 
         <nav className="z-depth-0">
             <div className="nav-wrapper white">
-                <a href="#" class="logo"> <Link
+                <a href="#" class="logo"> 
+                    <Link
                         to="/"
                         style={{
                             fontFamily: "Verdana"
@@ -21,24 +21,32 @@ class Header extends React.Component {
                     >
                             <i className="material-icons">flare</i>
                             HumbleHapnings
-                        </Link>
+                    </Link>
                 </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li>
-                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(0)}>Home</a>
+                        <a class="waves-effect waves-light btn">
+                        <Link to="/Home">Home</Link>
+                        </a>
                     </li>
                     <li>
-                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(1)}>About</a>
+                        <a class="waves-effect waves-light btn">About</a>
                     </li>
                     <li>
-                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(2)}>Events</a>
+                        <a class="waves-effect waves-light btn">
+                            <Link to="/Events">Events</Link>
+                        </a>
                     </li>
                     <li>
-                        <a class="waves-effect waves-light btn" onClick={() => selectedUpdate(3)}>Churches</a>
+                        <a class="waves-effect waves-light btn">
+                            <Link to="/ChurchDirectory">Churches</Link>
+                        </a>
                     </li>
                     <li>
-                        <a class="waves-effect waves-light btn"onClick={() => selectedUpdate(4)}><Link to="/ChurchCreation">Create Church Directory</Link></a>
+                        <a class="waves-effect waves-light btn">
+                            <Link to="/ChurchCreation">Create Church Directory</Link>
+                        </a>
                     </li>
                 </ul>
             </div>

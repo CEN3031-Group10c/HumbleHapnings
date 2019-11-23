@@ -9,6 +9,7 @@ import Register from "./views/Register/Register"
 import Login from "./views/Login/Login"
 import Events from "./views/Events/Events"
 import ChurchCreation from "./views/ChurchDirectoryCreation/ChurchDirectoryCreation"
+import ChurchDirectory from "./components/ChurchDirectory/ChurchDirectory"
 import { Provider } from "react-redux";
 import store from "./store";
 
@@ -47,6 +48,7 @@ const App = () => {
           <Route exact path="/Home" component={Home} />
           <Route exact path="/Events" component={Events}></Route>
           <Route exact path="/ChurchCreation" component={ChurchCreation} />
+          <Route exact path="/ChurchDirectory" component={ChurchDirectory} />
           <Route exact path="/">
           <Redirect to="/Login" />
           <Route component={NotFound}/></Route>

@@ -27,30 +27,12 @@ class Home extends React.Component {
             selectedTab: 0
         }
     }
-    // Updates the selected tab value so that the information on screen can switch based on what tab is pressed
-    selectedUpdate(id) {
-        this.setState({
-            selectedTab: id
-        })
-    }
 
     render() {
         
         return (
-            <div>
-                <div className={randomImage()}>
-                    <Header
-                        selectedUpdate={this.selectedUpdate.bind(this)}
-                    />
-                    <ChurchDirectory
-                        selectedTab={this.state.selectedTab}
-                    />
-                    <Events
-                        selectedTab={this.state.selectedTab}
-                    />
-
-                    
-                </div>
+            <div className={randomImage()}>
+                <Header/>
             </div>
         );
     }
