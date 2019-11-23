@@ -14,6 +14,7 @@ import store from "./store";
 //Test
 import Landing from "./components/layout/Landing";
 import PrivateRoute from "./components/private-route/PrivateRoute";
+import ChurchDirectory from './components/ChurchDirectory/ChurchDirectory';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -43,9 +44,9 @@ const App = () => {
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/Register" component={Register}/> 
           <Switch>
-            
             <PrivateRoute exact path="/Home" component={Home} />
             <PrivateRoute exact path="/Events" component={Events}/>
+            <PrivateRoute exact path="/ChurchDirectory" component={ChurchDirectory}/>
             <PrivateRoute exact path="/ChurchCreation" component={ChurchCreation} />
           </Switch>
           <Route path="/">
