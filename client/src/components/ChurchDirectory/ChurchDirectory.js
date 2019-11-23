@@ -3,6 +3,8 @@ import './ChurchDirectory.css';
 import axios from 'axios';
 import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 // import Card from 'react-bootstrap/Card';
+import {randomImage} from '../RandomImage/randomImage'
+import Header from "../Header/Header"
 
 
 class ChurchDirectory extends React.Component {
@@ -22,7 +24,6 @@ class ChurchDirectory extends React.Component {
 
     render(){
         
-        const {selectedTab} = this.props
         // Maps the values based on the churches name
         const churchList = this.state.churchListings
             .map(listings => {
@@ -45,19 +46,16 @@ class ChurchDirectory extends React.Component {
   
                 )
             });
-        // Does not display anything if the church directory tab wasn't pressed
-        console.log(selectedTab);
-        if (selectedTab === 3)
-        {
             return ( 
                 <div >
-                    <Row>
-                    {churchList} 
-                    </Row>
+                    <Header/>
+                    <div className={randomImage()}>
+                        <Row>
+                        {churchList} 
+                        </Row>
+                    </div>
                 </div>
             )
-        }
-        return <div></div>
     }
 }
 
