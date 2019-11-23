@@ -36,7 +36,7 @@ exports.readChurch = function(req,res) {
     res.json(req.churchListing);
 };
 
-// Function to update the church listing
+// Function to update the church listing (only admin)
 exports.updateChurch = function(req, res) {
     var churchListing = req.churchListing;
 
