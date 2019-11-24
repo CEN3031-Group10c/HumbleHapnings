@@ -3,6 +3,7 @@ import './Events.css';
 import Header from "../../components/Header/Header.js"
 import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 import { Z_FIXED } from 'zlib';
+import axios from 'axios';
 
 
 // Sebastian and Diego
@@ -18,12 +19,25 @@ class Events extends React.Component{
         })
     }
 
+    constructor (){
+        super();
+        this.state = {
+            eventListings: []
+        };
+    }
+    // Retrieves listings from the backend
+    componentDidMount() {
+        axios.get('api/EventCreation/list').then(res => {
+            this.setState({eventListings: res.data});
+        });
+    }
+
     render(){
 
         const {selectedTab} = this.props
 
         // creating the test array for the mapping 
-        const events = [{name: "Church Meeting",
+        /*const events = [{name: "Church Meeting",
         date: "11/15", 
         location: "Conference Room",
         description: "Discussing upcoming fair",
@@ -35,7 +49,7 @@ class Events extends React.Component{
         location: "Main Church",
         description: "Mass, praying",
         hostChurch: "Your-Church",
-        tags: ["Weekly mass, ", "Devotion, ", "Social"]}]
+        tags: ["Weekly mass, ", "Devotion, ", "Social"]}]*/
 
         function randomImage(){
 
@@ -49,7 +63,7 @@ class Events extends React.Component{
 
         //mapping the elements of the array
         //outline 
-        const eventMaping = events.map(event => {
+        const eventMaping = this.state.eventListings.map(event => {
             return (
                 <div class="columnEvents" style={{display: 'flex'}, {padding: '0px'}, {paddingTop: '0px'}, 
                                 {justifyContent:'center', alignItems:'center'}, {paddingBottom: '50px'}}>
