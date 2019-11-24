@@ -54,8 +54,8 @@ class ChurchDirectoryCreation extends React.Component{
         return(
             <div>
                 <Header/>
-                <div className="field1-background">
-                    <div className="container">
+                {/* <div className="field1-background">
+                    <div className="container"> */}
                         <div className="churchCreationContainer">
                             <body className="col s8 offset-s2 colorDiv2">
                                 <div className="churchCreationPad">
@@ -133,8 +133,8 @@ class ChurchDirectoryCreation extends React.Component{
                             </body>
                         </div>
                     </div>
-                </div>
-            </div>
+            //     </div>
+            // </div>
         )
     }
 }
