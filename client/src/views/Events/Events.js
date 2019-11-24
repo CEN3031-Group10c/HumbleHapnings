@@ -8,6 +8,9 @@ import {toast} from 'react-toastify';
 import randomImage from '../../components/RandomImage/randomImage'
 import "../Home/Home.css"
 
+import {StripeProvider} from 'react-stripe-elements';
+import CheckoutForm from '../../components/CheckoutForm/CheckoutForm'
+
 toast.configure()
 
 // Sebastian and Diego

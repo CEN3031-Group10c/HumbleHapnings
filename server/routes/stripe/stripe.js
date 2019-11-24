@@ -39,6 +39,7 @@ router.post("/checkout", async (req, res) => {
         // console.error("Error:", error);
         status = "failure";
     }
+    res.json({error, status});
 })
 
 module.exports = router;
