@@ -67,32 +67,22 @@ class Events extends React.Component{
         // Megan - worked on code formatting plus changed return to proper format to work with linking to webpages vs. 
         // puting component over top of home page
 
-
-        // //Kevin: token handler function 
-        // const eventPrice = 100;
-        // async function handleToken(token){
-        //     console.log({token})
-        //     const response = await Axios.post("/api/Events/checkout", {
-        //         token,
-        //         eventPrice
-        //     });
-        //     const {status} = response.data;
-        //     if (status === 'success'){
-        //         console.log('success')
-        //         toast('Purchase Successful', {
-        //             type: "success"});
-        //         }else{
-        //             console.log('fail')
-        //         toast("Payment is unsuccessful", {
-        //             type: "error"
-        //         });
-        //     }
-        // }
         return (
             <div>
                 <Header/>
-                <div className={randomImage()}>
-                    <div class="container">
+                <body className="Events">
+                    <div className={randomImage()}> 
+                        <div class="container">
+                            <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
+                            <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
+                                <form>
+                                    <div style={{paddingBottom: '30px'}}>{"   "}</div>
+                                    <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center'}}>{eventMaping}</div>
+                                </form>                              
+                        </div>
+                    </div>
+                </body>
+                <div class="container">
                         <StripeProvider apiKey="pk_test_8o2KG0ESrNywOAbv3v3OWG3s00HIu8oWDs">
                             <Elements>
                                 <CheckoutForm/>
@@ -105,24 +95,8 @@ class Events extends React.Component{
                             billingAddress
                             amount={eventPrice}
                         /> */}
-                    </div> 
-                </div>
+                </div> 
             </div>
-            // <div>
-            //     <Header/>
-            //     <body className="Events">
-            //         <div className={randomImage()}> 
-            //             <div class="container">
-            //                 <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
-            //                 <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
-            //                     <form>
-            //                         <div style={{paddingBottom: '30px'}}>{"   "}</div>
-            //                         <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center'}}>{eventMaping}</div>
-            //                     </form>                              
-            //             </div>
-            //         </div>
-            //     </body>
-            // </div>
         )
     }
 }
