@@ -1,23 +1,14 @@
 import React from 'react';
 import './Events.css';
 import Header from '../../components/Header/Header'
-import StripeCheckout from 'react-stripe-checkout'
-import Axios from 'axios';
-import { throwStatement } from 'babel-types';
-import {toast} from 'react-toastify';
-import randomImage from '../../components/RandomImage/randomImage'
 import "../Home/Home.css"
-
-import {StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from '../../components/CheckoutForm/CheckoutForm'
+import {StripeProvider, Elements} from 'react-stripe-elements';
 
-toast.configure()
 
 // Sebastian and Diego
 
 // Creating the event front end
-
-
 
 class Events extends React.Component{
 
@@ -43,7 +34,7 @@ class Events extends React.Component{
             var backgroundImages = ['book1-background', 'field1-background'];
             var randomIndex = Math.floor(Math.random() * backgroundImages.length);
             var randomImg = backgroundImages[randomIndex];
-            if(randomIndex == 0) //passing in the variable that is part of this class to be changed if the background is dark
+            if(randomIndex === 0) //passing in the variable that is part of this class to be changed if the background is dark
                  letterColor = "white";
             return randomImg;
         }  
@@ -77,38 +68,43 @@ class Events extends React.Component{
         // puting component over top of home page
 
 
-        //Kevin: token handler function 
-        const eventPrice = 100;
-        async function handleToken(token){
-            console.log({token})
-            const response = await Axios.post("/api/Events/checkout", {
-                token,
-                eventPrice
-            });
-            const {status} = response.data;
-            if (status === 'success'){
-                console.log('success')
-                toast('Purchase Successful', {
-                    type: "success"});
-                }else{
-                    console.log('fail')
-                toast("Payment is unsuccessful", {
-                    type: "error"
-                });
-            }
-        }
+        // //Kevin: token handler function 
+        // const eventPrice = 100;
+        // async function handleToken(token){
+        //     console.log({token})
+        //     const response = await Axios.post("/api/Events/checkout", {
+        //         token,
+        //         eventPrice
+        //     });
+        //     const {status} = response.data;
+        //     if (status === 'success'){
+        //         console.log('success')
+        //         toast('Purchase Successful', {
+        //             type: "success"});
+        //         }else{
+        //             console.log('fail')
+        //         toast("Payment is unsuccessful", {
+        //             type: "error"
+        //         });
+        //     }
+        // }
         return (
             <div>
                 <Header/>
                 <div className={randomImage()}>
                     <div class="container">
-                        <StripeCheckout
+                        <StripeProvider apiKey="pk_test_8o2KG0ESrNywOAbv3v3OWG3s00HIu8oWDs">
+                            <Elements>
+                                <CheckoutForm/>
+                            </Elements>
+                        </StripeProvider>
+                        {/* <StripeCheckout
                             name="Event Payment"
                             stripeKey="pk_test_8o2KG0ESrNywOAbv3v3OWG3s00HIu8oWDs"
                             token={handleToken}
                             billingAddress
                             amount={eventPrice}
-                        />
+                        /> */}
                     </div> 
                 </div>
             </div>
