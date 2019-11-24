@@ -1,5 +1,5 @@
 var mongoose = require('mongoose')
-var eventListing = require('../models/listings.server.events.js')
+var EventListing = require('../models/listings.server.events.js')
 
 
 // Function to create a event listing in the database
