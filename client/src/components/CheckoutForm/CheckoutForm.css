@@ -1,0 +1,32 @@
+.checkoutButton{
+    display: block;
+    width: calc(100% - 30px);
+    height: 40px;
+    margin: 40px 15px 0;
+    background-color: #24b47e;
+    border-radius: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.checkoutInput{
+    font-size: 14px;
+    color: #424770;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.025em;
+}
+input.checkoutInput::placeholder{
+    color: #aab7c4;
+}
+input.checkoutInput:focus{
+    background: transparent;
+}
+
+.checkout-card{
+    background-color: #fff;
+    padding: 10%;
+    opacity: 80%;
+}
+
