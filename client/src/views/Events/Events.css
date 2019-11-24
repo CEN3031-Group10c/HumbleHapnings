@@ -10,15 +10,50 @@ body.Events {
 div.containerEvent {
     font-family: Arial;
     padding: 10px;
+    padding-left: 40px;
+}
+
+.rowA {
     
+    width: 100%;
+}
+
+.columnE {
+    float: left;
+	width: 70%;
+	padding: 15px;
+
+}
+
+.columnB {
+    float: right;
+    width: 28%;
+    
+	padding: 15px;
+    background-color: #7af7c3;
+    
+}
+
+.leftSide {
+    height: 100vh;
+    width: 100%;
+}
+
+.rightSide {
+    height: 100vh;
+    width: 100%;
 }
 
 .columnEvents{
     float: left;
-	width: 35%;
+    width: 90%;
+    height: 35%;
     padding: 10px;
     padding-left: 0px;
 	background-color: #f9f1cc;
-    outline-style: solid;
-    margin-left: 50px;
+    margin-left: 35px;
+    border-radius: 50px;
+    box-shadow: 0 0 5pt 5pt white;
+    
+    margin-bottom: 25px;
 }
