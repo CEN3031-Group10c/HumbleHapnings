@@ -14,10 +14,11 @@ router.post("/checkout", async (req, res) => {
     let error;
     let status;
     try{
-        const{token, eventPrice} = req.body;
+        const{token, eventPrice, name, email} = req.body;
         const customer = await
         stripe.customers.create({
-            email: token.email,
+            email: email,
+            name: name,
             source: token.id
         });
         //used to ensures that user is not charged twice
@@ -27,7 +28,7 @@ router.post("/checkout", async (req, res) => {
                 amount: eventPrice,
                 currency: "usd",
                 customer: customer.id,
-                receipt_email: token.email,
+                receipt_email: email,
             },
             {
                 idempotency_key
