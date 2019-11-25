@@ -17,13 +17,24 @@ class ChurchDirectoryCreation extends React.Component{
             address: "",
             email: "",
             phone: "",
-            description: ""
+            denomination: "",
+            missionStatement: "",
+            description: "",
+            selectedFile: null
         };
     }
     
     //Updates the value of the specific id that is changed when inputting information into text box
     onChange = event => {
         this.setState({ [event.target.id]: event.target.value});
+    }
+
+    // Handler for selecting files to upload
+    fileSelectedHandler = event => {
+        this.setState({
+            selectedFile: event.target.files[0]
+        })
+
     }
 
     // Creates a new church listing when the submit button is pressed
@@ -55,13 +66,12 @@ class ChurchDirectoryCreation extends React.Component{
     render(){
         return(
             <div>
-                <Header/>
+                {/*<Header/>*/}
                 {/* <div className="field1-background">
                     <div className="container"> */}
                         <div className="churchCreationContainer">
                             <body className="col s8 offset-s2 colorDiv2">
                                 <div className="churchCreationPad">
-                                    <h1>Create Church Listing</h1>
                                     <div class="row-container">
                                         <div class="column2">
                                             <form onSubmit = {this.onSubmit}>
@@ -145,7 +155,12 @@ class ChurchDirectoryCreation extends React.Component{
                                                         value= {this.state.description}
                                                         onChange={this.onChange}
                                                     />
-                                                    
+                                                    <label for="regImage"><b>Church Image   </b></label>
+                                                    <input 
+                                                        id="image" 
+                                                        type="file"
+                                                        onChange={this.fileSelectedHandler}
+                                                    />
                                                 </div>
 
                                                 <button type="submit" class="reg">Create Church Listing</button>
