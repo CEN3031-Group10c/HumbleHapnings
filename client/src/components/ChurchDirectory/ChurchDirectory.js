@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import axios from 'axios';
 import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 // import Card from 'react-bootstrap/Card';
-
+import {randomImage} from '../RandomImage/randomImage'
 
 class ChurchDirectory extends React.Component {
 
@@ -40,6 +40,7 @@ class ChurchDirectory extends React.Component {
     }
 
     render(){
+
         // Maps the values based on the churches name
         const churchList = this.state.churchListings
             .map(listings => {

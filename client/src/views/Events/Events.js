@@ -1,19 +1,18 @@
 import React from 'react';
 import './Events.css';
-import Header from "../../components/Header/Header.js"
+import Header from '../../components/Header/Header'
 import "../Home/Home.css"
+import CheckoutForm from '../../components/CheckoutForm/CheckoutForm'
+import {StripeProvider, Elements} from 'react-stripe-elements';
+
 
 // Sebastian and Diego
 
 // Creating the event front end
 
- 
-
 class Events extends React.Component{
 
     render(){
-
-        const {selectedTab} = this.props
 
         // creating the test array for the mapping 
         const events = [{name: "Church Meeting",
@@ -35,7 +34,7 @@ class Events extends React.Component{
             var backgroundImages = ['book1-background', 'field1-background'];
             var randomIndex = Math.floor(Math.random() * backgroundImages.length);
             var randomImg = backgroundImages[randomIndex];
-            if(randomIndex == 0) //passing in the variable that is part of this class to be changed if the background is dark
+            if(randomIndex === 0) //passing in the variable that is part of this class to be changed if the background is dark
                  letterColor = "white";
             return randomImg;
         }  
@@ -67,6 +66,7 @@ class Events extends React.Component{
         var letterColor = "black";
         // Megan - worked on code formatting plus changed return to proper format to work with linking to webpages vs. 
         // putting component over top of home page
+
         return (
             <div>
                 <Header/>
@@ -82,6 +82,20 @@ class Events extends React.Component{
                         </div>
                     </div>
                 </body>
+                <div class="container">
+                        <StripeProvider apiKey="pk_test_8o2KG0ESrNywOAbv3v3OWG3s00HIu8oWDs">
+                            <Elements>
+                                <CheckoutForm/>
+                            </Elements>
+                        </StripeProvider>
+                        {/* <StripeCheckout
+                            name="Event Payment"
+                            stripeKey="pk_test_8o2KG0ESrNywOAbv3v3OWG3s00HIu8oWDs"
+                            token={handleToken}
+                            billingAddress
+                            amount={eventPrice}
+                        /> */}
+                </div> 
             </div>
         )
     }
