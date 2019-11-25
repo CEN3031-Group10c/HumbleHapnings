@@ -132,6 +132,7 @@ class Events extends React.Component{
                         /> */}
                 </div> 
             </div>
+        )
     }
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import './ChurchDirectoryCreation.css';
 import axios from "axios";
 import Header from '../../components/Header/Header'
+import storage from '../../Firebase/firebase'
 
 //From: Lukas
 /* 
@@ -20,7 +21,8 @@ class ChurchDirectoryCreation extends React.Component{
             denomination: "",
             missionStatement: "",
             description: "",
-            selectedFile: null
+            url: "",
+            image: null
         };
     }
     
@@ -32,14 +34,43 @@ class ChurchDirectoryCreation extends React.Component{
     // Handler for selecting files to upload
     fileSelectedHandler = event => {
         this.setState({
-            selectedFile: event.target.files[0]
+            image: event.target.files[0]
         })
-
     }
 
     // Creates a new church listing when the submit button is pressed
     onSubmit = event => {
         event.preventDefault();
+
+        console.log(this.state.image)
+
+        const {image} = this.state
+
+        const uploadTask = storage.ref(`images/${image.name}`).put(image);
+        uploadTask.on(
+            "state_changed",
+            snapshot => {
+                // Progress function
+                const progress = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                );
+                console.log(progress)
+            },
+            error => {
+                console.log(error)
+            },
+            () => {
+                storage
+                    .ref("images")
+                    .child(this.state.name)
+                    .getDownloadURL()
+                    .then(url => {
+                        this.setState({url});
+                    });
+
+            }
+        )
+
 
         const newChurchListing = {
             name: this.state.name,
@@ -49,7 +80,8 @@ class ChurchDirectoryCreation extends React.Component{
             phone: this.state.phone,
             denomination: this.state.denomination,
             missionStatement: this.state.missionStatement,
-            description: this.state.description
+            description: this.state.description,
+            url: this.state.url
         }
 
         console.log(newChurchListing);
@@ -60,6 +92,7 @@ class ChurchDirectoryCreation extends React.Component{
         .then(function(res) {
             window.location = "/home"
         })
+
         
     };
     // Needs new css to cleanup
