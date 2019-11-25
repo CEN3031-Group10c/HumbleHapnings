@@ -1,6 +1,9 @@
 import React from 'react';
 import './Events.css';
-import Header from '../../components/Header/Header'
+import Header from "../../components/Header/Header.js"
+import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
+import { Z_FIXED } from 'zlib';
+import axios from 'axios';
 import "../Home/Home.css"
 import CheckoutForm from '../../components/CheckoutForm/CheckoutForm'
 import {StripeProvider, Elements} from 'react-stripe-elements';
@@ -11,11 +14,29 @@ import {StripeProvider, Elements} from 'react-stripe-elements';
 // Creating the event front end
 
 class Events extends React.Component{
+    selectedUpdate(id) {
+        this.setState({
+            selectedTab: id
+        })
+    }
+
+    constructor (){
+        super();
+        this.state = {
+            eventListings: []
+        };
+    }
+    // Retrieves listings from the backend
+    componentDidMount() {
+        axios.get('api/EventCreation/list').then(res => {
+            this.setState({eventListings: res.data});
+        });
+    }
 
     render(){
 
         // creating the test array for the mapping 
-        const events = [{name: "Church Meeting",
+        /*const events = [{name: "Church Meeting",
         date: "11/15", 
         location: "Conference Room",
         description: "Discussing upcoming fair",
@@ -27,7 +48,7 @@ class Events extends React.Component{
         location: "Main Church",
         description: "Mass, praying",
         hostChurch: "Your-Church",
-        tags: ["Weekly mass, ", "Devotion, ", "Social"]}]
+        tags: ["Weekly mass, ", "Devotion, ", "Social"]}]*/
 
         function randomImage(){
 
@@ -41,27 +62,30 @@ class Events extends React.Component{
 
         //mapping the elements of the array
         //outline 
-        const eventMaping = events.map(event => {
+        const eventMaping = this.state.eventListings.map(event => {
             return (
-                
-                <div class="columnEvents" style={{padding: '0px'}, {paddingBottom: '20px'}, {paddingTop: '0px'}, 
-                                {display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+                <div class="columnEvents" style={{display: 'flex'}, {padding: '0px'}, {paddingTop: '0px'}, 
+                                {justifyContent:'center', alignItems:'center'}, {paddingBottom: '50px'}}>
                     <div class="containerEvent">
-                        <h1>{event.name}</h1>
-                        <tr>By: {event.hostChurch}</tr>
-                        <tr>{event.location}</tr>
-                        <tr>{event.date}</tr>
-                        <tr>Description: {event.description}</tr>
-                        <tr>Related to: {event.tags.map ( tag => {
+                        <text style={{fontSize: 45}}>{event.name}</text>
+                        <tr style={{fontSize: 23}}>By: {event.hostChurch}</tr>
+                        <tr style={{fontSize: 19}}>{event.location}</tr>
+                        <tr style={{fontSize: 19}}>{event.date}</tr>
+                        <tr style={{fontSize: 19}}>Description: {event.description}</tr>
+                        <tr style={{fontSize: 19}}>Related to: {event.tags.map ( tag => {
                             return (
                                 <text style={{fontWeight: "bold"}}>{tag}</text>
                             )
                         })}
-                    </tr>
-                </div>
-            </div>
-            );
-        });
+                        </tr>
+                    </div>  
+                    <div style={{paddingBottom: '30px'}}>{"   "}</div>   
+            </div>            
+        );
+    });
+
+    var letterColor = "black";
+        //organazing page components
 
         var letterColor = "black";
         // Megan - worked on code formatting plus changed return to proper format to work with linking to webpages vs. 
@@ -74,11 +98,22 @@ class Events extends React.Component{
                     <div className={randomImage()}> 
                         <div class="container">
                             <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
+                            
                             <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>
+                                
                                 <form>
-                                    <div style={{paddingBottom: '30px'}}>{"   "}</div>
-                                    <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center'}}>{eventMaping}</div>
-                                </form>                              
+                                    <div style={{paddingBottom: '30px'}}>{"   "}</div>        
+                                </form>
+                                
+                                <Row>
+                                    <div className = "columnE">
+                                        <div className = "leftSide">{eventMaping}</div>
+                                    </div>
+                                    
+                                    <div className = "columnB">
+                                        <div className = "rightSide">Place for Buttons and search bar</div>
+                                    </div>
+                                </Row>
                         </div>
                     </div>
                 </body>
@@ -97,7 +132,6 @@ class Events extends React.Component{
                         /> */}
                 </div> 
             </div>
-        )
     }
 }
 
