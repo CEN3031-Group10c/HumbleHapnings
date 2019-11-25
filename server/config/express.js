@@ -4,6 +4,7 @@ const path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     churchCreationRouter = require('../routes/server.church.routes');
+    const stripeRoutes = require("../routes/stripe/stripe")
 
 module.exports.init = () => {
     /* 
@@ -38,6 +39,10 @@ module.exports.init = () => {
             res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
         });
     }
+
+    //Routes for stripe
+    app.use("/api/Events", stripeRoutes);
+
 
     return app
 }
