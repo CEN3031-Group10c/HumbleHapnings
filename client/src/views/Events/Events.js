@@ -66,7 +66,7 @@ class Events extends React.Component{
 
         var letterColor = "black";
         // Megan - worked on code formatting plus changed return to proper format to work with linking to webpages vs. 
-        // puting component over top of home page
+        // putting component over top of home page
         return (
             <div>
                 <Header/>

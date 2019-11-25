@@ -1,7 +1,6 @@
 import React from 'react';
 import './ChurchDirectory.css';
 import Header from "../Header/Header";
-import "../../views/Home/Home.css"
 import axios from 'axios';
 import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 // import Card from 'react-bootstrap/Card';
@@ -9,12 +8,19 @@ import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 
 class ChurchDirectory extends React.Component {
 
-    constructor (){
+    constructor(){
         super();
         this.state = {
-            churchListings: []
+            churchListings: [],
+            displayName: "",
+            displayLeader: "",
+            displayAddress: "",
+            displayEmail: "",
+            displayPhone: "",
+            displayDescription: ""
         };
     }
+    
     // Retrieves listings from the backend
     componentDidMount() {
         axios.get('api/ChurchCreation/list').then(res => {
@@ -22,49 +28,53 @@ class ChurchDirectory extends React.Component {
         });
     }
 
+    updateDisplay(name, leader, address, email, phone, description) {
+        this.setState({
+            displayName: name,
+            displayLeader: leader,
+            displayAddress: address,
+            displayEmail: email,
+            displayPhone: phone,
+            displayDescription: description
+        });
+    }
+
     render(){
-        var letterColor = "black";
-        function randomImage(){
-            var backgroundImages = ['book1-background', 'field1-background'];
-            var randomIndex = Math.floor(Math.random() * backgroundImages.length);
-            var randomImg = backgroundImages[randomIndex];
-            if(randomIndex == 0) //passing in the variable that is part of this class to be changed if the background is dark
-                 letterColor = "white";
-            return randomImg;
-        }  
-        
         // Maps the values based on the churches name
         const churchList = this.state.churchListings
             .map(listings => {
                 return (
-                    <Col>
-                        <Card style={{ width: '20rem'}}>
-                            <CardBody>
-                                <CardTitle>{listings.name}</CardTitle>
-                                <ul className="ChurchDirCardList">
-                                    <li>Church Leader: {listings.pastor}</li>
-                                    <li>Address: {listings.address}</li>
-                                    <li>Email: {listings.email}</li>
-                                    <li>Phone: {listings.phone}</li>
-                                    <li>Description: {listings.description}</li>
-                                </ul>
-                                <Button>View Church</Button>
-                            </CardBody>
-                        </Card>
-                    </Col>
+                    <a onClick={() => this.updateDisplay(listings.name, listings.pastor, listings.address, listings.email, listings.phone, listings.description)}>
+                        {listings.name}
+                    </a>
                 )
             });
-
-            return ( 
-                <div>
-                    <Header/>
-                    <div className={randomImage()}>
-                        <Row>
-                            {churchList} 
-                        </Row>
+        return ( 
+            <div>
+                <Header/>
+                <dix class="welcome">
+                    Church Directory
+                </dix>
+                <div class="row">
+                    <div class = "column">
+                        <div class="sidebar">
+                            {churchList}
+                        </div>
+                    </div>
+                    <div class = "column"> 
+                        <div class="churchDisplay">
+                            <chName>
+                            {this.state.displayName}
+                            </chName>
+                            <br></br>
+                            <chDetail>
+                            {this.state.displayAddress}
+                            </chDetail>
+                        </div>
                     </div>
                 </div>
-            )
+            </div>
+        )
     }
 }
 
