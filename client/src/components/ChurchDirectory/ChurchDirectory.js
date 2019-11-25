@@ -5,7 +5,7 @@ import "../../views/Home/Home.css"
 import axios from 'axios';
 import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 // import Card from 'react-bootstrap/Card';
-
+import {randomImage} from '../RandomImage/randomImage'
 
 class ChurchDirectory extends React.Component {
 
@@ -23,16 +23,6 @@ class ChurchDirectory extends React.Component {
     }
 
     render(){
-        var letterColor = "black";
-        function randomImage(){
-            var backgroundImages = ['book1-background', 'field1-background'];
-            var randomIndex = Math.floor(Math.random() * backgroundImages.length);
-            var randomImg = backgroundImages[randomIndex];
-            if(randomIndex === 0) //passing in the variable that is part of this class to be changed if the background is dark
-                 letterColor = "white";
-            return randomImg;
-        }  
-        
         // Maps the values based on the churches name
         const churchList = this.state.churchListings
             .map(listings => {
