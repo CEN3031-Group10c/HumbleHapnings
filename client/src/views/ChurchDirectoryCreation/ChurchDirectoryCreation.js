@@ -110,7 +110,24 @@ class ChurchDirectoryCreation extends React.Component{
                                         onChange={this.onChange}
                                         required
                                     />
-
+                                    <label for="regDenomination"><b>Denomination</b></label>
+                                    <input 
+                                        id="denomination" 
+                                        type="text" 
+                                        placeholder="Enter the Church's Denomination" 
+                                        value= {this.state.denomination}
+                                        onChange={this.onChange}
+                                        required
+                                    />
+                                    <label for="regMissionStatement"><b>Mission Statement</b></label>
+                                    <input 
+                                        id="missionStatement" 
+                                        type="text" 
+                                        placeholder="Enter the Mission Statement of the Church" 
+                                        value= {this.state.missionStatement}
+                                        onChange={this.onChange}
+                                        required
+                                    />
                                     <label for="regDescription"><b>Description</b></label>
                                     <input 
                                         id="description" 
