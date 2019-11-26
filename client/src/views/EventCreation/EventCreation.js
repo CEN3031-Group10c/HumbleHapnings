@@ -18,7 +18,7 @@ class EventCreation extends React.Component{
             location: "",
             description: "",
             hostChurch: "",
-            tag: [],
+            tags: [],
             show: false,
             purchaseComplete: false,
         };
@@ -37,7 +37,7 @@ class EventCreation extends React.Component{
                 location: this.state.location,
                 description: this.state.description,
                 hostChurch: this.state.hostChurch,
-                tag: this.state.description
+                tags: this.state.tags,
             }
     
             console.log(newEvent);
@@ -62,6 +62,19 @@ class EventCreation extends React.Component{
         })
     }
 
+    addTag = (val) => {
+        const taglist = this.state.tags.concat(val);
+        this.setState({
+            tags: taglist
+        });
+    }
+    popTag = () => {
+        this.state.tags.pop();
+        this.setState({
+            tags: this.state.tags
+        });
+    }
+
     
     //Updates the value of the specific id that is changed when inputting information into text box
     onChange = event => {
@@ -71,7 +84,8 @@ class EventCreation extends React.Component{
     //state function for closing and opening stripe payment modal
     showModal = () => {
         this.setState({
-            show: !this.state.show
+            show: !this.state.show,
+            purchaseComplete: false,
         })
     }
 
@@ -92,7 +106,7 @@ class EventCreation extends React.Component{
                             <div class="row-container">
                                 <div class="column2">
                                     <form onSubmit = {this.onSubmit}>
-                                        <p>Please fill in this form to create an event.</p>
+                                        <h5>Please fill in this form to create an event.</h5>
                                         <div class="regName">
                                             <label for="regName"><b>Event Name</b></label>
                                             <input 
@@ -142,7 +156,8 @@ class EventCreation extends React.Component{
                                                 value= {this.state.description}
                                                 onChange={this.onChange}
                                             />
-                                            <Tags/>
+                                            <label for="regTags"><b>Tags</b></label>
+                                            <Tags addTag={this.addTag} popTag={this.popTag}/>
 
                                         </div>
 
