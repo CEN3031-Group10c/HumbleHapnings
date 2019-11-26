@@ -35,6 +35,8 @@ class CheckOutForm extends React.Component{
     //updating state of parent's show (in EventCreation)
     onClose = (event) => {
         this.props.onClose && this.props.onClose(event)
+        this.setState({complete: false});
+        
     }
 
     //updating state of parent's purchaseComplete after the backend of stripe sends confirmation
