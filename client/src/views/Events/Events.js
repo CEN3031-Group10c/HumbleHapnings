@@ -1,12 +1,10 @@
 import React from 'react';
 import './Events.css';
 import Header from "../../components/Header/Header.js"
-import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
-import { Z_FIXED } from 'zlib';
+import {Row} from 'reactstrap';
 import axios from 'axios';
 import "../Home/Home.css"
-import CheckoutForm from '../../components/CheckoutForm/CheckoutForm'
-import {StripeProvider, Elements} from 'react-stripe-elements';
+import {Link} from 'react-router-dom';
 
 
 // Sebastian and Diego
@@ -64,8 +62,7 @@ class Events extends React.Component{
         //outline 
         const eventMaping = this.state.eventListings.map(event => {
             return (
-                <div class="columnEvents" style={{display: 'flex'}, {padding: '0px'}, {paddingTop: '0px'}, 
-                                {justifyContent:'center', alignItems:'center'}, {paddingBottom: '50px'}}>
+                <div class="columnEvents" style={{display: 'flex'}, {padding: '0px'}, {paddingTop: '0px'}, {justifyContent:'center', alignItems:'center'}, {paddingBottom: '50px'}}>
                     <div class="containerEvent">
                         <text style={{fontSize: 45}}>{event.name}</text>
                         <tr style={{fontSize: 23}}>By: {event.hostChurch}</tr>
@@ -111,27 +108,18 @@ class Events extends React.Component{
                                     </div>
                                     
                                     <div className = "columnB">
-                                        <div className = "rightSide">Place for Buttons and search bar</div>
+                                        <div className = "rightSide">
+                                            Place for Buttons and search bar
+                                            <Link to="/EventCreation"><button> Create an Event</button></Link>
+                                        </div>
+                                        
                                     </div>
                                 </Row>
                         </div>
                     </div>
                 </body>
-                <div class="container">
-                        <StripeProvider apiKey="pk_test_8o2KG0ESrNywOAbv3v3OWG3s00HIu8oWDs">
-                            <Elements>
-                                <CheckoutForm/>
-                            </Elements>
-                        </StripeProvider>
-                        {/* <StripeCheckout
-                            name="Event Payment"
-                            stripeKey="pk_test_8o2KG0ESrNywOAbv3v3OWG3s00HIu8oWDs"
-                            token={handleToken}
-                            billingAddress
-                            amount={eventPrice}
-                        /> */}
-                </div> 
             </div>
+        );
     }
 }
 
