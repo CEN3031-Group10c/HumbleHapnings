@@ -41,6 +41,7 @@ class ChurchDirectory extends React.Component {
 
     render(){
 
+
         // Maps the values based on the churches name
         const churchList = this.state.churchListings
             .map(listings => {

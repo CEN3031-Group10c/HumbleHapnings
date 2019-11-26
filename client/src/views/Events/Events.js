@@ -80,7 +80,7 @@ class Events extends React.Component{
                         </tr>
                     </div>  
                     <div style={{paddingBottom: '30px'}}>{"   "}</div>   
-            </div>            
+                </div>            
         );
     });
 
@@ -132,6 +132,7 @@ class Events extends React.Component{
                         /> */}
                 </div> 
             </div>
+        );
     }
 }
 
