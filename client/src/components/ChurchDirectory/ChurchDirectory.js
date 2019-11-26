@@ -56,13 +56,10 @@ class ChurchDirectory extends React.Component {
                 <dix class="welcome">
                     Church Directory
                 </dix>
-                <div class="row">
-                    <div class = "column">
+                <div class="fullscreen">
                         <div class="sidebar">
                             {churchList}
                         </div>
-                    </div>
-                    <div class = "column"> 
                         <div class="churchDisplay">
                             <chName>
                             {this.state.displayName}
@@ -72,7 +69,11 @@ class ChurchDirectory extends React.Component {
                             {this.state.displayAddress}
                             </chDetail>
                         </div>
-                    </div>
+                        <div class="whitespace">
+                            <div class="filterbox">
+                                <div class="filterheader">Filter:</div>
+                            </div>
+                        </div>
                 </div>
             </div>
         )
