@@ -29,8 +29,11 @@
     "concurrently": "^4.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "firebase": "^7.5.0",
     "handlebars": "^4.5.3",
+=======
+>>>>>>> master
     "hbs": "^4.0.6",
     "http-proxy-middleware": "^0.20.0",
     "is-empty": "^1.2.0",

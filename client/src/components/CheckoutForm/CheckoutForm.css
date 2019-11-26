@@ -9,7 +9,26 @@
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
+    white-space: nowrap; 
 }
+
+.checkoutButton-complete{
+    display: block;
+    width: calc(100% - 30px);
+    height: 40px;
+    margin: 40px 15px 0;
+    background-color: #24b47e;
+    border-radius: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap; 
+    margin: 20px 15px 0;
+}
+
+
+
 
 .checkoutInput{
     font-size: 14px;
@@ -25,8 +44,54 @@ input.checkoutInput:focus{
 }
 
 .checkout-card{
+    position: fixed;
+}
+.checkout-content{
     background-color: #fff;
     padding: 10%;
-    opacity: 80%;
+    height: 400px;
+    width: 550px;
+    border-style: solid;
+    opacity: 1;
+    position: relative;
+}
+
+.checkout-bg-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-card-complete{
+    background-color: #fff;
+    padding: 5%;
+    height: 400px;
+    width: 550px;
+    border-style: solid;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.checkout-close{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 50px;
+    cursor: pointer;
+    transform: rotate(45deg);
+    color: black;
+}
+
+
+.checkout-button-box{
+    display:inline-block;
 }
 

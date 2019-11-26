@@ -6,15 +6,17 @@ import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 import NavBar from "../../components/layout/Navbar";
 import "./Register.css";
+import {NORMAL, UNAPPROVED_CHURCH_LEADER} from "../../actions/userTypes";
 
 class Register extends Component {
-    constructor() {
-    super();
+    constructor(props) {
+    super(props);
     this.state = {
         name: "",
         email: "",
         password: "",
         password2: "",
+        userType: NORMAL,
         errors: {}
     };
   }
@@ -33,6 +35,18 @@ class Register extends Component {
             });
         }
     }
+
+    //Josh - changes the account type based on checkbox status
+    onCheckbox() {
+        if (this.state.userType === NORMAL)
+        {
+            this.setState({ userType: UNAPPROVED_CHURCH_LEADER });
+        }
+        else 
+        {
+            this.setState({ userType: NORMAL });
+        }
+    }
     
     //Josh - Changes the state of the value at component target id  
     onChange = e => {
@@ -46,7 +60,8 @@ class Register extends Component {
             name: this.state.name,
             email: this.state.email,
             password: this.state.password,
-            password2: this.state.password2
+            password2: this.state.password2,
+            userType: this.state.userType
         };
         this.props.registerUser(newUser, this.props.history); 
     };
@@ -101,6 +116,14 @@ class Register extends Component {
                                     <label htmlFor="email">Email</label>
                                     <span className="red-text">{errors.email}</span>
                                 </div>
+                                <div>
+                                <p>
+                                <label style={{paddingLeft: 25}}>
+                                    <input onChange={this.onCheckbox.bind(this)} type="checkbox" class="filled-in" />
+                                    <span className="black-text">Apply for a Church Leader account? (Paid Subscription Required)</span>
+                                </label>
+                                </p>
+                                </div>
                                 <div className="input-field col s12">
                                     <input
                                         onChange={this.onChange}
@@ -149,7 +172,6 @@ class Register extends Component {
                 </div>
             </div>
         </div>
-       
         );
     }
 }
