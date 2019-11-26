@@ -15,6 +15,8 @@ import store from "./store";
 //Test
 import Landing from "./components/layout/Landing";
 import PrivateRoute from "./components/private-route/PrivateRoute";
+import AdminPage from './views/Admin/AdminPage';
+import ChurchLeader from './views/ChurchLeader/ChurchLeader';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -48,7 +50,8 @@ const App = () => {
             <PrivateRoute exact path="/Events" component={Events}/>
             <PrivateRoute exact path="/ChurchDirectory" component={ChurchDirectory}/>
             <PrivateRoute exact path="/ChurchCreation" component={ChurchCreation} />
-            <PrivateRoute exact path="/ChurchDirectory" component={ChurchDirectory} />
+            <PrivateRoute exact path="/Admin" component={AdminPage} />
+            <PrivateRoute exact path="/ChurchLeader" component={ChurchLeader} />
           </Switch>
           <Route path="/">
             <Redirect to="/landing" />
