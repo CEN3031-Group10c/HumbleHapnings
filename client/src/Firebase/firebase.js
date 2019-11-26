@@ -3,8 +3,19 @@ import "firebase/storage";
 
 const config = require("./firebase-config");
 
-firebase.initializeApp(config.db);
+var firebaseConfig = {
+        apiKey: config.db.apiKey,
+        authDomain: config.db.authDomain,
+        databaseURL: config.db.databaseURL,
+        projectId: config.db.projectId,
+        storageBucket: config.db.storageBucket,
+        messagingSenderId: config.db.messagingSenderId,
+        appId: config.db.appId,
+        measurementId: config.db.measurementId
+}
+
+firebase.initializeApp(firebaseConfig);
 
 var storage = firebase.storage();
 
-export {storage, firebase as default};
+export default storage;
