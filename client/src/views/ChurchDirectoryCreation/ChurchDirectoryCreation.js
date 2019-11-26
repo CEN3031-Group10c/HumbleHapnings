@@ -1,6 +1,9 @@
 import React from 'react';
 import './ChurchDirectoryCreation.css';
 import axios from "axios";
+import { ADMIN } from "../../actions/userTypes";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import Header from '../../components/Header/Header'
 
 //From: Lukas
@@ -9,8 +12,8 @@ This class is the form for church creation
 */
 class ChurchDirectoryCreation extends React.Component{
 
-    constructor (){
-        super();
+    constructor (props){
+        super(props);
         this.state = {
             name: "",
             pastor: "",
@@ -19,6 +22,21 @@ class ChurchDirectoryCreation extends React.Component{
             phone: "",
             description: ""
         };
+    }
+
+    componentDidMount() {
+        // If the user is not an admin, push them back to the home page.
+        if (this.props.auth.user.userType !== ADMIN) {
+            this.props.history.push("/home");
+        }
+    }
+    
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.errors) {
+          this.setState({
+            errors: nextProps.errors
+          });
+        }
     }
     
     //Updates the value of the specific id that is changed when inputting information into text box
@@ -139,4 +157,17 @@ class ChurchDirectoryCreation extends React.Component{
     }
 }
 
-export default ChurchDirectoryCreation;
+ChurchDirectoryCreation.propTypes = {
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
+  };
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors
+  });
+
+  export default connect(
+    mapStateToProps
+  )(ChurchDirectoryCreation);
+
