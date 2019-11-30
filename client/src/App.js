@@ -17,7 +17,9 @@ import EventCreation from "./views/EventCreation/EventCreation"
 import Landing from "./components/layout/Landing";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import AdminPage from './views/Admin/AdminPage';
+import AccountApproval from './views/Admin/AccountApproval';
 import ChurchLeader from './views/ChurchLeader/ChurchLeader';
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -54,6 +56,7 @@ const App = () => {
             <PrivateRoute exact path="/Admin" component={AdminPage} />
             <PrivateRoute exact path="/ChurchLeader" component={ChurchLeader} />
             <PrivateRoute exact path="/EventCreation" component={EventCreation} />
+            <PrivateRoute exact path="/AccountApproval" component={AccountApproval} />
           </Switch>
           <Route path="/">
             <Redirect to="/landing" />
