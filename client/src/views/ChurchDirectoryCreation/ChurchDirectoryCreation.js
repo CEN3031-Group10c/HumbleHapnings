@@ -120,11 +120,11 @@ class ChurchDirectoryCreation extends React.Component{
                         <body className="col s8 offset-s2 colorDiv2">
                             <div className="churchCreationPad">
                                 <h1>Create a Church Listing</h1>
-                                <div class="row-container">
-                                    <div class="column2">
+                                <div className="row-container">
+                                    <div className="column2">
                                         <form onSubmit = {this.onSubmit}>
                                             <p>Please fill in this form to create a church listing.</p>
-                                            <div class="regName">
+                                            <div className="regName">
                                                 <label for="regName"><b>Name</b></label>
                                                 <input 
                                                     id="name" 

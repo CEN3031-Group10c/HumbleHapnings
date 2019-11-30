@@ -14,6 +14,7 @@ class ChurchLeader extends React.Component{
             this.props.auth.user.userType !== CHURCH_LEADER) {
             this.props.history.push("/home");
         }
+        console.log("Passed")
     }
     
     componentWillReceiveProps(nextProps) {
@@ -27,6 +28,7 @@ class ChurchLeader extends React.Component{
 
     // Needs new css to cleanup
     render(){
+      console.log("Does it render");
         return(
             <div>
               <Header/>

@@ -30,7 +30,7 @@ class Header extends React.Component {
                         </Link>
                 </a>
                 <a data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li>
                         <a className="waves-effect waves-light btn blue accent-3">Social</a>
                     </li>

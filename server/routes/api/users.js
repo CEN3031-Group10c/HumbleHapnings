@@ -9,6 +9,8 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 // Load User model
 const User = require("../../models/User");
+const UNAPPROVED_CHURCH_LEADER = "UNAPPROVED CHURCH LEADER";
+const UNAPPROVED_ADMIN = "UNAPPROVED ADMIN";
 
 // @route POST api/users/register
 // @desc Register user
@@ -98,6 +100,17 @@ router.post("/login", (req, res) => {
             }
         });
     });
+});
+
+router.get("/AccountApproval",  (req, res) => {
+    User.find({"$or" : [
+        {userType : UNAPPROVED_ADMIN}, 
+        {userType : UNAPPROVED_CHURCH_LEADER}
+    ]}).forEach( function(myDoc) 
+    { 
+        print( "userType: " + myDoc.userType ); 
+    });
+
 });
 
 module.exports = router;
