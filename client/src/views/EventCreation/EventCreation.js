@@ -103,11 +103,11 @@ class EventCreation extends React.Component{
                     <body className="col s8 offset-s2 colorDiv2">
                         <div className="churchCreationPad">
                             <h1>Create Event</h1>
-                            <div class="row-container">
-                                <div class="column2">
+                            <div className="row-container">
+                                <div className="column2">
                                     <form onSubmit = {this.onSubmit}>
                                         <h5>Please fill in this form to create an event.</h5>
-                                        <div class="regName">
+                                        <div className="regName">
                                             <label for="regName"><b>Event Name</b></label>
                                             <input 
                                                 id="name" 
