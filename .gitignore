@@ -3,6 +3,9 @@
 # config file for Mongo DB
 /server/config.js
 
+# config file for firebase
+/client/src/Firebase/firebase-config.js
+
 # dependencies
 /node_modules
 /client/node_modules
