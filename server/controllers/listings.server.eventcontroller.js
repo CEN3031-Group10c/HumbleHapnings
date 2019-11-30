@@ -4,7 +4,6 @@ var EventListing = require('../models/listings.server.events.js')
 
 // Function to create a event listing in the database
 exports.createEvent = function(req,res) {
-
     var eventData = {
         name: req.body.name,
         date: req.body.date,

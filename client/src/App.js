@@ -11,6 +11,7 @@ import ChurchCreation from "./views/ChurchDirectoryCreation/ChurchDirectoryCreat
 import ChurchDirectory from "./components/ChurchDirectory/ChurchDirectory"
 import { Provider } from "react-redux";
 import store from "./store";
+import EventCreation from "./views/EventCreation/EventCreation"
 
 //Test
 import Landing from "./components/layout/Landing";
@@ -52,6 +53,7 @@ const App = () => {
             <PrivateRoute exact path="/ChurchCreation" component={ChurchCreation} />
             <PrivateRoute exact path="/Admin" component={AdminPage} />
             <PrivateRoute exact path="/ChurchLeader" component={ChurchLeader} />
+            <PrivateRoute exact path="/EventCreation" component={EventCreation} />
           </Switch>
           <Route path="/">
             <Redirect to="/landing" />
