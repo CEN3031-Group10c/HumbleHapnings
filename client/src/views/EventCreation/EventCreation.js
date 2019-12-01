@@ -15,6 +15,7 @@ class EventCreation extends React.Component{
         this.state = {
             name: "",
             date: "",
+            time: "",
             location: "",
             description: "",
             hostChurch: "",
@@ -34,6 +35,7 @@ class EventCreation extends React.Component{
             const newEvent = {
                 name: this.state.name,
                 date: this.state.date,
+                time: this.state.time,
                 location: this.state.location,
                 description: this.state.description,
                 hostChurch: this.state.hostChurch,
@@ -53,6 +55,7 @@ class EventCreation extends React.Component{
         this.setState({
             name: "",
             date: "",
+            time: "",
             location: "",
             description: "",
             hostChurch: "",
@@ -124,6 +127,16 @@ class EventCreation extends React.Component{
                                                 type="date" 
                                                 placeholder="Enter date of event" 
                                                 value= {this.state.date}
+                                                onChange={this.onChange}
+                                                required
+                                            />
+
+                                            <label for="regTime"><b>Time</b></label>
+                                            <input 
+                                                id="time" 
+                                                type="time" 
+                                                placeholder="Enter time of event" 
+                                                value= {this.state.time}
                                                 onChange={this.onChange}
                                                 required
                                             />

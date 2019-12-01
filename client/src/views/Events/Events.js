@@ -66,8 +66,9 @@ class Events extends React.Component{
                     <div className="containerEvent">
                         <text style={{fontSize: 45}}>{event.name}</text>
                         <tr style={{fontSize: 23}}>By: {event.hostChurch}</tr>
-                        <tr style={{fontSize: 19}}>{event.location}</tr>
-                        <tr style={{fontSize: 19}}>{event.date}</tr>
+                        <tr style={{fontSize: 19}}>Location: {event.location}</tr>
+                        <tr style={{fontSize: 19}}>Date: {event.date}</tr>
+                        <tr style={{fontSize: 19}}>Time: {event.time}</tr>
                         <tr style={{fontSize: 19}}>Description: {event.description}</tr>
                         <tr style={{fontSize: 19}}>Related to: {event.tags.map ( tag => {
                             return (
