@@ -5,6 +5,7 @@ import axios from 'axios';
 import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 // import Card from 'react-bootstrap/Card';
 import {randomImage} from '../RandomImage/randomImage'
+import storage from '../../Firebase/firebase'
 
 class ChurchDirectory extends React.Component {
 
@@ -17,7 +18,10 @@ class ChurchDirectory extends React.Component {
             displayAddress: "",
             displayEmail: "",
             displayPhone: "",
-            displayDescription: ""
+            displayDenomination: "",
+            displayMissionStatement: "",
+            displayDescription: "",
+            imageUrl: ""
         };
     }
     
@@ -28,14 +32,17 @@ class ChurchDirectory extends React.Component {
         });
     }
 
-    updateDisplay(name, leader, address, email, phone, description) {
+    updateDisplay(name, leader, address, email, phone, denomination, missionStatement, description, url) {
         this.setState({
             displayName: name,
             displayLeader: leader,
             displayAddress: address,
             displayEmail: email,
             displayPhone: phone,
-            displayDescription: description
+            displayDenomination: denomination,
+            displayMissionStatement: missionStatement,
+            displayDescription: description,
+            imageUrl: url
         });
     }
 
@@ -46,35 +53,58 @@ class ChurchDirectory extends React.Component {
         const churchList = this.state.churchListings
             .map(listings => {
                 return (
-                    <a onClick={() => this.updateDisplay(listings.name, listings.pastor, listings.address, listings.email, listings.phone, listings.description)}>
+                    <a onClick={() => this.updateDisplay(listings.name, listings.pastor, listings.address, listings.email, listings.phone, listings.denomination, listings.missionStatement, listings.description, listings.url)}>
                         {listings.name}
                     </a>
                 )
             });
+        
+        var testMission, about, address, email, phone, denomination, description;
+        if(this.state.displayName != "") {testMission = "\"This is a test mission statement.\"";}
+        if(this.state.displayName != "") {about = "About: ";}
+        if(this.state.displayName != "") {address = "Address: ";}
+        if(this.state.displayName != "") {email = "Email: ";}
+        if(this.state.displayName != "") {phone = "Phone: ";}
+        if(this.state.displayName != "") {denomination = "Denomination: ";}
+        if(this.state.displayName != "") {description = "Description: ";}
+
         return ( 
-            <div>
+            <div className="unscroll">
                 <Header/>
-                <dix class="welcome">
-                    Church Directory
-                </dix>
                 <div class="fullscreen">
+                    <div class="welcome">
+                        Church Directory
+                    </div>
+                    <div class="contentContainer">
                         <div class="sidebar">
                             {churchList}
                         </div>
+                        <div className="churchImage"></div>
                         <div class="churchDisplay">
                             <chName>
-                            {this.state.displayName}
+                                {this.state.displayName}
                             </chName>
                             <br></br>
+                            <missionStatement>
+                                {testMission}
+                            </missionStatement>
+                            <br></br>
+                            <br></br>
+                            {about}
+                            <br></br>
                             <chDetail>
-                            {this.state.displayAddress}
+                                {address}{this.state.displayAddress}
+                                <br></br>
+                                {email}{this.state.displayEmail}
+                                <br></br>
+                                {phone}{this.state.displayPhone}
+                                <br></br>
+                                {denomination}{this.state.displayDenomination}
+                                <br></br>
+                                {description}{this.state.displayDescription}
                             </chDetail>
                         </div>
-                        <div class="whitespace">
-                            <div class="filterbox">
-                                <div class="filterheader">Filter:</div>
-                            </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         )

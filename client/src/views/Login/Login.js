@@ -64,7 +64,7 @@ class Login extends Component {
             <div className="cathedral1-background">
                 <NavBar/>   
                 <div className="container">
-                    <div style={{ marginTop: "4rem" }} className="row">
+                    <div className="row">
                         <div className="col s8 offset-s2 colorDiv2">
                             <Link to="/landing" className="btn-flat waves-effect">
                             <i className="material-icons left">keyboard_backspace</i> 
