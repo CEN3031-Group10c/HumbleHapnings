@@ -5,6 +5,7 @@ import {Row} from 'reactstrap';
 import axios from 'axios';
 import "../Home/Home.css"
 import {Link} from 'react-router-dom';
+import SelectBoxMenu from './dropDown';
 
 
 // Sebastian and Diego
@@ -109,9 +110,23 @@ class Events extends React.Component{
                                     
                                     <div className = "columnB">
                                         <div className = "rightSide">
-                                            Place for Buttons and search bar
-                                            <Link to="/EventCreation"><button> Create an Event</button></Link>
+                                            <Link to="/EventCreation"><button style={{borderRadius: '20px'}}> Create an Event</button></Link>
+                                            
+                                            Search:
+                                            
+                                            <SelectBoxMenu
+                                                width={150}
+                                                items = {[
+                                                    {value: 'Name', id: 1 },
+                                                    {value: 'Location', id: 2 },
+                                                    {value: 'Date', id: 3 },
+                                                    {value: 'Host Church', id: 4 },
+                                                    {value: 'Tag', id: 5 }
+                                                ]}
+                                             />
+
                                         </div>
+                                        
                                         
                                     </div>
                                 </Row>
