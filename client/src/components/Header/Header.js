@@ -15,7 +15,7 @@ class Header extends React.Component {
     render(){
 
         return (
-            <ul>
+            <ul className="landing">
                 <Link to="/Home">
                     <div className="headerText">
                         <i className="material-icons">flare</i> 
