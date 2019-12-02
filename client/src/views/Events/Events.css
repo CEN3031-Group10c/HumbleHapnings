@@ -1,11 +1,12 @@
 body.Events {
     font-family: Arial;
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0);
     margin: 0;
     padding: 0;
-    margin: 0px;
-    background-position: center;
-    background-size: cover;
+    padding-top: 20px;
+    width: 100vw;
+    height: 80vh;
+    position: relative;
 }
 
 div.containerEvent {
@@ -13,7 +14,6 @@ div.containerEvent {
     padding: 10px;
     padding-left: 40px;
 }
-
 .rowA {
     
     width: 100%;
@@ -29,12 +29,9 @@ div.containerEvent {
 .columnB {
     float: right;
     width: 28%;
-    height: 37vh;
-    
 	padding: 15px;
     background-color: #7af7c3;
-    border-radius: 40px;
-    
+    height: 100vh;
 }
 
 .leftSide {
@@ -56,7 +53,32 @@ div.containerEvent {
 	background-color: #f9f1cc;
     margin-left: 35px;
     border-radius: 50px;
-    box-shadow: 0 0 5pt 5pt white;
-    
+    box-shadow: 0 0 5pt 5pt white;  
     margin-bottom: 25px;
+}
+
+.book1-background{
+    background-image: url('../../assets/book1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    padding: 0;
+}
+.cathedral1-background{
+    background-image: url('../../assets/cathedral1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    padding: 0;
+}
+
+.field1-background{
+    background-image: url('../../assets/field1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    padding: 0;
 }
