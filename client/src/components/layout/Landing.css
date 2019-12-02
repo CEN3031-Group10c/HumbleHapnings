@@ -12,3 +12,41 @@
 .colorDiv {
     background-color: rgb(255, 255, 255, 0.5);
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    height: 70px;
+    position: fixed;
+    min-width: 1300px;
+    width: 100vw;
+    z-index: 1;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 24px 50px;
+    text-decoration: none;
+    height: 70px;
+    font-size: 16px;
+  }
+  
+  .headerText {
+    color: black;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: left;
+    font-family: 'Palatino Linotype';
+}

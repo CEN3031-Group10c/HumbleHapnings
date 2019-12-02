@@ -31,7 +31,7 @@ componentWillReceiveProps(nextProps) {
     return (
       <div className='field1-background'>
         <NavBar/>
-        <div style={{ height: "50vh", paddingBottom: "200" }} className="container valign-wrapper">
+        <div style={{ height: "50vh", paddingBottom: "200"}} className="container valign-wrapper">
           <div className="row ">
             <div style={{ paddingBottom: "25px" }} className="col s12 center-align colorDiv">
               <h2>
