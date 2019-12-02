@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-      <ul>
+      <ul className="landing">
                 <Link to="/landing">
                     <div className="headerText">
                         <i className="material-icons">flare</i> 
