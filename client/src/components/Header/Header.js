@@ -23,7 +23,7 @@ class Header extends React.Component {
                     </div>
                 </Link>
                 <li><log onClick={() => this.props.logoutUser()}>Logout</log></li>
-                <li><Link to="/ChurchDirectoryCreation" classname="a">Create a Church Directory</Link></li>
+                <li><Link to="/ChurchCreation" classname="a">Create a Church Directory</Link></li>
                 <li><Link to="/ChurchDirectory" classname="a">Churches</Link></li>
                 <li><Link to="/Events" classname="a">Events</Link></li>
                 <li><Link to="/Home" classname="a">Social</Link></li>
