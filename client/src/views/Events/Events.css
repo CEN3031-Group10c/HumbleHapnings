@@ -4,6 +4,7 @@ body.Events {
     margin: 0;
     padding: 0;
     margin: 0px;
+    background-position: center;
     background-size: cover;
 }
 
@@ -28,6 +29,7 @@ div.containerEvent {
 .columnB {
     float: right;
     width: 28%;
+    height: 37vh;
     
 	padding: 15px;
     background-color: #7af7c3;

@@ -2,10 +2,12 @@ import React from 'react';
 import './dropDown.css';
 
 class dropDown extends React.Component {
+    //Sebastian - created js and css file for drop-down menu to choose what to filter on to search through events
     state = {
         items: this.props.items || [],
         showItems: false,
         selectedItem: this.props.items && this.props.items[0], 
+        searchFilter: this.props.searchFilter,
     }
 
     dropDown = () => {
@@ -14,10 +16,16 @@ class dropDown extends React.Component {
         }))
     }
 
-    selectItem = (item) => this.setState ({
-        selectedItem: item,
-        showItems: false,
-    })
+    
+
+    selectItem = (item) => 
+    {
+        this.setState ({
+            selectedItem: item,
+            showItems: false,
+        })
+        this.props.updateFilter(item)
+    }
 
     render() {
         return <div>
