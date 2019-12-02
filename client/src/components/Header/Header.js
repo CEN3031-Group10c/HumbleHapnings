@@ -28,6 +28,7 @@ class Header extends React.Component {
                 <li><Link to="/Events" classname="a">Events</Link></li>
                 <li><Link to="/Home" classname="a">Social</Link></li>
             </ul>
+
         )
     }
 }

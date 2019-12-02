@@ -62,12 +62,13 @@ class Events extends React.Component{
         //outline 
         const eventMaping = this.state.eventListings.map(event => {
             return (
-                <div class="columnEvents" style={{display: 'flex'}, {padding: '0px'}, {paddingTop: '0px'}, {justifyContent:'center', alignItems:'center'}, {paddingBottom: '50px'}}>
-                    <div class="containerEvent">
+                <div className="columnEvents" style={{display: 'flex'}, {padding: '0px'}, {paddingTop: '0px'}, {justifyContent:'center', alignItems:'center'}, {paddingBottom: '50px'}}>
+                    <div className="containerEvent">
                         <text style={{fontSize: 45}}>{event.name}</text>
                         <tr style={{fontSize: 23}}>By: {event.hostChurch}</tr>
-                        <tr style={{fontSize: 19}}>{event.location}</tr>
-                        <tr style={{fontSize: 19}}>{event.date}</tr>
+                        <tr style={{fontSize: 19}}>Location: {event.location}</tr>
+                        <tr style={{fontSize: 19}}>Date: {event.date}</tr>
+                        <tr style={{fontSize: 19}}>Time: {event.time}</tr>
                         <tr style={{fontSize: 19}}>Description: {event.description}</tr>
                         <tr style={{fontSize: 19}}>Related to: {event.tags.map ( tag => {
                             return (
@@ -83,8 +84,6 @@ class Events extends React.Component{
 
     var letterColor = "black";
         //organazing page components
-
-        var letterColor = "black";
         // Megan - worked on code formatting plus changed return to proper format to work with linking to webpages vs. 
         // putting component over top of home page
 
@@ -93,7 +92,7 @@ class Events extends React.Component{
                 <Header/>
                 <body className="Events">
                     <div className={randomImage()}> 
-                        <div class="container">
+                        <div className="container">
                             <h1 style={{color: letterColor, fontSize: 70,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Events</h1>
                             
                             <text style={{color: letterColor, fontSize: 30,  display: 'flex',  justifyContent:'center', alignItems:'center'}}>Check out these awesome events happening in your community!</text>

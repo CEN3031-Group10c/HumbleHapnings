@@ -7,6 +7,7 @@ exports.createEvent = function(req,res) {
     var eventData = {
         name: req.body.name,
         date: req.body.date,
+        time: req.body.time,
         location: req.body.location,
         description: req.body.description,
         hostChurch: req.body.hostChurch,
