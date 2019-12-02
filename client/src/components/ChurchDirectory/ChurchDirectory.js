@@ -79,7 +79,13 @@ class ChurchDirectory extends React.Component {
                         <div class="sidebar">
                             {churchList}
                         </div>
-                        <div className="churchImage"></div>
+                        <div className="churchImage">
+                            <img 
+                            src = {this.state.imageUrl}
+                            width = "300"
+                            height = "200"
+                            />
+                        </div>
                         <div class="churchDisplay">
                             <chName>
                                 {this.state.displayName}
