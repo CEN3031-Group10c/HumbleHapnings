@@ -60,13 +60,15 @@ class ChurchDirectory extends React.Component {
             });
         
         var testMission, about, address, email, phone, denomination, description;
-        if(this.state.displayName != "") {testMission = "\"This is a test mission statement.\"";}
-        if(this.state.displayName != "") {about = "About: ";}
-        if(this.state.displayName != "") {address = "Address: ";}
-        if(this.state.displayName != "") {email = "Email: ";}
-        if(this.state.displayName != "") {phone = "Phone: ";}
-        if(this.state.displayName != "") {denomination = "Denomination: ";}
-        if(this.state.displayName != "") {description = "Description: ";}
+        if(this.state.displayName !== "") {
+            testMission = "\"This is a test mission statement.\"";
+            about = "About: ";
+            address = "Address: ";
+            email = "Email: ";
+            phone = "Phone: ";
+            denomination = "Denomination: ";
+            description = "Description: ";
+        }
 
         return ( 
             <div className="unscroll">
