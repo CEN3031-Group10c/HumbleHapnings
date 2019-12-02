@@ -87,7 +87,7 @@
     display: inline-block;
     background-image: url('../../assets/book1.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     opacity: 1;
   }
 
