@@ -7,7 +7,7 @@ import Home from "./views/Home/Home"
 import Register from "./views/Register/Register"
 import Login from "./views/Login/Login"
 import Events from "./views/Events/Events"
-import ChurchDirectoryCreation from "./views/ChurchDirectoryCreation/ChurchDirectoryCreation"
+import ChurchCreation from "./views/ChurchDirectoryCreation/ChurchDirectoryCreation"
 import ChurchDirectory from "./components/ChurchDirectory/ChurchDirectory"
 import { Provider } from "react-redux";
 import store from "./store";
