@@ -13,53 +13,97 @@ body.header{
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
-    opacity: 0.75;
+    color:black;
+    background-color: rgb(49, 172, 151);
+    opacity: 1;
     width: 100%;
     height: 70px;
+    width: 100%;
+    min-width: 1300px;
 }
 
-.nav{
-    display: flex;
-    justify-content: right;
-    list-style: none;
-    margin-right: 10%;
-    
-}
-.nav button{
-    margin: 15px;
-    background: none;
-    border: none;
-    padding: 0;
-    text-decoration: underline;
-    font-size: 18px;
-    color: gray;
-}
-.nav button:hover{
-    opacity: 0.5;
-    color: gray;   
-}
-.nav button:hover{
-    opacity: 0.5;
-    color: white;
-    color: gray;
-}
-.nav button:hover{
-    opacity: 0.5;
-    color: gray;
-    cursor: pointer;
-}
-
-.navbar .logo{
-    font-size: 30px;
+.headerText {
     color: black;
-    list-style: none;
-    flex: 1 1 auto;
-    margin-left: 5%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-family: 'Palatino Linotype';
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: left;
+}
+
+.linkBox {
+    width: 50vw;
+    background-color: rgb(49, 172, 151);
+    height: 50px;
+    align-items: flex-end;
+    padding-right: 50px;
+    min-width: 900px;
+}
+
+.linkText {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
     font-weight: bold;
+    background-color: rgb(49, 172, 151);
+    float: right;
+    padding-top: 17px;
+    padding-left: 100px;
+    color:black;
 }
-.logo {
-        padding-left: 50px;
+
+.material-icons {
+    padding-right: 10px;
 }
+
+ul.landing {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    height: 70px;
+    position: fixed;
+    min-width: 1300px;
+    width: 100vw;
+    z-index: 1;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 24px 50px;
+    text-decoration: none;
+    height: 70px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+
+  li log {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 24px 50px;
+    text-decoration: none;
+    height: 70px;
+    font-size: 16px;
+    cursor: pointer;
+    border-left-style: solid;
+    border-color: grey;
+    border-width: 1px;;
+  }
+
+  li log:hover {
+    background-color: #111;
+  }

@@ -15,6 +15,7 @@ class EventCreation extends React.Component{
         this.state = {
             name: "",
             date: "",
+            time: "",
             location: "",
             description: "",
             hostChurch: "",
@@ -34,6 +35,7 @@ class EventCreation extends React.Component{
             const newEvent = {
                 name: this.state.name,
                 date: this.state.date,
+                time: this.state.time,
                 location: this.state.location,
                 description: this.state.description,
                 hostChurch: this.state.hostChurch,
@@ -53,6 +55,7 @@ class EventCreation extends React.Component{
         this.setState({
             name: "",
             date: "",
+            time: "",
             location: "",
             description: "",
             hostChurch: "",
@@ -103,11 +106,11 @@ class EventCreation extends React.Component{
                     <body className="col s8 offset-s2 colorDiv2">
                         <div className="churchCreationPad">
                             <h1>Create Event</h1>
-                            <div class="row-container">
-                                <div class="column2">
+                            <div className="row-container">
+                                <div className="column2">
                                     <form onSubmit = {this.onSubmit}>
                                         <h5>Please fill in this form to create an event.</h5>
-                                        <div class="regName">
+                                        <div className="regName">
                                             <label for="regName"><b>Event Name</b></label>
                                             <input 
                                                 id="name" 
@@ -124,6 +127,16 @@ class EventCreation extends React.Component{
                                                 type="date" 
                                                 placeholder="Enter date of event" 
                                                 value= {this.state.date}
+                                                onChange={this.onChange}
+                                                required
+                                            />
+
+                                            <label for="regTime"><b>Time</b></label>
+                                            <input 
+                                                id="time" 
+                                                type="time" 
+                                                placeholder="Enter time of event" 
+                                                value= {this.state.time}
                                                 onChange={this.onChange}
                                                 required
                                             />

@@ -15,49 +15,29 @@ class Header extends React.Component {
     render(){
 
         return (
+            <ul className="landing">
+                <Link to="/Home">
+                    <div className="headerText">
+                        <i className="material-icons">flare</i> 
+                        HumbleHapnings
+                    </div>
+                </Link>
+                <li><log onClick={() => this.props.logoutUser()}>Logout</log></li>
+                <li><Link to="/ChurchCreation" classname="a">Create a Church Directory</Link></li>
+                <li><Link to="/ChurchDirectory" classname="a">Churches</Link></li>
+                <li><Link to="/Events" classname="a">Events</Link></li>
+                <li><Link to="/Home" classname="a">Social</Link></li>
+            </ul>
 
-        <nav className="z-depth-0">
-            <div className="nav-wrapper white">
-                <a className="logo"> <Link
-                        to="/Home"
-                        style={{
-                            fontFamily: "Verdana"
-                        }}
-                        className="col s5 brand-logo left black-text"
-                    >
-                            <i className="material-icons">flare</i>
-                            HumbleHapnings
-                        </Link>
-                </a>
-                <a data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li>
-                        <a className="waves-effect waves-light btn blue accent-3">Social</a>
-                    </li>
-                    <li>
-                        <a className="waves-effect waves-light btn blue accent-3"> <Link to="/Events">Events</Link></a>
-                    </li>
-                    <li>
-                        <a className="waves-effect waves-light btn blue accent-3"> <Link to="/ChurchDirectory">Churches</Link></a>
-                    </li>
-                    <li>
-                        <a className="waves-effect waves-light btn blue accent-3"> <Link to="/ChurchCreation">Create Church Directory</Link></a>
-                    </li>
-                    <li>
-                        <a className="waves-effect waves-light btn blue accent-3"onClick={this.onLogoutClick}>Logout</a>
-                    </li>
-                </ul>
-            </div>
-      </nav>
         )
-    } 
+    }
 }
 
 Header.propTypes = {
     logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 };
-  
+
 const mapStateToProps = state => ({
     auth: state.auth
 });

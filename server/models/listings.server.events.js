@@ -5,6 +5,7 @@ const eventSchema = new Schema({
     // May want to update required parts of listing
     name: {type: String, required: true},
     date: {type: String, required: true},
+    time: {type: String, required: true},
     location: {type: String, required: true},
     description: {type: String, required: true},
     hostChurch: {type: String, required: true},
