@@ -1,5 +1,5 @@
 import React from 'react';
-import './UnderConatruction.css';
+import './UnderConstruction.css';
 import PropTypes from "prop-types";
 import Header from "../../components/Header/Header.js"
 import { connect } from "react-redux";
@@ -22,7 +22,7 @@ class UnderConstruction extends React.Component {
                     <div className="container">
                         <div className="center-align colorDiv2">
                                 <h3>Sorry!</h3>
-                                <h4>This Feature Is Under Constrction.</h4>
+                                <h4>This Feature Is Under Construction.</h4>
                         </div>
                     </div>
                 </div>
