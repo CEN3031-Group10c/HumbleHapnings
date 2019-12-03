@@ -67,10 +67,9 @@ exports.updateChurch = function(req, res) {
 
 // Deletes a church from the directory
 exports.deleteChurch = function(req, res) {
-    var churchListing = req.churchListing;
 
     // query based on listing email
-    var query2 = {email: churchListing.email};
+    var query2 = {name: req.body.name};
 
     ChurchListing.findOneAndDelete(query2, function(err) {
         if (err) throw err;

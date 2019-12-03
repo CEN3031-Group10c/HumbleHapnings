@@ -84,15 +84,15 @@ class Events extends React.Component{
         //outline 
         const eventMaping = this.state.eventListings
         .filter(eventListing => {
-                if (this.state.searchFilter == "name")
+                if (this.state.searchFilter === "name")
                     return   eventListing.name.toLowerCase().indexOf(this.state.filterText.toLowerCase()) >= 0
-                if (this.state.searchFilter == "date")
+                if (this.state.searchFilter === "date")
                     return   eventListing.date.toLowerCase().indexOf(this.state.filterText.toLowerCase()) >= 0
-                if (this.state.searchFilter == "location")
+                if (this.state.searchFilter === "location")
                     return   eventListing.location.toLowerCase().indexOf(this.state.filterText.toLowerCase()) >= 0
-                if (this.state.searchFilter == "hostChurch")
+                if (this.state.searchFilter === "hostChurch")
                     return   eventListing.hostChurch.toLowerCase().indexOf(this.state.filterText.toLowerCase()) >= 0
-                if (this.state.searchFilter == "tag" && eventListing.tags[0] != null)
+                if (this.state.searchFilter === "tag" && eventListing.tags[0] != null)
                 {
                     for (const [index, value] of eventListing.tags.entries())
                     {

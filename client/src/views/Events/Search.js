@@ -10,7 +10,7 @@ class Search extends Component {
         return (
             <form>
                 <input 
-                    type = {this.props.filterOn != "date" ? "text" : "date"}
+                    type = {this.props.filterOn !== "date" ? "text" : "date"}
 
                     ref = { (value) => {this.myValue = value}}
                     placeholder=" Type to Filter" 
