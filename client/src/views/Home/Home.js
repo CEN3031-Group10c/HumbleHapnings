@@ -5,12 +5,8 @@ import Header from "../../components/Header/Header.js"
 import { connect } from "react-redux";
 import {randomImage} from '../../components/RandomImage/randomImage'
 
-
 class Home extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {

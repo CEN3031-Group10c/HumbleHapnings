@@ -26,7 +26,7 @@ class Header extends React.Component {
                 <li><Link to="/ChurchCreation" classname="a">Create a Church Directory</Link></li>
                 <li><Link to="/ChurchDirectory" classname="a">Churches</Link></li>
                 <li><Link to="/Events" classname="a">Events</Link></li>
-                <li><Link to="/Home" classname="a">Social</Link></li>
+                <li><Link to="/UnderConstruction" classname="a">Social</Link></li>
             </ul>
 
         )

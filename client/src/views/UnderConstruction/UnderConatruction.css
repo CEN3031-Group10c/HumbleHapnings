@@ -1,0 +1,22 @@
+.underconstruction1{
+    background-image: url('../../assets/underconstruction1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 50px;
+}
+
+.colorDiv2 {
+    background-color: rgb(255, 255, 255, 0.9);
+    padding: 25px;
+}
+.container {
+    padding: 50px;
+}
+
+.full-width{
+    width: 50%
+}
