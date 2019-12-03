@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/storage";
 
-console.log(process.env.API_ID)
+console.log(process.env.DB_URI)
 
 var firebaseConfig = {
         apiKey: process.env.API_KEY,
