@@ -59,6 +59,7 @@ class AccountReview extends React.Component {
 
   render() {
     // Maps the values based on the users name
+    console.log(this.state.users)
     const userList = this.state.users
       .map(user => {
         return (
@@ -67,6 +68,7 @@ class AccountReview extends React.Component {
           </a>
         )
       });
+
 
     var email, date, userType;
     if (this.state.displayName !== "") {
