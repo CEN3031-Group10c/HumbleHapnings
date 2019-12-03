@@ -40,6 +40,14 @@ class AdminPage extends React.Component{
                   <div className="col s12" style={{padding: 10}}>
                     <Link 
                       className="btn btn-large waves-effect waves-light hoverable full-width" 
+                      to="/AccountReview" 
+                      style={{color: "white"}} >
+                      View All Accounts
+                    </Link>  
+                  </div>
+                  <div className="col s12" style={{padding: 10}}>
+                    <Link 
+                      className="btn btn-large waves-effect waves-light hoverable full-width" 
                       to="/AccountApproval" 
                       style={{color: "white"}} >
                       Account Approval
@@ -51,6 +59,30 @@ class AdminPage extends React.Component{
                       to="/ChurchCreation"
                       style={{color: "white"}} >
                       Create a Church Directory
+                    </Link>  
+                  </div>
+                  <div className="col s12" style={{padding: 10}}>
+                    <Link 
+                      className="btn btn-large waves-effect waves-light hoverable full-width" 
+                      to="/AdminChurchDirectory"
+                      style={{color: "white"}} >
+                      Manage Church Directory Listings
+                    </Link>  
+                  </div>
+                  <div className="col s12" style={{padding: 10}}>
+                    <Link 
+                      className="btn btn-large waves-effect waves-light hoverable full-width" 
+                      to="/UnderConstruction"
+                      style={{color: "white"}} >
+                      Select the Church Spotlight
+                    </Link>  
+                  </div>
+                  <div className="col s12" style={{padding: 10}}>
+                    <Link 
+                      className="btn btn-large waves-effect waves-light hoverable full-width" 
+                      to="/UnderConstruction"
+                      style={{color: "white"}} >
+                      Manage Events
                     </Link>  
                   </div>
                   <div className="col s12" style={{padding: 10}}>

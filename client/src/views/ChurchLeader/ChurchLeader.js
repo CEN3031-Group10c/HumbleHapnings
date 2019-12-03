@@ -48,6 +48,30 @@ class ChurchLeader extends React.Component{
                     to="/EventCreation"
                     style={{color: "white"}} >
                     Create an Event
+                  </Link>
+                </div>
+                <div className="col s12" style={{padding: 10}}>
+                  <Link 
+                    className="btn btn-large waves-effect waves-light hoverable full-width" 
+                    to="/UnderConstruction"
+                    style={{color: "white"}} >
+                    Manage Your Events
+                  </Link>  
+                </div>
+                <div className="col s12" style={{padding: 10}}>
+                  <Link 
+                    className="btn btn-large waves-effect waves-light hoverable full-width" 
+                    to="/UnderConstruction"
+                    style={{color: "white"}} >
+                    Request an edit to your church listing
+                  </Link>  
+                </div>
+                <div className="col s12" style={{padding: 10}}>
+                  <Link 
+                    className="btn btn-large waves-effect waves-light hoverable full-width" 
+                    to="/UnderConstruction"
+                    style={{color: "white"}} >
+                    View order history
                   </Link>  
                 </div>
               </div>
