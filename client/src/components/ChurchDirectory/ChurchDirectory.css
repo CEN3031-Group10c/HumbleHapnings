@@ -2,13 +2,13 @@
     color: black;
 }
 
-.sidebarContainer {
+.sidebarContainercd {
   background-color: rgb(245, 245, 220, 0);
   float: left;
   width: 300px;
 }
 
-.sidebar {
+.sidebarcd {
     width: 300px;
     float: left;
     top: 0;
@@ -20,7 +20,7 @@
   }
 
   /* The navigation menu links */
-.sidebar a {
+.sidebarcd a {
     padding: 5px 5px 5px 10px;
     text-decoration: none;
     font-size: 15px;
@@ -38,13 +38,13 @@
   }
   
   /* When you mouse over the navigation links, change their color */
-  .sidebar a:hover {
+  .sidebarcd a:hover {
     color: #000000;
     background-color: rgb(245, 245, 220, .9);
     font-weight: bold;
   }
 
-  .welcome {
+  .welcomecd {
       font-size: 40px;
       width: 90vw;
       padding-left: 20px;
@@ -59,13 +59,13 @@
       height: 60px;
   }
 
-  .fullscreen {
+  .fullscreencd {
     height: 100vh;
     width: 100vw;
     text-align: center;
   }
 
-  .contentContainer {
+  .contentContainercd {
     width: 90vw;
     height: 75vh;
     margin-left: 5vw;
@@ -79,7 +79,7 @@
     position: fixed;
   }
 
-  .churchDisplay {
+  .churchDisplaycd {
     float: left;
     text-align: left;
     position: fixed;
@@ -92,7 +92,7 @@
     min-width: 550px;
   }
 
-  .churchImage {
+  .churchImagecd {
     margin: 20px;
     height: 250px;
     width: 350px;
@@ -102,22 +102,22 @@
     float: right;
   }
 
-  .churchDisplay missionStatement {
+  .churchDisplaycd missionStatement {
     font-family: 'Palatino Linotype';
     font-size: 25px;
   }
 
-  .churchDisplay chName {
+  .churchDisplaycd chName {
       font-size: 35px;
   }
 
-  .churchDisplay chDetail {
+  .churchDisplaycd chDetail {
     padding-left: 40px;  
     font-size: 15px;
     display: inline-block;
   }
 
-  .unscroll {
+  .unscrollcd {
     background-image: url('../../assets/cathedral1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;

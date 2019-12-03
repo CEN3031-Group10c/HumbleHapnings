@@ -23,18 +23,18 @@ div.containerEvent {
 .columnE {
     float: left;
     width: 70%;
-	padding: 15px;
+    padding: 15px;
+    min-width: 550px;
 }
 
 .columnB {
     float: right;
     width: 28%;
     height: 37vh;
-    
 	padding: 15px;
     background-color: #f0f0f0;
     border-radius: 40px;
-    
+    min-width: 277px;
 }
 
 .leftSide {

@@ -120,24 +120,24 @@ class AdminChurchDirectory extends React.Component {
         if(this.state.displayMissionStatement !== "") {testMission = "\"";}
 
         return ( 
-            <div className="unscroll">
+            <div className="unscrollcd">
                 <Header/>
-                <div className="fullscreen">
-                    <div className="welcome">
+                <div className="fullscreencd">
+                    <div className="welcomecd">
                         Church Directory
                     </div>
-                    <div className="contentContainer">
-                            <div className="sidebar">
+                    <div className="contentContainercd">
+                            <div className="sidebarcd">
                                 {churchList}
                             </div>
-                        <div className="churchImage">
+                        <div className="churchImagecd">
                             <img 
                             src = {this.state.imageUrl}
                             width = "350"
                             height = "250"
                             />
                         </div>
-                        <div class="churchDisplay">
+                        <div class="churchDisplaycd">
                             <chName>
                                 {this.state.displayName}
                             </chName>

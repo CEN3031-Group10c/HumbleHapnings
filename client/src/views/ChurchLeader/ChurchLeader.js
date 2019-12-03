@@ -14,6 +14,7 @@ class ChurchLeader extends React.Component{
         if (this.props.auth.user.userType !== ADMIN  &&
             this.props.auth.user.userType !== CHURCH_LEADER) {
             this.props.history.push("/home");
+            console.log("Unauthenticated user pushed to home.");
         }
     }
     
