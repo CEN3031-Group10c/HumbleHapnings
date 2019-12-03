@@ -1,6 +1,6 @@
-require('dotenv').load();
 import firebase from "firebase/app";
 import "firebase/storage";
+require('dotenv').load();
 
 var firebaseConfig = {
         apiKey: process.env.API_KEY,
