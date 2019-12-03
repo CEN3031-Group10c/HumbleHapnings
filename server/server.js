@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 
 const config = require ('./config/config');
 const users = require("./routes/api/users");
+const churches = require("./routes/server.church.routes");
 
 const app = express.init();
 

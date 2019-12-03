@@ -42,6 +42,41 @@ class ChurchDirectory extends React.Component {
         });
     }
 
+    renderButton() {
+        if (this.state.displayName !== "") {
+            return(
+                <button onClick={this.deleteChurch}>
+                    Click to Delete Church Listing
+                </button>
+            )
+        }
+        else {
+            return
+        }
+    }
+
+    //Function to delete churches
+    deleteChurch = event => {
+        event.preventDefault();
+
+        const churchListing = {
+            name: this.state.displayName,
+            pastor: this.state.displayLeader,
+            address: this.state.displayAddress,
+            email: this.state.displayEmail,
+            phone: this.state.displayPhone,
+            denomination: this.state.displayDenomination,
+            missionStatement: this.state.displayMissionStatement,
+            description: this.state.displayDescription,
+            url: this.state.imageUrl
+        }
+
+        // Sends delete request to backend and refreshes church list
+        axios
+        .delete("api/ChurchCreation/delete", { data: churchListing })
+        .then(this.componentDidMount())
+    }
+
     render(){
 
 
@@ -105,6 +140,8 @@ class ChurchDirectory extends React.Component {
                                 {denomination}{this.state.displayDenomination}
                                 <br></br>
                                 {description}{this.state.displayDescription}
+                                <br></br>
+                                {this.renderButton()}
                             </chDetail>
                         </div>
                     </div>
