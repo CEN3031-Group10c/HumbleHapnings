@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import Header from "../../components/Header/Header.js"
 import { connect } from "react-redux";
 import {randomImage} from '../../components/RandomImage/randomImage'
-import {Link} from 'react-router-dom'; //PIKAD
 
 class Home extends React.Component {
 
@@ -25,15 +24,8 @@ class Home extends React.Component {
             <div>
                 <Header/>
                 <div className={randomImage()}/>
-                <div>
-                  <Link to="/ChurchLeader" classname="btn btn-large waves-effect waves-light hoverable">Church Leader</Link>
-                </div>
-                <div>
-                  <Link to="/Admin" classname="btn btn-large waves-effect waves-light hoverable">Admin</Link>
-                </div>
             </div>
         );
-        //PIKAD the Admin
     }
 }
 
