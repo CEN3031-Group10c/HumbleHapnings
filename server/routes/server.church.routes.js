@@ -10,4 +10,7 @@ router.route('/create')
 router.route('/list')
     .get(ChurchController.listChurch);
 
+router.route('/delete')
+  .delete(ChurchController.deleteChurch);
+
   module.exports = router;

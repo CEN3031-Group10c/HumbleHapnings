@@ -67,26 +67,33 @@ class ChurchDirectory extends React.Component {
         if(this.state.displayName != "") {phone = "Phone: ";}
         if(this.state.displayName != "") {denomination = "Denomination: ";}
         if(this.state.displayName != "") {description = "Description: ";}
+        if(this.state.displayMissionStatement != "") {testMission = "\"";}
 
         return ( 
             <div className="unscroll">
                 <Header/>
-                <div class="fullscreen">
-                    <div class="welcome">
+                <div className="fullscreen">
+                    <div className="welcome">
                         Church Directory
                     </div>
-                    <div class="contentContainer">
-                        <div class="sidebar">
-                            {churchList}
+                    <div className="contentContainer">
+                            <div className="sidebar">
+                                {churchList}
+                            </div>
+                        <div className="churchImage">
+                            <img 
+                            src = {this.state.imageUrl}
+                            width = "350"
+                            height = "250"
+                            />
                         </div>
-                        <div className="churchImage"></div>
                         <div class="churchDisplay">
                             <chName>
                                 {this.state.displayName}
                             </chName>
                             <br></br>
                             <missionStatement>
-                                {testMission}
+                                {testMission}{this.state.displayMissionStatement}{testMission}
                             </missionStatement>
                             <br></br>
                             <br></br>
