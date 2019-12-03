@@ -25,6 +25,7 @@ div.containerEvent {
     width: 70%;
     padding: 15px;
     min-width: 550px;
+    top: 0;
 }
 
 .columnB {
@@ -35,6 +36,7 @@ div.containerEvent {
     background-color: #f0f0f0;
     border-radius: 40px;
     min-width: 277px;
+    top: 0;
 }
 
 .leftSide {
