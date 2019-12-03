@@ -2,8 +2,11 @@ import React from 'react';
 import './ChurchDirectory.css';
 import Header from "../Header/Header";
 import axios from 'axios';
+import { ADMIN } from "../../actions/userTypes";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-class ChurchDirectory extends React.Component {
+class AdminChurchDirectory extends React.Component {
 
     constructor(){
         super();
@@ -23,9 +26,23 @@ class ChurchDirectory extends React.Component {
     
     // Retrieves listings from the backend
     componentDidMount() {
-        axios.get('api/ChurchCreation/list').then(res => {
-            this.setState({churchListings: res.data});
-        });
+        if (this.props.auth.user.userType !== ADMIN) {
+            this.props.history.push("/home");
+        }
+        else
+        {
+            axios.get('api/ChurchCreation/list').then(res => {
+                this.setState({churchListings: res.data});
+            });
+        } 
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.errors) {
+          this.setState({
+            errors: nextProps.errors
+          });
+        }
     }
 
     updateDisplay(name, leader, address, email, phone, denomination, missionStatement, description, url) {
@@ -91,13 +108,15 @@ class ChurchDirectory extends React.Component {
             });
         
         var testMission, about, address, email, phone, denomination, description;
-        if(this.state.displayName !== "") {testMission = "\"This is a test mission statement.\"";}
-        if(this.state.displayName !== "") {about = "About: ";}
-        if(this.state.displayName !== "") {address = "Address: ";}
-        if(this.state.displayName !== "") {email = "Email: ";}
-        if(this.state.displayName !== "") {phone = "Phone: ";}
-        if(this.state.displayName !== "") {denomination = "Denomination: ";}
-        if(this.state.displayName !== "") {description = "Description: ";}
+        if(this.state.displayName !== "") {
+            testMission = "\"This is a test mission statement.\"";
+            about = "About: ";
+            address = "Address: ";
+            email = "Email: ";
+            phone = "Phone: ";
+            denomination = "Denomination: ";
+            description = "Description: ";
+        }
         if(this.state.displayMissionStatement !== "") {testMission = "\"";}
 
         return ( 
@@ -151,4 +170,16 @@ class ChurchDirectory extends React.Component {
     }
 }
 
-export default ChurchDirectory;
+AdminChurchDirectory.propTypes = {
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
+  };
+  
+  const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors
+  });
+  
+  export default connect(
+    mapStateToProps
+  )(AdminChurchDirectory);
