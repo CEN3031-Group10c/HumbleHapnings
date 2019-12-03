@@ -144,11 +144,9 @@ router.post("/UpdateUserType", (req, res)  => {
             userTypeValue = CHURCH_LEADER;
         }
     }
-    console.log("Pre" + JSON.stringify(userData));
     var query = {email: userData.email};
     User.findOneAndUpdate(query, {userType: userTypeValue}, function(err) {
         if (err) throw err;
-        console.log("Successful update");
         res.send({message: "Deleted"});
     });
 

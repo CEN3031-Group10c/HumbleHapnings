@@ -34,10 +34,8 @@ router.post("/checkout", async (req, res) => {
                 idempotency_key
             }
         );
-        // console.log("Charge:", {charge});
         status = "success";
     } catch(error){
-        // console.error("Error:", error);
         status = "failure";
     }
     res.json({error, status});

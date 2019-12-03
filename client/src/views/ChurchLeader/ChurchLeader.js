@@ -10,14 +10,11 @@ import "./ChurchLeader.css";
 class ChurchLeader extends React.Component{
 
     componentWillMount() {
-        console.log("User Type " + this.props.auth.user.userType);
         // If the user is not an admin, push them back to the home page.
         if (this.props.auth.user.userType !== ADMIN  &&
             this.props.auth.user.userType !== CHURCH_LEADER) {
             this.props.history.push("/home");
-            console.log("Unauthenticated user pushed to home.");
         }
-        console.log("Passed")
     }
     
     componentWillReceiveProps(nextProps) {
@@ -31,7 +28,6 @@ class ChurchLeader extends React.Component{
 
     // Needs new css to cleanup
     render(){
-      console.log("Does it render");
         return(
           <div className="cathedral1-background">
           <Header/>  
