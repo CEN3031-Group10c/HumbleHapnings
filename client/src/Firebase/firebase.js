@@ -3,6 +3,8 @@ import "firebase/storage";
 
 const config = require("./firebase-config");
 
+console.log(process.env.API_ID)
+
 var firebaseConfig = {
         apiKey: config.db.apiKey,
         authDomain: config.db.authDomain,
