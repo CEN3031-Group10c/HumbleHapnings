@@ -22,6 +22,7 @@ div.containerEvent {
 
 .columnE {
     float: left;
+    top: 0;
     width: 70%;
 	padding: 15px;
 }
@@ -30,6 +31,7 @@ div.containerEvent {
     float: right;
     width: 28%;
     height: 37vh;
+    top: 0;
     
 	padding: 15px;
     background-color: #f0f0f0;
