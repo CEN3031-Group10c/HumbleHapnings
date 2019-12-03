@@ -1,12 +1,13 @@
 body.Events {
     font-family: Arial;
-    background-color: rgb(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
     margin: 0;
     padding: 0;
     padding-top: 20px;
     width: 100vw;
     height: 80vh;
     position: relative;
+    overflow: visible;
 }
 
 div.containerEvent {
@@ -21,33 +22,39 @@ div.containerEvent {
 
 .columnE {
     float: left;
-	width: 70%;
+    width: 70%;
 	padding: 15px;
-
 }
 
 .columnB {
     float: right;
     width: 28%;
+    height: 37vh;
+    
 	padding: 15px;
-    background-color: #7af7c3;
-    height: 100vh;
+    background-color: #f0f0f0;
+    border-radius: 40px;
+    
 }
 
 .leftSide {
     height: 100vh;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .rightSide {
     height: 100vh;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .columnEvents{
     float: left;
     width: 90%;
-    height: 35%;
+  
     padding: 10px;
     padding-left: 0px;
 	background-color: #f9f1cc;
