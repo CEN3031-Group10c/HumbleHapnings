@@ -1,23 +1,21 @@
 import firebase from "firebase/app";
 import "firebase/storage";
 
-const config = require("./firebase-config");
-
 console.log(process.env.API_ID)
 
 var firebaseConfig = {
-        apiKey: config.db.apiKey,
-        authDomain: config.db.authDomain,
-        databaseURL: config.db.databaseURL,
-        projectId: config.db.projectId,
-        storageBucket: config.db.storageBucket,
-        messagingSenderId: config.db.messagingSenderId,
-        appId: config.db.appId,
-        measurementId: config.db.measurementId
+        apiKey: process.env.API_KEY,
+        authDomain: process.env.AUTH_DOMAIN,
+        databaseURL: process.env.DATABASE_URL,
+        projectId: process.env.PROJECT_ID,
+        storageBucket: process.env.STORAGE_BUCKET,
+        messagingSenderId: process.env.MESSAGING_SENDER_ID,
+        appId: process.env.APP_ID,
+        measurementId: process.env.MEASUREMENT_ID
 }
+console.log(firebaseConfig)
 
 firebase.initializeApp(firebaseConfig);
-console.log(firebaseConfig)
 
 var storage = firebase.storage();
 

@@ -2,6 +2,7 @@
 
 # config file for Mongo DB
 /server/config.js
+/client/src/Firebase/firebase-config.js
 
 # config file for firebase - appears on heroku because the vars inside it are env variables within heroku
 
