@@ -13,7 +13,7 @@ var firebaseConfig = {
         measurementId: process.env.MEASUREMENT_ID
 }
 
-firebase.initializeApp({firebaseConfig});
+firebase.initializeApp(firebaseConfig);
 
 var storage = firebase.storage();
 
