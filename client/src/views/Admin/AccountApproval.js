@@ -6,6 +6,7 @@ import Header from '../../components/Header/Header'
 import axios from 'axios';
 //import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 import './AccountApproval.css';
+var moment = require('moment');
 
 function ApproveDeletebuttons(props) {
   const userSelected = props.userSelected;
@@ -39,7 +40,8 @@ class AccountApproval extends React.Component {
       displayName: "",
       displayEmail: "",
       displayDate: Date.now,
-      displayUserType: ""
+      displayUserType: "",
+      displayMoment: ""
     };
   }
 
@@ -65,11 +67,15 @@ class AccountApproval extends React.Component {
   }
 
   updateDisplay(name, email, date, userType) {
+    var dateStr = ""
+    if (name !== "")
+      dateStr = moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a");;
     this.setState({
       displayName: name,
       displayEmail: email,
       displayDate: date,
-      displayUserType: userType
+      displayUserType: userType,
+      displayMoment : dateStr
     });
   }
 
@@ -81,16 +87,19 @@ class AccountApproval extends React.Component {
       },
       approved: approved
     }
-    console.log("Pre Axios - " + JSON.stringify(requestData));
     axios.post("/api/users/UpdateUserType", requestData);
-    // if (approved)
-    // {
-    //   alert("User Approved");
-    // }
-    // else
-    // {
-    //   alert("User Denied");
-    // }
+    axios.get("/api/users/AccountApproval").then(res => {
+      this.setState({ unapprovedUsers: res.data });
+    });
+    this.updateDisplay("","",Date.now,"");
+    if (approved)
+    {
+      alert("User Approved");
+    }
+    else
+    {
+      alert("User Denied");
+    }
   }
 
   render() {
@@ -130,7 +139,7 @@ class AccountApproval extends React.Component {
               <chDetail>
                 {email}{this.state.displayEmail}
                 <br></br>
-                {date}{this.state.displayDate}
+                {date}{this.state.displayMoment}
                 <br></br>
                 {userType}{this.state.displayUserType}
                 <br></br>
