@@ -14,7 +14,9 @@
 }
 
 .container {
-  padding: 100px
+  padding: 100px;
+  height: 50vh;
+  padding-bottom: 200px;
 }
 
 ul.landing {
