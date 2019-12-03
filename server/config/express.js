@@ -17,6 +17,7 @@ module.exports.init = () => {
     });
     mongoose.set('useCreateIndex', true);
     mongoose.set('useFindAndModify', false);
+    console.log(process.env.DB_URI)
 
     // initialize app
     const app = express();
