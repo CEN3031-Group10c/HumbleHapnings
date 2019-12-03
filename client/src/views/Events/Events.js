@@ -160,7 +160,7 @@ class Events extends React.Component{
                                     <div style={{paddingBottom: '30px'}}>{"   "}</div>        
                                 </form>
                                 
-                                <Row>
+                                <Row style={{width: "max-content"}}>
                                     <div className = "columnE">
                                         <div className = "leftSide">{eventMaping}</div>
                                     </div>

@@ -17,7 +17,7 @@ div.containerEvent {
 }
 .rowA {
     
-    width: 100%;
+    width: max-content;
 }
 
 .columnE {
@@ -25,6 +25,7 @@ div.containerEvent {
     width: 70%;
     padding: 15px;
     min-width: 550px;
+    max-width: 620px;
     top: 0;
 }
 
