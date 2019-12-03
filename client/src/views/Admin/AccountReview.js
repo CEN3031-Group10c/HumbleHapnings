@@ -64,7 +64,7 @@ class AccountReview extends React.Component {
     
     const userList = [];
     console.log("fired");
-    console.log(typeof(this.state.users);
+    console.log(typeof(this.state.users));
     if (Array.isArray(this.state.users) && this.state.users.length > 0)
     {
       
