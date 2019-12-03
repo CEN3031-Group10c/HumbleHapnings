@@ -9,8 +9,13 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 // Load User model
 const User = require("../../models/User");
+
+//User type constants
 const UNAPPROVED_CHURCH_LEADER = "UNAPPROVED CHURCH LEADER";
 const UNAPPROVED_ADMIN = "UNAPPROVED ADMIN";
+const NORMAL = "NORMAL";
+const CHURCH_LEADER = "CHURCH LEADER";
+const ADMIN = "ADMIN";
 
 // @route POST api/users/register
 // @desc Register user
@@ -111,6 +116,31 @@ router.get("/AccountApproval",  (req, res) => {
         if (err) throw err;
 
         res.send(foundUsers);
+    });
+
+});
+
+router.post("/UpdateUserType", (req, res)  => {
+    var userData = req.body.userData;
+    var approved = req.body.approved;
+    var userTypeValue = NORMAL;
+    if (approved)
+    {
+        if (userData.userType === UNAPPROVED_ADMIN)
+        {
+            userTypeValue = ADMIN;
+        }
+        else if (userData.userType == UNAPPROVED_CHURCH_LEADER)
+        {
+            userTypeValue = CHURCH_LEADER;
+        }
+    }
+    console.log("Pre" + JSON.stringify(userData));
+    var query = {email: userData.email};
+    User.findOneAndUpdate(query, {userType: userTypeValue}, function(err) {
+        if (err) throw err;
+        console.log("Successful update");
+        res.send({message: "Deleted"});
     });
 
 });
