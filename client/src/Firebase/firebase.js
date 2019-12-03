@@ -1,8 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/storage";
 
-const config = require("./firebase-config");
-
 var firebaseConfig = {
         apiKey: process.env.apiKey,
         authDomain: process.env.authDomain,
