@@ -60,22 +60,15 @@ class AccountReview extends React.Component {
   }
 
   render() {
-    // Maps the values based on the users name
-    
-    const userList = [];
-    console.log("fired");
-    if (Array.isArray(this.state.users) && this.state.users.length > 0)
-    {
-      
-      console.log("Entered");
-      //userList = this.state.users.map(user => {
-        //return (
-          //<a onClick={() => this.updateDisplay(user.name, user.email, user.date, user.userType)}>
-            //{user.name}
-          //</a>
-        //)
-      //});
-    }
+     // Maps the values based on the users name
+     const userList = this.state.users
+     .map(user => {
+       return (
+         <a onClick={() => this.updateDisplay(user.name, user.email, user.date, user.userType)}>
+           {user.name}
+         </a>
+       )
+     });
 
     var email, date, userType;
     if (this.state.displayName !== "") {
