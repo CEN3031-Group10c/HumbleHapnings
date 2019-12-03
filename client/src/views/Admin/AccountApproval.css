@@ -1,0 +1,114 @@
+.ChurchDirCardList li{
+    color: black;
+}
+
+.sidebar {
+    width: 25%;
+    min-width: 300px;
+    float: left;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255, .9);
+    padding-top: 0px;
+    border-color: grey;
+  }
+
+  /* The navigation menu links */
+.sidebar a {
+    padding: 5px 5px 5px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    background-color: rgb(255, 255, 240, .9);
+    display: block;
+    border-color: #000000;
+    border-width: 1px;
+    cursor: pointer;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #000000;
+    background-color: rgb(245, 245, 220, .9);
+    font-weight: bold;
+  }
+
+  .welcome {
+      font-size: 40px;
+      width: 90vw;
+      padding-left: 20px;
+      font-family: 'Palatino Linotype';
+      background-color: rgb(255, 255, 240, 1);
+      color:black;
+      text-align: center;
+      margin-top: 120px;
+      min-width: 1000px;
+      position: fixed;
+      margin-left: 5vw;
+      height: 60px;
+  }
+
+  .fullscreen {
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+  }
+
+  .contentContainer {
+    width: 90vw;
+    height: 75vh;
+    margin-left: 5vw;
+    margin-top: 180px;
+    min-height: 600px;
+    min-width: 1000px;
+    background-color: rgb(255, 255, 240, .9);
+    border-top-style: solid;
+    border-width: 1px;
+    text-align: left;
+    position: fixed;
+  }
+
+  .churchDisplay {
+    display: inline-block;
+    text-align: left;
+    position: fixed;
+    margin-top: 20px;
+    font-size: 20px;;
+  }
+
+  .churchImage {
+    margin: 20px;
+    height: 200px;
+    width: 300px;
+    display: inline-block;
+    background-image: url('../../assets/book1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+  }
+
+  .churchDisplay missionStatement {
+    font-family: cursive;
+    font-size: 25px;
+  }
+
+  .churchDisplay chName {
+      font-size: 35px;
+  }
+
+  .churchDisplay chDetail {
+    padding-left: 20px;  
+    font-size: 15px;
+    display: inline-block;
+  }
+
+  .unscroll {
+    background-image: url('../../assets/cathedral1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }

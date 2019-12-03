@@ -120,7 +120,7 @@ class Register extends Component {
                                 <p>
                                 <label style={{paddingLeft: 25}}>
                                     <input onChange={this.onCheckbox.bind(this)} type="checkbox" class="filled-in" />
-                                    <span className="black-text">Apply for a Church Leader account? (Paid Subscription Required)</span>
+                                    <span className="black-text">Apply for a Church Leader account?</span>
                                 </label>
                                 </p>
                                 </div>
@@ -161,7 +161,7 @@ class Register extends Component {
                                             marginTop: "1rem"
                                         }}
                                         type="submit"
-                                        className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                                        className="btn btn-large waves-effect waves-light hoverable "
                                     >
                                         Sign up
                             </button>

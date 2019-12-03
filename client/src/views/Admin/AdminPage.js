@@ -2,7 +2,9 @@ import React from 'react';
 import { ADMIN } from "../../actions/userTypes";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import Header from '../../components/Header/Header'
+import Header from '../../components/Header/Header';
+import {Link} from 'react-router-dom';
+import "./AdminPage.css";
 
 //Josh - AdminPage
 class AdminPage extends React.Component{
@@ -26,9 +28,43 @@ class AdminPage extends React.Component{
     // Needs new css to cleanup
     render(){
         return(
-            <div>
-              <Header/>
+          <div className="cathedral1-background">
+            <Header/>  
+            <div className="container">
+              <div className="col s12 center-align colorDiv2">
+                <div className="row">
+                  <div className="col s12">
+                    <h4>Administrator Abilities</h4>
+                    <hr/>
+                  </div>
+                  <div className="col s12" style={{padding: 10}}>
+                    <Link 
+                      className="btn btn-large waves-effect waves-light hoverable full-width" 
+                      to="/AccountApproval" 
+                      style={{color: "white"}} >
+                      Account Approval
+                    </Link>  
+                  </div>
+                  <div className="col s12" style={{padding: 10}}>
+                    <Link 
+                      className="btn btn-large waves-effect waves-light hoverable full-width" 
+                      to="/ChurchCreation"
+                      style={{color: "white"}} >
+                      Create a Church Directory
+                    </Link>  
+                  </div>
+                  <div className="col s12" style={{padding: 10}}>
+                    <Link 
+                      className="btn btn-large waves-effect waves-light hoverable full-width" 
+                      to="/ChurchLeader"
+                      style={{color: "white"}} >
+                      Church Leader Features
+                    </Link>  
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         )
     }
 }

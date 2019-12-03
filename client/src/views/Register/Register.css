@@ -27,6 +27,10 @@ button.reg:hover {
     background-color: rgb(255, 255, 255, 0.9);
 }
 
+.container {
+    padding: 100px
+}
+
 .book1-background{
     background-image: url('../../assets/book1.jpg');
     background-size: cover;

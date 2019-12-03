@@ -102,13 +102,15 @@ router.post("/login", (req, res) => {
     });
 });
 
+//Gets all the unapproved accounts
 router.get("/AccountApproval",  (req, res) => {
     User.find({"$or" : [
         {userType : UNAPPROVED_ADMIN}, 
         {userType : UNAPPROVED_CHURCH_LEADER}
-    ]}).forEach( function(myDoc) 
-    { 
-        print( "userType: " + myDoc.userType ); 
+    ]}, function(err, foundUsers) {
+        if (err) throw err;
+
+        res.send(foundUsers);
     });
 
 });

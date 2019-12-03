@@ -31,8 +31,8 @@ componentWillReceiveProps(nextProps) {
     return (
       <div className='field1-background'>
         <NavBar/>
-        <div style={{ height: "50vh", paddingBottom: "200"}} className="container valign-wrapper">
-          <div className="row ">
+        <div style={{ height: "50vh", paddingBottom: "200"}} className="container">
+          <div className="row valign-wrapper">
             <div style={{ paddingBottom: "25px" }} className="col s12 center-align colorDiv">
               <h2>
                 <b>Welcome to HumbleHapnings!</b> 
@@ -46,7 +46,7 @@ componentWillReceiveProps(nextProps) {
               <br />
               <div className="col s6">
                   <Link 
-                    className="btn btn-large waves-effect waves-light hoverable blue accent-3" 
+                    className="btn btn-large waves-effect waves-light hoverable" 
                     to="/Register" 
                     style={{color: "white"}} >
                     Register
@@ -54,7 +54,7 @@ componentWillReceiveProps(nextProps) {
               </div>
               <div className="col s6">
                 <Link 
-                    className="btn btn-large waves-effect waves-light hoverable blue accent-3" 
+                    className="btn btn-large waves-effect waves-light hoverable" 
                     to="/Login" 
                     style={{color: "white"}} >
                     Login

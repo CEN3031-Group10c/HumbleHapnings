@@ -2,7 +2,9 @@ import React from 'react';
 import { ADMIN, CHURCH_LEADER } from "../../actions/userTypes";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-//import Header from '../../components/Header/Header'
+import Header from '../../components/Header/Header';
+import {Link} from 'react-router-dom';
+import "./ChurchLeader.css";
 
 //Josh - AdminPage
 class ChurchLeader extends React.Component{
@@ -31,9 +33,27 @@ class ChurchLeader extends React.Component{
     render(){
       console.log("Does it render");
         return(
-            <div>
-              <h4>CHURCH LEADER</h4>
+          <div className="cathedral1-background">
+          <Header/>  
+          <div className="container">
+            <div className="col s12 center-align colorDiv2">
+              <div className="row">
+                <div className="col s12">
+                  <h4>Church Leader Abilities</h4>
+                  <hr/>
+                </div>
+                <div className="col s12" style={{padding: 10}}>
+                  <Link 
+                    className="btn btn-large waves-effect waves-light hoverable full-width" 
+                    to="/EventCreation"
+                    style={{color: "white"}} >
+                    Create an Event
+                  </Link>  
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
         )
     }
 }

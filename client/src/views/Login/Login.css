@@ -43,4 +43,9 @@
 
 .colorDiv2 {
     background-color: rgb(255, 255, 255, 0.9);
+    padding-top: 75px;
+}
+
+.container {
+    padding: 100px
 }

@@ -8,9 +8,6 @@ import {Link} from 'react-router-dom'; //PIKAD
 
 class Home extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
