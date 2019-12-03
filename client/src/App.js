@@ -3,22 +3,25 @@ import { BrowserRouter as Router, Route, Switch, Redirect  } from 'react-router-
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-import Home from "./views/Home/Home"
-import Register from "./views/Register/Register"
-import Login from "./views/Login/Login"
-import Events from "./views/Events/Events"
-import ChurchCreation from "./views/ChurchDirectoryCreation/ChurchDirectoryCreation"
-import ChurchDirectory from "./components/ChurchDirectory/ChurchDirectory"
+import Home from "./views/Home/Home";
+import Register from "./views/Register/Register";
+import Login from "./views/Login/Login";
+import Events from "./views/Events/Events";
+import ChurchCreation from "./views/ChurchDirectoryCreation/ChurchDirectoryCreation";
+import ChurchDirectory from "./components/ChurchDirectory/ChurchDirectory";
+import AdminChurchDirectory from "./components/ChurchDirectory/AdminChurchDirectory";
 import { Provider } from "react-redux";
 import store from "./store";
-import EventCreation from "./views/EventCreation/EventCreation"
+import EventCreation from "./views/EventCreation/EventCreation";
 
 //Test
 import Landing from "./components/layout/Landing";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import AdminPage from './views/Admin/AdminPage';
 import AccountApproval from './views/Admin/AccountApproval';
+import AccountReview from './views/Admin/AccountReview';
 import ChurchLeader from './views/ChurchLeader/ChurchLeader';
+import UnderConstruction from './views/UnderConstruction/UnderConstruction';
 
 
 // Check for token to keep user logged in
@@ -57,6 +60,9 @@ const App = () => {
             <PrivateRoute exact path="/ChurchLeader" component={ChurchLeader} />
             <PrivateRoute exact path="/EventCreation" component={EventCreation} />
             <PrivateRoute exact path="/AccountApproval" component={AccountApproval} />
+            <PrivateRoute exact path="/AccountReview" component={AccountReview} />
+            <PrivateRoute exact path="/AdminChurchDirectory" component={AdminChurchDirectory}/>
+            <PrivateRoute exact path="/UnderConstruction" component={UnderConstruction} />
           </Switch>
           <Route path="/">
             <Redirect to="/landing" />
