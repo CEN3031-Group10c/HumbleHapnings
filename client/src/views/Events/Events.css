@@ -25,6 +25,7 @@ div.containerEvent {
     width: 70%;
     padding: 15px;
     min-width: 550px;
+    max-width: 600px;
 }
 
 .columnB {
