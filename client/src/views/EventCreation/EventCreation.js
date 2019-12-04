@@ -59,7 +59,7 @@ class EventCreation extends React.Component{
             location: "",
             description: "",
             hostChurch: "",
-            tag: [],
+            tags: [],
             show: false,
             purchaseComplete: false,
         })
@@ -72,10 +72,11 @@ class EventCreation extends React.Component{
         });
     }
     popTag = () => {
-        this.state.tags.pop();
+        const tag = this.state.tags.pop();
         this.setState({
             tags: this.state.tags
         });
+        return tag;
     }
 
     
@@ -170,7 +171,7 @@ class EventCreation extends React.Component{
                                                 onChange={this.onChange}
                                             />
                                             <label for="regTags"><b>Tags</b></label>
-                                            <Tags addTag={this.addTag} popTag={this.popTag}/>
+                                            <Tags addTag={this.addTag} popTag={this.popTag} tags={this.state.tags}/>
 
                                         </div>
 
