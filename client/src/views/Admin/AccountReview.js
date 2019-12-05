@@ -60,9 +60,9 @@ class AccountReview extends React.Component {
   render() {
      // Maps the values based on the users name
      if(Array.isArray(this.state.users))
-        console.log("Array.isArray is FALSE and makes it go to ELSE")
+        console.log("Array.isArray is TRUE and makes it go to ELSE")
      if(this.state.users.length > 0)
-        console.log("...length > 0 is FALSE and makes it go to ELSE")
+        console.log("...length > 0 is TRUE and makes it go to ELSE "+ typeof this.state.users)
 
      console.log("Rendering...");
      var userList= this.state.users
