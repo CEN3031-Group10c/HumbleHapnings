@@ -124,10 +124,7 @@ router.get("/AccountApproval",  (req, res) => {
 router.get("/GetAllAccounts",  (req, res) => {
     User.find({}, function(err, foundUsers) {
         if (err) throw err;
-        
-        console.log("\n" + foundUsers + "\n")
-
-        res.send(foundUsers);
+        res.send({userData: foundUsers});
     });
 });
 
