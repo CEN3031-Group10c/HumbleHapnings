@@ -53,6 +53,7 @@ class CheckOutForm extends React.Component{
 
     makeAnotherEvent = (event)=>{
         this.props.makeAnotherEvent && this.props.makeAnotherEvent(event)
+        this.setState({complete: false});
     }
 
 
