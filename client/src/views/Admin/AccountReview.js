@@ -23,14 +23,14 @@ class AccountReview extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     // If the user is not an admin, push them back to the home page.
     if (this.props.auth.user.userType !== ADMIN) {
       this.props.history.push("/home");
     }
     else {
       //Retrieves unapproved users from backend
-      axios.get("/api/users/GetAllAccounts").then(res => {
+      await axios.get("/api/users/GetAllAccounts").then(res => {
         this.setState({ users: res.data });
       });
     }
@@ -60,14 +60,21 @@ class AccountReview extends React.Component {
   render() {
      // Maps the values based on the users name
      console.log("Rendering...");
-     var userList = this.state.users
-     .map(user => {
-       return (
-         <a onClick={() => this.updateDisplay(user.name, user.email, user.date, user.userType)}>
-           {user.name}
-         </a>
-       );
-     });
+     var userList= this.state.users
+     if(this.state.users !== undefined && Array.isArray(this.state.users) && this.state.users.length > 0)
+     {
+       userList
+      .map(user => {
+        return (
+          <a onClick={() => this.updateDisplay(user.name, user.email, user.date, user.userType)}>
+            {user.name}
+          </a>
+        );
+      });
+    }
+    else{
+      userList = []
+    }
 
     var email, date, userType;
     if (this.state.displayName !== "") {
