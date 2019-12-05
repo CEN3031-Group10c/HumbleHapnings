@@ -7,10 +7,7 @@ import axios from 'axios';
 //import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 import './AccountApproval.css';
 var moment = require('moment');
-<<<<<<< HEAD
 
-=======
->>>>>>> 4c5dce64a964287b7ff639b6fa97fd5e4fc8f4f7
 function ApproveDeletebuttons(props) {
   const userSelected = props.userSelected;
   const { updateDisplayedUserType } = props;
