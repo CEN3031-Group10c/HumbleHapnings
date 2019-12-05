@@ -36,13 +36,13 @@ class AccountReview extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({
-        errors: nextProps.errors
-      });
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.errors) {
+  //     this.setState({
+  //       errors: nextProps.errors
+  //     });
+  //   }
+  // }
 
   updateDisplay(name, email, date, userType) {
     var dateStr = ""
@@ -59,13 +59,14 @@ class AccountReview extends React.Component {
 
   render() {
      // Maps the values based on the users name
-     const userList = this.state.users
+     console.log("Rendering...");
+     var userList = this.state.users
      .map(user => {
        return (
          <a onClick={() => this.updateDisplay(user.name, user.email, user.date, user.userType)}>
            {user.name}
          </a>
-       )
+       );
      });
 
     var email, date, userType;
