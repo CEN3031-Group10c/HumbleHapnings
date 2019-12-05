@@ -104,7 +104,7 @@ class AccountReview extends React.Component {
             <div class="churchDisplay">
               <div>
               </div>
-                User number displayed in this page was not able to correctly retrieve the data because of a Heroku error. It works correctly √ locally, but this is a Heroku issue. Please refer to the demo video until hosting the website with a domain besides Heroku.
+                User number displayed in this page was not able to correctly retrieve the data because of a Heroku error. It works correctly locally. \n But this is a Heroku issue. \n Please refer to the demo video until hosting the website with a domain besides Heroku.
               <chName>
                 {this.state.displayName}
               </chName>
