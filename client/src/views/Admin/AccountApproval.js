@@ -7,6 +7,10 @@ import axios from 'axios';
 //import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
 import './AccountApproval.css';
 var moment = require('moment');
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4c5dce64a964287b7ff639b6fa97fd5e4fc8f4f7
 function ApproveDeletebuttons(props) {
   const userSelected = props.userSelected;
   const { updateDisplayedUserType } = props;
@@ -41,6 +45,7 @@ class AccountApproval extends React.Component {
       displayMoment: ""
     };
   }
+  
   componentDidMount() {
     // If the user is not an admin, push them back to the home page.
     if (this.props.auth.user.userType !== ADMIN) {
@@ -53,6 +58,7 @@ class AccountApproval extends React.Component {
       });
     }
   }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
@@ -60,6 +66,7 @@ class AccountApproval extends React.Component {
       });
     }
   }
+  
   updateDisplay(name, email, date, userType) {
     var dateStr = ""
     if (name !== "")
@@ -72,6 +79,7 @@ class AccountApproval extends React.Component {
       displayMoment : dateStr
     });
   }
+  
   updateDisplayedUserType(approved) {
     var requestData = {
       userData: {
@@ -94,10 +102,9 @@ class AccountApproval extends React.Component {
       alert("User Denied");
     }
   }
+  
   render() {
     // Maps the values based on the users name
-    if(this.state.unapprovedUsers === undefined)
-      console.log("unapprovedUsersArray is underfined")
     var userList = <div>Loading....</div>;
     if(this.state.unapprovedUsers === undefined)
       console.log("unapprovedUsersArray is underfined")
@@ -112,12 +119,14 @@ class AccountApproval extends React.Component {
         )
       });
     }
+    
     var email, date, userType;
     if (this.state.displayName !== "") {
       email = "Email: ";
       date = "Account Creation Date: ";
       userType = "User Type: ";
     }
+    
     return (
       <div className="unscroll">
         <Header />
@@ -153,14 +162,17 @@ class AccountApproval extends React.Component {
     );
   }
 }
+
 AccountApproval.propTypes = {
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
+
 const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
+
 export default connect(
   mapStateToProps
 )(AccountApproval);
