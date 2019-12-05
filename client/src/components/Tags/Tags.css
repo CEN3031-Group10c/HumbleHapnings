@@ -1,0 +1,52 @@
+.tag-body {
+    font-family: 'open sans', 'helvetica neue', helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #222;
+    background: #ecf0f1;
+  }
+  
+  
+.tags-tags {
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+}
+  
+.tag-tag {
+    color: #fff;
+    font-weight: bold;
+    background: #333333;
+    float: left;
+    padding: 5px 10px;
+    border-radius: 10em;
+    margin: 5px;
+    
+}
+  
+.tag-input {
+    padding: 5px 10px;
+    box-sizing: border-box;
+    color: black;
+    border: 0;
+    float: left;
+    margin: 10px 0;
+    font-size: 16px;
+    outline: 0;
+}
+  
+code.tags{
+    font-size: 12px;
+    background: #FCF8D0;
+    display: inline-block;
+    font-family: courier;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+  small.tags {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    line-height: 16px;
+}

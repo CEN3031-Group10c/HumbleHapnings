@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 
 const prod = require ('./config/prod');
 const users = require("./routes/api/users");
+const churches = require("./routes/server.church.routes");
+
 const app = express.init();
 
 // Bodyparser middleware
@@ -26,6 +28,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
+
 
 // Use env port or default
 const port = process.env.PORT || 5000;

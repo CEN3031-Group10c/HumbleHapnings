@@ -1,24 +1,94 @@
 body.Events {
     font-family: Arial;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     margin: 0;
     padding: 0;
-    margin: 0px;
-    background-size: cover;
+    padding-top: 20px;
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+    overflow: visible;
 }
 
 div.containerEvent {
     font-family: Arial;
     padding: 10px;
+    padding-left: 40px;
+}
+.rowA {
     
+    width: max-content;
+}
+
+.columnE {
+    float: left;
+    width: 70%;
+    padding: 15px;
+    min-width: 550px;
+    max-width: 620px;
+    top: 0;
+}
+
+.columnB {
+    float: right;
+    width: 28%;
+    height: 37vh;
+	padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 40px;
+    min-width: 277px;
+    top: 0;
+}
+
+.leftSide {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.rightSide {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .columnEvents{
     float: left;
-	width: 35%;
+    width: 90%;
+  
     padding: 10px;
     padding-left: 0px;
 	background-color: #f9f1cc;
-    outline-style: solid;
-    margin-left: 50px;
+    margin-left: 35px;
+    border-radius: 50px;
+    box-shadow: 0 0 5pt 5pt white;  
+    margin-bottom: 25px;
+}
+
+.book1-background{
+    background-image: url('../../assets/book1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    padding: 0;
+}
+.cathedral1-background{
+    background-image: url('../../assets/cathedral1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    padding: 0;
+}
+
+.field1-background{
+    background-image: url('../../assets/field1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    padding: 0;
 }

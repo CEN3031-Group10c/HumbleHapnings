@@ -1,18 +1,26 @@
 import React from 'react';
 import './ChurchDirectory.css';
+import Header from "../Header/Header";
 import axios from 'axios';
-import {Card, CardBody, CardTitle, Row, Col, Button} from 'reactstrap';
-// import Card from 'react-bootstrap/Card';
-
 
 class ChurchDirectory extends React.Component {
 
-    constructor (){
+    constructor(){
         super();
         this.state = {
-            churchListings: []
+            churchListings: [],
+            displayName: "",
+            displayLeader: "",
+            displayAddress: "",
+            displayEmail: "",
+            displayPhone: "",
+            displayDenomination: "",
+            displayMissionStatement: "",
+            displayDescription: "",
+            imageUrl: ""
         };
     }
+    
     // Retrieves listings from the backend
     componentDidMount() {
         axios.get('api/ChurchCreation/list').then(res => {
@@ -20,44 +28,91 @@ class ChurchDirectory extends React.Component {
         });
     }
 
+    updateDisplay(name, leader, address, email, phone, denomination, missionStatement, description, url) {
+        this.setState({
+            displayName: name,
+            displayLeader: leader,
+            displayAddress: address,
+            displayEmail: email,
+            displayPhone: phone,
+            displayDenomination: denomination,
+            displayMissionStatement: missionStatement,
+            displayDescription: description,
+            imageUrl: url
+        });
+    }
+
     render(){
-        
-        const {selectedTab} = this.props
+
+
         // Maps the values based on the churches name
         const churchList = this.state.churchListings
             .map(listings => {
                 return (
-                    <Col>
-                        <Card style={{ width: '20rem'}}>
-                            <CardBody>
-                                <CardTitle>{listings.name}</CardTitle>
-                                <ul className="ChurchDirCardList">
-                                    <li>Church Leader: {listings.pastor}</li>
-                                    <li>Address: {listings.address}</li>
-                                    <li>Email: {listings.email}</li>
-                                    <li>Phone: {listings.phone}</li>
-                                    <li>Description: {listings.description}</li>
-                                </ul>
-                                <Button>View Church</Button>
-                            </CardBody>
-                        </Card>
-                    </Col>
-  
+                    <a onClick={() => this.updateDisplay(listings.name, listings.pastor, listings.address, listings.email, listings.phone, listings.denomination, listings.missionStatement, listings.description, listings.url)}>
+                        {listings.name}
+                    </a>
                 )
             });
-        // Does not display anything if the church directory tab wasn't pressed
-        console.log(selectedTab);
-        if (selectedTab == 3)
-        {
-            return ( 
-                <div >
-                    <Row>
-                    {churchList} 
-                    </Row>
-                </div>
-            )
+        
+        var testMission, about, address, email, phone, denomination, description;
+        if(this.state.displayName !== "") {
+            testMission = "\"This is a test mission statement.\"";
+            about = "About: ";
+            address = "Address: ";
+            email = "Email: ";
+            phone = "Phone: ";
+            denomination = "Denomination: ";
+            description = "Description: ";
         }
-        return <div></div>
+        if(this.state.displayMissionStatement !== "") {testMission = "\"";}
+
+        return ( 
+            <div className="unscrollcd">
+                <Header/>
+                <div className="fullscreencd">
+                    <div className="welcomecd">
+                        Church Directory
+                    </div>
+                    <div className="contentContainercd">
+                            <div className="sidebarcd">
+                                {churchList}
+                            </div>
+                        <div className="churchImagecd">
+                            <img 
+                            src = {this.state.imageUrl}
+                            width = "350"
+                            height = "250"
+                            />
+                        </div>
+                        <div class="churchDisplaycd">
+                            <chName>
+                                {this.state.displayName}
+                            </chName>
+                            <br></br>
+                            <missionStatement>
+                                {testMission}{this.state.displayMissionStatement}{testMission}
+                            </missionStatement>
+                            <br></br>
+                            <br></br>
+                            {about}
+                            <br></br>
+                            <chDetail>
+                                {address}{this.state.displayAddress}
+                                <br></br>
+                                {email}{this.state.displayEmail}
+                                <br></br>
+                                {phone}{this.state.displayPhone}
+                                <br></br>
+                                {denomination}{this.state.displayDenomination}
+                                <br></br>
+                                {description}{this.state.displayDescription}
+                            </chDetail>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
     }
 }
 

@@ -41,7 +41,11 @@
     padding: 50px;
 }
 
+.colorDiv2 {
+    background-color: rgb(0, 255, 255, 0.9);
+    padding: 75px;
+}
 
-
-
-
+div.container {
+    padding: 100px
+}

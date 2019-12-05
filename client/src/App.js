@@ -3,20 +3,26 @@ import { BrowserRouter as Router, Route, Switch, Redirect  } from 'react-router-
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-import Home from "./views/Home/Home"
-import NotFound from "./views/NotFound"
-import Register from "./views/Register/Register"
-import Login from "./views/Login/Login"
-import Events from "./views/Events/Events"
-import ChurchCreation from "./views/ChurchDirectoryCreation/ChurchDirectoryCreation"
+import Home from "./views/Home/Home";
+import Register from "./views/Register/Register";
+import Login from "./views/Login/Login";
+import Events from "./views/Events/Events";
+import ChurchCreation from "./views/ChurchDirectoryCreation/ChurchDirectoryCreation";
+import ChurchDirectory from "./components/ChurchDirectory/ChurchDirectory";
+import AdminChurchDirectory from "./components/ChurchDirectory/AdminChurchDirectory";
 import { Provider } from "react-redux";
 import store from "./store";
+import EventCreation from "./views/EventCreation/EventCreation";
 
 //Test
-import Navbar from './components/layout/Navbar';
 import Landing from "./components/layout/Landing";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/Dashboard/Dashboard";
+import AdminPage from './views/Admin/AdminPage';
+import AccountApproval from './views/Admin/AccountApproval';
+import AccountReview from './views/Admin/AccountReview';
+import ChurchLeader from './views/ChurchLeader/ChurchLeader';
+import UnderConstruction from './views/UnderConstruction/UnderConstruction';
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -41,18 +47,26 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <div> 
+        <div>
+          <Route exact path="/landing" component={Landing} />
           <Route exact path="/Login" component={Login}/>
-          <Route exact path="/Register" component={Register}/> 
-          <Route exact path="/Home" component={Home} />
-          <Route exact path="/Events" component={Events}></Route>
-          <Route exact path="/ChurchCreation" component={ChurchCreation} />
-          <Route exact path="/">
-          <Redirect to="/Login" />
-          <Route component={NotFound}/></Route>
+          <Route exact path="/Register" component={Register}/>
           <Switch>
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/Home" component={Home} />
+            <PrivateRoute exact path="/Events" component={Events}/>
+            <PrivateRoute exact path="/ChurchDirectory" component={ChurchDirectory}/>
+            <PrivateRoute exact path="/ChurchCreation" component={ChurchCreation} />
+            <PrivateRoute exact path="/Admin" component={AdminPage} />
+            <PrivateRoute exact path="/ChurchLeader" component={ChurchLeader} />
+            <PrivateRoute exact path="/EventCreation" component={EventCreation} />
+            <PrivateRoute exact path="/AccountApproval" component={AccountApproval} />
+            <PrivateRoute exact path="/AccountReview" component={AccountReview} />
+            <PrivateRoute exact path="/AdminChurchDirectory" component={AdminChurchDirectory}/>
+            <PrivateRoute exact path="/UnderConstruction" component={UnderConstruction} />
           </Switch>
+          <Route path="/">
+            <Redirect to="/landing" />
+          </Route>
         </div>
       </Router>   
     </Provider> 

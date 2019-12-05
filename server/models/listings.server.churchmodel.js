@@ -10,6 +10,9 @@ var churchSchema = new Schema({
     address: {type: String, required: true},
     email: {type: String, required: true},
     phone: {type: String, required: true},
+    denomination: {type: String, required: true},
+    missionStatement: {type: String, required: true},
+    url: {type:String},
     description: String
 });
 

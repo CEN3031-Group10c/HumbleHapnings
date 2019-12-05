@@ -10,6 +10,13 @@ const validateLoginInput = require("../../validation/login");
 // Load User model
 const User = require("../../models/User");
 
+//User type constants
+const UNAPPROVED_CHURCH_LEADER = "UNAPPROVED CHURCH LEADER";
+const UNAPPROVED_ADMIN = "UNAPPROVED ADMIN";
+const NORMAL = "NORMAL";
+const CHURCH_LEADER = "CHURCH LEADER";
+const ADMIN = "ADMIN";
+
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -20,6 +27,7 @@ router.post("/register", (req, res) => {
     if (!isValid) {
         return res.status(400).json(errors);
     }
+    
     // If valid input, use MongoDB’s User.findOne() to see if the user exists
     User.findOne({ email: req.body.email }).then(user => {
         if (user) {
@@ -29,7 +37,8 @@ router.post("/register", (req, res) => {
             const newUser = new User({
                 name: req.body.name,
                 email: req.body.email,
-                password: req.body.password
+                password: req.body.password,
+                userType: req.body.userType
             });
         // Use bcryptjs to hash the password before storing it in your database
         bcrypt.genSalt(10, (err, salt) => {
@@ -73,7 +82,8 @@ router.post("/login", (req, res) => {
                 // Create JWT Payload
                 const payload = {
                     id: user.id,
-                    name: user.name
+                    name: user.name,
+                    userType: user.userType
                 };
                 // Sign token
                 jwt.sign(
@@ -95,6 +105,51 @@ router.post("/login", (req, res) => {
             }
         });
     });
+});
+
+//Gets all the unapproved accounts
+router.get("/AccountApproval",  (req, res) => {
+    User.find({"$or" : [
+        {userType : UNAPPROVED_ADMIN}, 
+        {userType : UNAPPROVED_CHURCH_LEADER}
+    ]}, function(err, foundUsers) {
+        if (err) throw err;
+
+        res.send(foundUsers);
+    });
+
+});
+
+//Gets all the user accounts
+router.get("/GetAllAccounts",  (req, res) => {
+    User.find(function(err, foundUsers) {
+        if (err) throw err;
+
+        res.send(foundUsers);
+    });
+});
+
+router.post("/UpdateUserType", (req, res)  => {
+    var userData = req.body.userData;
+    var approved = req.body.approved;
+    var userTypeValue = NORMAL;
+    if (approved)
+    {
+        if (userData.userType === UNAPPROVED_ADMIN)
+        {
+            userTypeValue = ADMIN;
+        }
+        else if (userData.userType == UNAPPROVED_CHURCH_LEADER)
+        {
+            userTypeValue = CHURCH_LEADER;
+        }
+    }
+    var query = {email: userData.email};
+    User.findOneAndUpdate(query, {userType: userTypeValue}, function(err) {
+        if (err) throw err;
+        res.send({message: "Deleted"});
+    });
+
 });
 
 module.exports = router;

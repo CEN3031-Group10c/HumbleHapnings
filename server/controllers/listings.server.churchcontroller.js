@@ -11,7 +11,10 @@ exports.createChurch = function(req,res) {
         address: req.body.address,
         email: req.body.email,
         phone: req.body.phone,
-        description: req.body.description
+        denomination: req.body.denomination,
+        missionStatement: req.body.missionStatement,
+        description: req.body.description,
+        url: req.body.url
     };
 
     var churchListing = new ChurchListing(churchData);
@@ -34,7 +37,7 @@ exports.readChurch = function(req,res) {
     res.json(req.churchListing);
 };
 
-// Function to update the church listing
+// Function to update the church listing (only admin)
 exports.updateChurch = function(req, res) {
     var churchListing = req.churchListing;
 
@@ -46,7 +49,10 @@ exports.updateChurch = function(req, res) {
     churchListing.address = req.body.address;
     churchListing.email = req.body.email;
     churchListing.phone = req.body.phone;
+    churchListing.denomination = req.body.denomination;
+    churchListing.missionStatement = req.body.missionStatement;
     churchListing.description = req.body.description;
+    churchListing.url = req.body.url;
 
     ChurchListing.findOneAndUpdate(query, churchListing, function(err) {
         if(err) {
@@ -61,10 +67,9 @@ exports.updateChurch = function(req, res) {
 
 // Deletes a church from the directory
 exports.deleteChurch = function(req, res) {
-    var churchListing = req.churchListing;
 
     // query based on listing email
-    var query2 = {email: churchListing.email};
+    var query2 = {name: req.body.name};
 
     ChurchListing.findOneAndDelete(query2, function(err) {
         if (err) throw err;

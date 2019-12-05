@@ -4,6 +4,8 @@ const path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     churchCreationRouter = require('../routes/server.church.routes');
+    eventCreationRouter = require('../routes/server.event.routes');
+    const stripeRoutes = require("../routes/stripe/stripe")
 
 module.exports.init = () => {
     /* 
@@ -29,6 +31,9 @@ module.exports.init = () => {
     // Church Creation Router
     app.use('/api/ChurchCreation', churchCreationRouter);
 
+    // Event Creation Router
+    app.use('/api/EventCreation', eventCreationRouter);
+
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files
         app.use(express.static(path.join(__dirname, '../../client/build')));
@@ -38,6 +43,10 @@ module.exports.init = () => {
             res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
         });
     }
+
+    //Routes for stripe
+    app.use("/api/Events", stripeRoutes);
+
 
     return app
 }

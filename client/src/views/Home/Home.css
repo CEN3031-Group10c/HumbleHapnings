@@ -99,6 +99,7 @@ input[type=text]:focus, input[type=password]:focus {
     bottom: 0;
     height: 100vh;
     padding: 0px;
+    z-index: 0;
 }
 .cathedral1-background{
     background-image: url('../../assets/cathedral1.jpg');
@@ -109,6 +110,7 @@ input[type=text]:focus, input[type=password]:focus {
     bottom: 0;
     height: 100vh;
     padding: 0px;
+    z-index: 0;
 }
 
 .field1-background{
@@ -120,6 +122,7 @@ input[type=text]:focus, input[type=password]:focus {
     bottom: 0;
     height: 100vh;
     padding: 0px;
+    z-index: 0;
 }
 
 .homePagePad{

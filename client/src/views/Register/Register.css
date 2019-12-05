@@ -1,6 +1,6 @@
 body.reg {
-    font-family: Arial;
-    background-color: white;
+    font-family: Verdana;
+    background-color: black;
     margin: 0;
     padding: 0;
     margin: 0px;
@@ -10,7 +10,7 @@ body.reg {
   
 button.reg {
     background-color: rgb(43, 86, 202);
-    color: white;
+    color: black;
     padding: 16px 20px;
     margin: 8px 0;
     border: none;
@@ -22,8 +22,22 @@ button.reg {
 button.reg:hover {
     opacity: 1;
 }
-  
 
+.colorDiv2 {
+    background-color: rgb(255, 255, 255, 0.9);
+}
 
+div.container {
+    padding: 100px
+}
 
- 
+.book1-background{
+    background-image: url('../../assets/book1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 50px;
+}
