@@ -11,8 +11,8 @@ var moment = require('moment');
 //Josh - 
 class AccountReview extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       listOfUsers: [],
       displayName: "",
