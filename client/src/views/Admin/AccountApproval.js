@@ -105,7 +105,7 @@ class AccountApproval extends React.Component {
   
   render() {
     // Maps the values based on the users name
-    var userList = <div>Loading....</div>;
+    var userList = <a>Loading....</a>;
     if (this.state.unapprovedUsers !== undefined && Array.isArray(this.state.unapprovedUsers) && this.state.unapprovedUsers.length > 0)
     {
       userList = this.state.unapprovedUsers
