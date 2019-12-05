@@ -59,10 +59,16 @@ class AccountReview extends React.Component {
 
   render() {
      // Maps the values based on the users name
+     if(Array.isArray(this.state.users))
+        console.log("Array.isArray is FALSE and makes it go to ELSE")
+     if(this.state.users.length > 0)
+        console.log("...length > 0 is FALSE and makes it go to ELSE")
+
      console.log("Rendering...");
      var userList= this.state.users
      if(this.state.users !== undefined && Array.isArray(this.state.users) && this.state.users.length > 0)
      {
+       console.log("got into map if statement")
        userList
       .map(user => {
         return (
