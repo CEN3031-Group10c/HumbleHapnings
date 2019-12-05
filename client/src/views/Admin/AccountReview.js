@@ -14,7 +14,7 @@ class AccountReview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [],
+      listOfUsers: [],
       displayName: "",
       displayEmail: "",
       displayDate: Date.now,
@@ -59,14 +59,14 @@ class AccountReview extends React.Component {
 
   render() {
      // Maps the values based on the users name
-     if(Array.isArray(this.state.users))
+     if(Array.isArray(this.state.listOfUsers))
         console.log("Array.isArray is TRUE and makes it go to ELSE")
-     if(this.state.users.length > 0)
-        console.log("...length > 0 is TRUE and makes it go to ELSE "+ typeof this.state.users + "\n" + this.state.users)
+     if(this.state.listOfUsers.length > 0)
+        console.log("...length > 0 is TRUE and makes it go to ELSE "+ typeof this.state.listOfUsers + "\n" + this.state.listOfUsers)
 
      console.log("Rendering...");
-     var userList= this.state.users
-     if(this.state.users !== undefined && Array.isArray(this.state.users) && this.state.users.length > 0)
+     var userList= this.state.listOfUsers
+     if(this.state.listOfUsers !== undefined && Array.isArray(this.state.listOfUsers) && this.state.listOfUsers.length > 0)
      {
        console.log("got into map if statement")
        userList
