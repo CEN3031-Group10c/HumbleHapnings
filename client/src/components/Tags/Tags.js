@@ -8,10 +8,10 @@ const BACKSPACE_KEY = 8;
 
 //https://codepen.io/zebapy/pen/mJVrwg
 class Tags extends React.Component {
+    tags = this.props.tags
     constructor(props) {
         super(props);
         this.state = { 
-            tags: [], 
             value: "",
         };
 
@@ -42,7 +42,7 @@ class Tags extends React.Component {
     }
 
     addTag() {
-        const { tags, value } = this.state;
+        const {value } = this.state;
         let newTag = value.trim();
 
         newTag = newTag.replace(/,/g, "");
@@ -52,29 +52,26 @@ class Tags extends React.Component {
         }
 
         this.setState({
-            tags: tags.concat(newTag),
             value: ""
         });
         this.props.addTag(newTag);
     }
 
     editPrevTag() {
-        let { tags } = this.state;
 
-        const tag = tags.pop();
+        const tag = this.props.popTag();
 
-        this.setState({ tags, value: tag });
-        
-        this.props.popTag();
+        this.setState({ value: tag });
+
     }
 
     render() {
-        const { tags, value } = this.state;
+        const {value } = this.state;
         return (
         <div className="form">
             <div className="tags-tags">
             <ul>
-                {tags.map((tag, i) => (
+                {this.props.tags.map((tag, i) => (
                 <li key={tag + i} className="tag-tag">
                     {tag}
                 </li>
