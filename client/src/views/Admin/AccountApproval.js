@@ -96,6 +96,8 @@ class AccountApproval extends React.Component {
   }
   render() {
     // Maps the values based on the users name
+    if(this.state.unapprovedUsers === undefined)
+      console.log("unapprovedUsersArray is underfined")
     var userList = <div>Loading....</div>;
     if(this.state.unapprovedUsers === undefined)
       console.log("unapprovedUsersArray is underfined")
