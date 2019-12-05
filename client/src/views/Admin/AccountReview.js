@@ -31,6 +31,7 @@ class AccountReview extends React.Component {
     else {
       //Retrieves unapproved users from backend
       await axios.get("/api/users/GetAllAccounts").then(res => {
+        console.log("\n" + JSON.stringify(res) + "\n")
         this.setState({ listOfUsers: res.data });
       });
     }
