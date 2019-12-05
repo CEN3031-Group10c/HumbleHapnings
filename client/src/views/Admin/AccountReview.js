@@ -62,7 +62,7 @@ class AccountReview extends React.Component {
      if(Array.isArray(this.state.users))
         console.log("Array.isArray is TRUE and makes it go to ELSE")
      if(this.state.users.length > 0)
-        console.log("...length > 0 is TRUE and makes it go to ELSE "+ typeof this.state.users)
+        console.log("...length > 0 is TRUE and makes it go to ELSE "+ typeof this.state.users + "\n" + this.state.users)
 
      console.log("Rendering...");
      var userList= this.state.users

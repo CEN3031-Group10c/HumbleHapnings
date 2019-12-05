@@ -122,7 +122,7 @@ router.get("/AccountApproval",  (req, res) => {
 
 //Gets all the user accounts
 router.get("/GetAllAccounts",  (req, res) => {
-    User.find(function(err, foundUsers) {
+    User.find({}, function(err, foundUsers) {
         if (err) throw err;
 
         res.send(foundUsers);
