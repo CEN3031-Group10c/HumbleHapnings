@@ -59,8 +59,9 @@ class AccountReview extends React.Component {
   }
 
   render() {
+    var userList = <div></div>;
     if (this.state.listOfUsers !== undefined && Array.isArray(this.state.listOfUsers) && this.state.listOfUsers.length > 0) {
-      const userList = this.state.listOfUsers
+      userList = this.state.listOfUsers
       .map(user => {
         return (
           <a onClick={() => this.updateDisplay(user.name, user.email, user.date, user.userType)}>
