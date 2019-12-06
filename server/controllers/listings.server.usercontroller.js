@@ -147,3 +147,14 @@ exports.listUsers = function(req, res) {
         res.send(foundListings)
     });
 };
+
+exports.userListingByID = function(req, res, next, id) {
+    User.findById(id).exec(function(err, listing) {
+        if(err) {
+            res.status(400).send(err);
+        } else {
+            req.userListing = listing;
+            next();
+        }
+    });
+};
