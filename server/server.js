@@ -1,6 +1,7 @@
 const express = require('./config/express.js');
 const mongoose = require("mongoose");
 const passport = require("passport");
+var cors = require('cors');
 const bodyParser = require("body-parser");
 
 const prod = require ('./config/prod');
@@ -8,7 +9,7 @@ const users = require("./routes/api/users");
 const churches = require("./routes/server.church.routes");
 
 const app = express.init();
-
+app.use(cors());
 // Bodyparser middleware
 app.use(
     bodyParser.urlencoded({
