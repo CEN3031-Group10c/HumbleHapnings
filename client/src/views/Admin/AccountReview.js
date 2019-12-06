@@ -59,7 +59,7 @@ class AccountReview extends React.Component {
   }
 
   render() {
-    const userList;
+    var userList;
     if (this.state.listOfUsers === []) 
       { userList = <div></div> }
     else {
