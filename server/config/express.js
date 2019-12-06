@@ -3,8 +3,9 @@ const path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    churchCreationRouter = require('../routes/server.church.routes');
-    eventCreationRouter = require('../routes/server.event.routes');
+    churchCreationRouter = require('../routes/server.church.routes'),
+    eventCreationRouter = require('../routes/server.event.routes'),
+    userRouter = require('../routes/server.user.routes');
     const stripeRoutes = require("../routes/stripe/stripe")
 
 module.exports.init = () => {
@@ -33,6 +34,8 @@ module.exports.init = () => {
 
     // Event Creation Router
     app.use('/api/EventCreation', eventCreationRouter);
+
+    app.use('/api/users', userRouter);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files

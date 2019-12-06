@@ -23,7 +23,7 @@ class AccountReview extends React.Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     // If the user is not an admin, push them back to the home page.
     if (this.props.auth.user.userType !== ADMIN) {
       this.props.history.push("/home");
@@ -31,7 +31,6 @@ class AccountReview extends React.Component {
     else {
       //Retrieves unapproved users from backend
       await axios.get("/api/users/GetAllAccounts").then(res => {
-        console.log("\n" + JSON.stringify(res) + "\n")
         this.setState({ listOfUsers: res.data });
       });
     }
@@ -59,29 +58,14 @@ class AccountReview extends React.Component {
   }
 
   render() {
-     // Maps the values based on the users name
-     if(Array.isArray(this.state.listOfUsers))
-        console.log("Array.isArray is TRUE and makes it go to ELSE")
-     if(this.state.listOfUsers.length > 0)
-        console.log("...length > 0 is TRUE and makes it go to ELSE "+ typeof this.state.listOfUsers + "\n" + this.state.listOfUsers)
-
-     console.log("Rendering...");
-     var userList= this.state.listOfUsers
-     if(this.state.listOfUsers !== undefined && Array.isArray(this.state.listOfUsers) && this.state.listOfUsers.length > 0)
-     {
-       console.log("got into map if statement")
-       userList
-      .map(user => {
-        return (
-          <a onClick={() => this.updateDisplay(user.name, user.email, user.date, user.userType)}>
-            {user.name}
-          </a>
-        );
-      });
-    }
-    else{
-      userList = []
-    }
+    const userList = this.state.listOfUsers
+    .map(user => {
+      return (
+        <a onClick={() => this.updateDisplay(user.name, user.email, user.date, user.userType)}>
+          {user.name}
+        </a>
+      )
+    });
 
     var email, date, userType;
     if (this.state.displayName !== "") {
