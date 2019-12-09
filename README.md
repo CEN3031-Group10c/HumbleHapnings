@@ -1,3 +1,48 @@
+********************************************************************************************************
+Deployed Site: https://humble-hapnings.herokuapp.com/
+
+API's Used:
+Stripe
+Firebase
+Bootstrap
+MongoDB
+MaterializeCSS
+MERN
+
+Features
+User Features
+
+https://www.youtube.com/watch?v=dC1XvD_6lZs
+This feature streamlines the first time user experience. The user arrives on a stylish landing page and can easily register for a user or church leader account and log in.
+
+
+
+Admin Features
+https://www.youtube.com/watch?v=whvSdjc3F1o
+Church leader and admin account approvals. The admin(s) can approve users’ applications to become church leaders or reject them. The admin(s) can also see basic information about all users and the total number of users.
+
+Admin features dashboard
+
+Church leader features dashboard
+
+Church Creation with Image Uploading:
+https://youtu.be/k8BhohpOe6E
+This feature allows for church creation with image uploading and then shows the church displayed in the church directory
+
+Event Creation and Stripe payment:
+https://youtu.be/mGvi2tRKkUM 
+This feature allows for event creation through the Stripe API. A user can input the event’s information and attach tags to the event. A user has to pay before he or she can post his or her event to the event page.
+
+
+Events Page: Mapping the DB Events 
+https://www.youtube.com/watch?v=3uYXMnBFFwA&feature=youtu.be
+This page maps each of the events currently in the DB and their tags, description, location, name, host church, etc. as long of a string as each may be. On the right column, the user can filter through each of the attributes of the events and pay to create a new event, which will instantly appear in the Events page, once paid for and submitted.
+
+
+Database can be updated through the login information provided to the client.
+
+********************************************************************************************************
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 This project contains an example project board meant to showcase how one can be used. The issues posted to it are not real issues.
 
